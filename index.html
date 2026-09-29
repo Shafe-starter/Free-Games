@@ -6,379 +6,398 @@
 <title>Free Games</title>
 
 <style>
-* {
-    box-sizing: border-box;
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#0f0f14;
+color:white;
 }
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0f0f14;
-    color: white;
+header{
+background:#17171f;
+padding:18px;
+text-align:center;
+font-size:25px;
+font-weight:bold;
+border-bottom:1px solid #292933;
 }
 
-header {
-    background: #17171f;
-    padding: 18px;
-    text-align: center;
-    font-size: 25px;
-    font-weight: bold;
-    border-bottom: 1px solid #292933;
+.container{
+width:92%;
+max-width:1100px;
+margin:auto;
 }
 
-.container {
-    width: 92%;
-    max-width: 1100px;
-    margin: auto;
+.hero{
+text-align:center;
+padding:45px 10px 25px;
 }
 
-.hero {
-    text-align: center;
-    padding: 45px 10px 25px;
+.hero h1{
+font-size:32px;
+margin-bottom:12px;
 }
 
-.hero h1 {
-    font-size: 32px;
-    margin-bottom: 12px;
+.hero p{
+color:#aaa;
+font-size:16px;
 }
 
-.hero p {
-    color: #aaa;
-    font-size: 16px;
+.search-box{
+max-width:650px;
+margin:25px auto 35px;
 }
 
-.search-box {
-    max-width: 650px;
-    margin: 25px auto 35px;
+.search-box input{
+width:100%;
+padding:16px 20px;
+border-radius:14px;
+border:1px solid #33333f;
+background:#191922;
+color:white;
+font-size:16px;
+outline:none;
+text-align:right;
 }
 
-.search-box input {
-    width: 100%;
-    padding: 16px 20px;
-    border-radius: 14px;
-    border: 1px solid #33333f;
-    background: #191922;
-    color: white;
-    font-size: 16px;
-    outline: none;
-    text-align: right;
+.search-box input:focus{
+border-color:#6c63ff;
 }
 
-.search-box input:focus {
-    border-color: #6c63ff;
+.search-result-title{
+text-align:center;
+color:#aaa;
+margin-bottom:20px;
+display:none;
 }
 
-.search-result-title {
-    text-align: center;
-    color: #aaa;
-    margin-bottom: 20px;
-    display: none;
+.platforms{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:14px;
+margin-bottom:40px;
 }
 
-.platforms {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-    margin-bottom: 40px;
+.platform-btn{
+padding:18px 10px;
+border:none;
+border-radius:14px;
+background:#1c1c27;
+color:white;
+font-size:17px;
+cursor:pointer;
+transition:.25s;
+border:1px solid #2d2d3a;
 }
 
-.platform-btn {
-    padding: 18px 10px;
-    border: none;
-    border-radius: 14px;
-    background: #1c1c27;
-    color: white;
-    font-size: 17px;
-    cursor: pointer;
-    transition: 0.25s;
-    border: 1px solid #2d2d3a;
+.platform-btn:hover{
+background:#29293a;
+transform:translateY(-2px);
 }
 
-.platform-btn:hover {
-    background: #29293a;
-    transform: translateY(-2px);
+.platform-page{
+display:none;
+padding-bottom:50px;
 }
 
-.platform-page {
-    display: none;
-    padding-bottom: 50px;
+.platform-header{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:10px;
+margin-bottom:25px;
 }
 
-.platform-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    margin-bottom: 25px;
+.platform-header h2{
+margin:0;
+font-size:27px;
 }
 
-.platform-header h2 {
-    margin: 0;
-    font-size: 27px;
+.back-btn{
+border:none;
+background:#292936;
+color:white;
+padding:11px 16px;
+border-radius:10px;
+cursor:pointer;
+font-size:14px;
 }
 
-.back-btn {
-    border: none;
-    background: #292936;
-    color: white;
-    padding: 11px 16px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 14px;
+.games-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:20px;
 }
 
-.games-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 20px;
+.game-card{
+background:#191922;
+border:1px solid #2b2b36;
+border-radius:16px;
+overflow:hidden;
+transition:.25s;
 }
 
-.game-card {
-    background: #191922;
-    border: 1px solid #2b2b36;
-    border-radius: 16px;
-    overflow: hidden;
-    transition: 0.25s;
+.game-card:hover{
+transform:translateY(-4px);
+border-color:#45455a;
 }
 
-.game-card:hover {
-    transform: translateY(-4px);
-    border-color: #45455a;
+.game-card img{
+width:100%;
+height:280px;
+object-fit:cover;
+display:block;
 }
 
-.game-card img {
-    width: 100%;
-    height: 280px;
-    object-fit: cover;
-    display: block;
+.game-content{
+padding:16px;
 }
 
-.game-content {
-    padding: 16px;
+.game-content h3{
+margin:0 0 10px;
+font-size:20px;
 }
 
-.game-content h3 {
-    margin: 0 0 10px;
-    font-size: 20px;
+.game-description{
+color:#aaa;
+font-size:14px;
+line-height:1.7;
+min-height:48px;
 }
 
-.game-description {
-    color: #aaa;
-    font-size: 14px;
-    line-height: 1.7;
-    min-height: 48px;
+.game-info{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:8px;
+margin:15px 0;
 }
 
-.game-info {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    margin: 15px 0;
+.info-box{
+background:#121219;
+border-radius:9px;
+padding:9px;
+font-size:12px;
+color:#bbb;
 }
 
-.info-box {
-    background: #121219;
-    border-radius: 9px;
-    padding: 9px;
-    font-size: 12px;
-    color: #bbb;
+.info-box strong{
+display:block;
+color:white;
+margin-top:4px;
 }
 
-.info-box strong {
-    display: block;
-    color: white;
-    margin-top: 4px;
-}
-
-.buttons {
-    display: flex;
-    gap: 8px;
+.buttons{
+display:flex;
+gap:8px;
 }
 
 .info-btn,
-.download-btn {
-    flex: 1;
-    padding: 12px 8px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    color: white;
-    font-size: 13px;
+.download-btn{
+flex:1;
+padding:12px 8px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+color:white;
+font-size:13px;
 }
 
-.info-btn {
-    background: #303044;
+.info-btn{
+background:#303044;
 }
 
-.download-btn {
-    background: #315f3b;
+.download-btn{
+background:#315f3b;
 }
 
 .info-btn:hover,
-.download-btn:hover {
-    opacity: 0.85;
+.download-btn:hover{
+opacity:.85;
 }
 
-.no-results {
-    display: none;
-    text-align: center;
-    padding: 35px 10px;
-    color: #999;
+.no-results{
+display:none;
+text-align:center;
+padding:35px 10px;
+color:#999;
 }
 
-.free-section {
-    margin-top: 45px;
-    margin-bottom: 50px;
+.free-section{
+margin-top:45px;
+margin-bottom:50px;
 }
 
-.free-section h2 {
-    text-align: center;
-    margin-bottom: 10px;
+.free-section h2{
+text-align:center;
+margin-bottom:10px;
 }
 
-.free-section p {
-    text-align: center;
-    color: #888;
-    margin-bottom: 25px;
+.free-section>p{
+text-align:center;
+color:#888;
+margin-bottom:25px;
 }
 
-.free-card {
-    background: #191922;
-    border: 1px solid #2b2b36;
-    border-radius: 16px;
-    padding: 20px;
-    text-align: center;
+.free-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:20px;
 }
 
-.free-icon {
-    font-size: 55px;
-    margin-bottom: 10px;
+.free-card{
+background:#191922;
+border:1px solid #2b2b36;
+border-radius:16px;
+overflow:hidden;
+padding-bottom:18px;
+transition:.25s;
 }
 
-.free-card h3 {
-    margin: 10px 0;
-    font-size: 23px;
+.free-card:hover{
+transform:translateY(-4px);
+border-color:#45455a;
 }
 
-.free-card p {
-    color: #aaa;
-    line-height: 1.7;
-    margin-bottom: 18px;
+.free-icon{
+height:150px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:70px;
+background:#14141c;
 }
 
-.official-download {
-    display: inline-block;
-    text-decoration: none;
-    background: #315f3b;
-    color: white;
-    padding: 13px 22px;
-    border-radius: 11px;
-    font-size: 15px;
+.free-content{
+padding:16px;
 }
 
-.official-download:hover {
-    opacity: 0.85;
+.free-content h3{
+margin:0 0 10px;
+font-size:21px;
 }
 
-.modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.78);
-    z-index: 9999;
-    padding: 20px;
-    overflow-y: auto;
+.free-content p{
+color:#aaa;
+font-size:14px;
+line-height:1.7;
+min-height:72px;
 }
 
-.modal-content {
-    width: 100%;
-    max-width: 600px;
-    margin: 50px auto;
-    background: #191922;
-    border: 1px solid #343444;
-    border-radius: 20px;
-    padding: 20px;
-    position: relative;
-    animation: popup 0.25s ease;
+.free-download{
+display:block;
+text-align:center;
+text-decoration:none;
+background:#315f3b;
+color:white;
+padding:12px;
+border-radius:10px;
+margin-top:15px;
 }
 
-@keyframes popup {
-    from {
-        opacity: 0;
-        transform: scale(0.92);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+.free-download:hover{
+opacity:.85;
 }
 
-.close-btn {
-    position: absolute;
-    left: 15px;
-    top: 12px;
-    width: 38px;
-    height: 38px;
-    border: none;
-    border-radius: 50%;
-    background: #30303c;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
+.modal{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.78);
+z-index:9999;
+padding:20px;
+overflow-y:auto;
 }
 
-.modal-image {
-    width: 100%;
-    max-height: 350px;
-    object-fit: cover;
-    border-radius: 14px;
-    margin-bottom: 18px;
+.modal-content{
+width:100%;
+max-width:600px;
+margin:50px auto;
+background:#191922;
+border:1px solid #343444;
+border-radius:20px;
+padding:20px;
+position:relative;
+animation:popup .25s ease;
 }
 
-.modal-content h2 {
-    margin: 5px 0 12px;
-    font-size: 27px;
+@keyframes popup{
+from{
+opacity:0;
+transform:scale(.92);
+}
+to{
+opacity:1;
+transform:scale(1);
+}
 }
 
-.modal-description {
-    color: #bbb;
-    line-height: 1.8;
-    margin-bottom: 20px;
+.close-btn{
+position:absolute;
+left:15px;
+top:12px;
+width:38px;
+height:38px;
+border:none;
+border-radius:50%;
+background:#30303c;
+color:white;
+font-size:20px;
+cursor:pointer;
 }
 
-.modal-details {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+.modal-image{
+width:100%;
+max-height:350px;
+object-fit:cover;
+border-radius:14px;
+margin-bottom:18px;
 }
 
-.modal-detail {
-    background: #111118;
-    padding: 13px;
-    border-radius: 11px;
-    color: #aaa;
-    font-size: 13px;
+.modal-content h2{
+margin:5px 0 12px;
+font-size:27px;
 }
 
-.modal-detail strong {
-    display: block;
-    color: white;
-    margin-top: 5px;
-    font-size: 14px;
+.modal-description{
+color:#bbb;
+line-height:1.8;
+margin-bottom:20px;
 }
 
-footer {
-    text-align: center;
-    color: #666;
-    padding: 35px 10px;
-    font-size: 13px;
+.modal-details{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
 }
 
-@media (min-width: 700px) {
-    .platforms {
-        grid-template-columns: repeat(4, 1fr);
-    }
+.modal-detail{
+background:#111118;
+padding:13px;
+border-radius:11px;
+color:#aaa;
+font-size:13px;
+}
+
+.modal-detail strong{
+display:block;
+color:white;
+margin-top:5px;
+font-size:14px;
+}
+
+footer{
+text-align:center;
+color:#666;
+padding:35px 10px;
+font-size:13px;
+}
+
+@media(min-width:700px){
+.platforms{
+grid-template-columns:repeat(4,1fr);
+}
 }
 </style>
 </head>
@@ -386,524 +405,550 @@ footer {
 <body>
 
 <header>
-    🎮 Free Games
+🎮 Free Games
 </header>
 
 <div id="homePage" class="container">
 
-    <section class="hero">
-        <h1>🎮 ألعاب مجانية للجميع</h1>
-        <p>اختر منصتك واستمتع بالألعاب</p>
-    </section>
+<section class="hero">
+<h1>🎮 ألعاب مجانية للجميع</h1>
+<p>اختر منصتك واستمتع بالألعاب</p>
+</section>
 
-    <div class="search-box">
-        <input
-            type="text"
-            id="searchInput"
-            placeholder="🔎 ابحث عن لعبة..."
-            oninput="searchGames()"
-        >
-    </div>
+<div class="search-box">
+<input
+type="text"
+id="searchInput"
+placeholder="🔎 ابحث عن لعبة..."
+oninput="searchGames()">
+</div>
 
-    <div id="searchResultTitle" class="search-result-title">
-        نتائج البحث
-    </div>
+<div id="searchResultTitle" class="search-result-title">
+نتائج البحث
+</div>
 
-    <div id="searchResults" class="games-grid"></div>
+<div id="searchResults" class="games-grid"></div>
 
-    <div id="noResults" class="no-results">
-        😕 ما لگينا لعبة بهذا الاسم
-    </div>
+<div id="noResults" class="no-results">
+😕 ما لگينا لعبة بهذا الاسم
+</div>
 
-    <div id="platformSection">
+<div id="platformSection">
 
-        <h2 style="text-align:center; margin-bottom:20px;">
-            اختر منصتك 🎮
-        </h2>
+<h2 style="text-align:center;margin-bottom:20px;">
+اختر منصتك 🎮
+</h2>
 
-        <div class="platforms">
+<div class="platforms">
 
-            <button class="platform-btn" onclick="openPlatform('Android')">
-                📱 Android
-            </button>
+<button class="platform-btn" onclick="openPlatform('Android')">
+📱 Android
+</button>
 
-            <button class="platform-btn" onclick="openPlatform('PSP')">
-                🎮 PSP
-            </button>
+<button class="platform-btn" onclick="openPlatform('PSP')">
+🎮 PSP
+</button>
 
-            <button class="platform-btn" onclick="openPlatform('PS1')">
-                🎮 PS1
-            </button>
+<button class="platform-btn" onclick="openPlatform('PS1')">
+🎮 PS1
+</button>
 
-            <button class="platform-btn" onclick="openPlatform('PS2')">
-                🎮 PS2
-            </button>
+<button class="platform-btn" onclick="openPlatform('PS2')">
+🎮 PS2
+</button>
 
-            <button class="platform-btn" onclick="openPlatform('Nintendo')">
-                🕹️ Nintendo
-            </button>
+<button class="platform-btn" onclick="openPlatform('Nintendo')">
+🕹️ Nintendo
+</button>
 
-            <button class="platform-btn" onclick="openPlatform('PC')">
-                💻 PC
-            </button>
+<button class="platform-btn" onclick="openPlatform('PC')">
+💻 PC
+</button>
 
-            <button class="platform-btn" onclick="openPlatform('Emulators')">
-                ⚙️ Emulators
-            </button>
+<button class="platform-btn" onclick="openPlatform('Emulators')">
+⚙️ Emulators
+</button>
 
-        </div>
+</div>
+</div>
 
-    </div>
 
-    <!-- الألعاب المجانية القانونية -->
+<section class="free-section">
 
-    <section class="free-section">
+<h2>🆓 ألعاب مجانية وقانونية</h2>
 
-        <h2>🆓 ألعاب مجانية وقانونية</h2>
+<p>
+ألعاب مجانية من مشاريع رسمية ومفتوحة المصدر.
+</p>
 
-        <p>
-            ألعاب مجانية من مشاريع رسمية ومفتوحة المصدر.
-        </p>
+<div class="free-grid">
 
-        <div class="free-card">
+<div class="free-card">
 
-            <div class="free-icon">
-                🐧
-            </div>
+<div class="free-icon">🐧</div>
 
-            <h3>SuperTux</h3>
+<div class="free-content">
 
-            <p>
-                لعبة منصات مجانية ومفتوحة المصدر مستوحاة من ألعاب
-                المنصات الكلاسيكية. تتوفر إصدارات رسمية من المشروع.
-            </p>
+<h3>SuperTux</h3>
 
-            <a
-                class="official-download"
-                href="https://github.com/SuperTux/supertux/releases"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                📥 التحميل الرسمي
-            </a>
+<p>
+لعبة منصات مجانية ومفتوحة المصدر، مستوحاة من ألعاب
+المنصات الكلاسيكية.
+</p>
 
-        </div>
+<a
+class="free-download"
+href="https://github.com/SuperTux/supertux/releases"
+target="_blank"
+rel="noopener noreferrer">
+📥 التحميل الرسمي
+</a>
 
-    </section>
+</div>
+</div>
+
+
+<div class="free-card">
+
+<div class="free-icon">⚔️</div>
+
+<div class="free-content">
+
+<h3>Battle for Wesnoth</h3>
+
+<p>
+لعبة استراتيجية بنظام الأدوار وعالم فانتازي،
+وهي مجانية ومفتوحة المصدر.
+</p>
+
+<a
+class="free-download"
+href="https://wesnoth.itch.io/battle-for-wesnoth"
+target="_blank"
+rel="noopener noreferrer">
+📥 التحميل الرسمي
+</a>
+
+</div>
+</div>
+
+
+<div class="free-card">
+
+<div class="free-icon">🏛️</div>
+
+<div class="free-content">
+
+<h3>0 A.D.</h3>
+
+<p>
+لعبة استراتيجية تاريخية مجانية ومفتوحة المصدر
+تركز على بناء الحضارات والحروب القديمة.
+</p>
+
+<a
+class="free-download"
+href="https://play0ad.com/download/"
+target="_blank"
+rel="noopener noreferrer">
+📥 التحميل الرسمي
+</a>
+
+</div>
+</div>
+
+</div>
+</section>
 
 </div>
 
 
-<!-- صفحة المنصة -->
-
 <div id="platformPage" class="container platform-page">
 
-    <div class="platform-header">
+<div class="platform-header">
 
-        <h2 id="platformTitle"></h2>
+<h2 id="platformTitle"></h2>
 
-        <button class="back-btn" onclick="goHome()">
-            ← الرئيسية
-        </button>
+<button class="back-btn" onclick="goHome()">
+← الرئيسية
+</button>
 
-    </div>
+</div>
 
-    <div id="gamesContainer" class="games-grid"></div>
+<div id="gamesContainer" class="games-grid"></div>
 
-    <div id="otherGames" class="no-results">
-        🚧 سيتم إضافة الألعاب هنا قريبًا
-    </div>
+<div id="otherGames" class="no-results">
+🚧 سيتم إضافة الألعاب هنا قريبًا
+</div>
 
 </div>
 
 
 <footer>
-    🎮 Free Games
+🎮 Free Games
 </footer>
 
 
-<!-- نافذة معلومات اللعبة -->
-
 <div id="infoModal" class="modal" onclick="closeOutside(event)">
 
-    <div class="modal-content">
+<div class="modal-content">
 
-        <button class="close-btn" onclick="closeInfo()">
-            ×
-        </button>
+<button class="close-btn" onclick="closeInfo()">
+×
+</button>
 
-        <img id="modalImage" class="modal-image" src="" alt="Game">
+<img id="modalImage" class="modal-image" src="" alt="Game">
 
-        <h2 id="modalTitle"></h2>
+<h2 id="modalTitle"></h2>
 
-        <div id="modalDescription" class="modal-description"></div>
+<div id="modalDescription" class="modal-description"></div>
 
-        <div class="modal-details">
+<div class="modal-details">
 
-            <div class="modal-detail">
-                المنصة
-                <strong id="modalPlatform"></strong>
-            </div>
+<div class="modal-detail">
+المنصة
+<strong id="modalPlatform"></strong>
+</div>
 
-            <div class="modal-detail">
-                النوع
-                <strong id="modalGenre"></strong>
-            </div>
+<div class="modal-detail">
+النوع
+<strong id="modalGenre"></strong>
+</div>
 
-            <div class="modal-detail">
-                سنة الإصدار
-                <strong id="modalYear"></strong>
-            </div>
+<div class="modal-detail">
+سنة الإصدار
+<strong id="modalYear"></strong>
+</div>
 
-            <div class="modal-detail">
-                الحجم
-                <strong id="modalSize"></strong>
-            </div>
+<div class="modal-detail">
+الحجم
+<strong id="modalSize"></strong>
+</div>
 
-        </div>
-
-    </div>
-
+</div>
+</div>
 </div>
 
 
 <script>
 
-const games = [
+const games=[
 
-    {
-        title: "God of War",
-        image: "a54009d4ebdb37adb97e8257734fb4b2.jpg",
-        description: "تبدأ رحلة كريتوس وسط عالم الأساطير اليونانية في مغامرة مليئة بالأكشن والمعارك.",
-        platform: "PS2",
-        genre: "أكشن ومغامرات",
-        year: "2005",
-        size: "يحدد حسب النسخة"
-    },
+{
+title:"God of War",
+image:"a54009d4ebdb37adb97e8257734fb4b2.jpg",
+description:"تبدأ رحلة كريتوس وسط عالم الأساطير اليونانية في مغامرة مليئة بالأكشن والمعارك.",
+platform:"PS2",
+genre:"أكشن ومغامرات",
+year:"2005",
+size:"يحدد حسب النسخة"
+},
 
-    {
-        title: "GTA San Andreas",
-        image: "f5cc170d31edbacf8be1cfb4a0a46180.jpg",
-        description: "يعود كارل جونسون إلى مدينته ليبدأ رحلة مليئة بالمهمات والمطاردات والعالم المفتوح.",
-        platform: "PS2",
-        genre: "عالم مفتوح وأكشن",
-        year: "2004",
-        size: "يحدد حسب النسخة"
-    },
+{
+title:"GTA San Andreas",
+image:"f5cc170d31edbacf8be1cfb4a0a46180.jpg",
+description:"يعود كارل جونسون إلى مدينته ليبدأ رحلة مليئة بالمهمات والمطاردات والعالم المفتوح.",
+platform:"PS2",
+genre:"عالم مفتوح وأكشن",
+year:"2004",
+size:"يحدد حسب النسخة"
+},
 
-    {
-        title: "Resident Evil 4",
-        image: "1562a6801c37f3f7dd6d4684245b8b16.jpg",
-        description: "يخوض ليون إس كينيدي مهمة خطيرة لإنقاذ ابنة الرئيس وسط أحداث مليئة بالرعب والأكشن.",
-        platform: "PS2",
-        genre: "رعب وأكشن",
-        year: "2005",
-        size: "يُحدد حسب النسخة"
-    },
+{
+title:"Resident Evil 4",
+image:"1562a6801c37f3f7dd6d4684245b8b16.jpg",
+description:"يخوض ليون إس كينيدي مهمة خطيرة لإنقاذ ابنة الرئيس وسط أحداث مليئة بالرعب والأكشن.",
+platform:"PS2",
+genre:"رعب وأكشن",
+year:"2005",
+size:"يُحدد حسب النسخة"
+},
 
-    {
-        title: "Need for Speed Most Wanted",
-        image: "c67803d869623cda4e274619934dd9ed.jpg",
-        description: "سباقات شوارع ومطاردات شرطة وتحديات للوصول إلى قمة قائمة المطلوبين.",
-        platform: "PS2",
-        genre: "سباقات سيارات",
-        year: "2005",
-        size: "يحدد حسب النسخة"
-    },
+{
+title:"Need for Speed Most Wanted",
+image:"c67803d869623cda4e274619934dd9ed.jpg",
+description:"سباقات شوارع ومطاردات شرطة وتحديات للوصول إلى قمة قائمة المطلوبين.",
+platform:"PS2",
+genre:"سباقات سيارات",
+year:"2005",
+size:"يحدد حسب النسخة"
+},
 
-    {
-        title: "Tekken 5",
-        image: "4d54f38bbc54bc578ea0f510831bf7e5.jpg",
-        description: "واحدة من أشهر ألعاب القتال، تضم مجموعة كبيرة من الشخصيات وأنماط لعب متعددة.",
-        platform: "PS2",
-        genre: "قتال",
-        year: "2004",
-        size: "يحدد حسب النسخة"
-    }
+{
+title:"Tekken 5",
+image:"4d54f38bbc54bc578ea0f510831bf7e5.jpg",
+description:"واحدة من أشهر ألعاب القتال، تضم مجموعة كبيرة من الشخصيات وأنماط لعب متعددة.",
+platform:"PS2",
+genre:"قتال",
+year:"2004",
+size:"يحدد حسب النسخة"
+}
 
 ];
 
 
-function openPlatform(platform) {
+function openPlatform(platform){
 
-    document.getElementById("homePage").style.display = "none";
+document.getElementById("homePage").style.display="none";
 
-    document.getElementById("platformPage").style.display = "block";
+document.getElementById("platformPage").style.display="block";
 
-    document.getElementById("platformTitle").textContent =
-        "🎮 ألعاب " + platform;
+document.getElementById("platformTitle").textContent=
+"🎮 ألعاب "+platform;
 
-    const container =
-        document.getElementById("gamesContainer");
+const container=document.getElementById("gamesContainer");
 
-    const otherGames =
-        document.getElementById("otherGames");
+const otherGames=document.getElementById("otherGames");
 
-    container.innerHTML = "";
+container.innerHTML="";
 
-    if (platform === "PS2") {
+if(platform==="PS2"){
 
-        otherGames.style.display = "none";
+otherGames.style.display="none";
 
-        const ps2Games =
-            games.filter(game => game.platform === "PS2");
+const ps2Games=
+games.filter(game=>game.platform==="PS2");
 
-        ps2Games.forEach(game => {
+ps2Games.forEach(game=>{
+container.innerHTML+=createGameCard(game);
+});
 
-            container.innerHTML += createGameCard(game);
+}else{
 
-        });
+otherGames.style.display="block";
 
-    } else {
+}
 
-        otherGames.style.display = "block";
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
 
-    }
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
 }
 
 
-function goHome() {
+function goHome(){
 
-    document.getElementById("platformPage").style.display = "none";
+document.getElementById("platformPage").style.display="none";
 
-    document.getElementById("homePage").style.display = "block";
+document.getElementById("homePage").style.display="block";
 
-    document.getElementById("searchInput").value = "";
+document.getElementById("searchInput").value="";
 
-    document.getElementById("searchResults").innerHTML = "";
+document.getElementById("searchResults").innerHTML="";
 
-    document.getElementById("searchResults").style.display = "none";
+document.getElementById("searchResults").style.display="none";
 
-    document.getElementById("searchResultTitle").style.display = "none";
+document.getElementById("searchResultTitle").style.display="none";
 
-    document.getElementById("noResults").style.display = "none";
+document.getElementById("noResults").style.display="none";
 
-    document.getElementById("platformSection").style.display = "block";
+document.getElementById("platformSection").style.display="block";
 
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
 }
 
 
-function createGameCard(game) {
+function createGameCard(game){
 
-    return `
+return`
 
-        <div class="game-card">
+<div class="game-card">
 
-            <img src="${game.image}" alt="${game.title}">
+<img src="${game.image}" alt="${game.title}">
 
-            <div class="game-content">
+<div class="game-content">
 
-                <h3>${game.title}</h3>
+<h3>${game.title}</h3>
 
-                <div class="game-description">
-                    ${game.description}
-                </div>
+<div class="game-description">
+${game.description}
+</div>
 
-                <div class="game-info">
+<div class="game-info">
 
-                    <div class="info-box">
-                        المنصة
-                        <strong>${game.platform}</strong>
-                    </div>
+<div class="info-box">
+المنصة
+<strong>${game.platform}</strong>
+</div>
 
-                    <div class="info-box">
-                        النوع
-                        <strong>${game.genre}</strong>
-                    </div>
+<div class="info-box">
+النوع
+<strong>${game.genre}</strong>
+</div>
 
-                    <div class="info-box">
-                        السنة
-                        <strong>${game.year}</strong>
-                    </div>
+<div class="info-box">
+السنة
+<strong>${game.year}</strong>
+</div>
 
-                    <div class="info-box">
-                        الحجم
-                        <strong>${game.size}</strong>
-                    </div>
+<div class="info-box">
+الحجم
+<strong>${game.size}</strong>
+</div>
 
-                </div>
+</div>
 
-                <div class="buttons">
+<div class="buttons">
 
-                    <button
-                        class="info-btn"
-                        onclick='showInfo(
-                            ${JSON.stringify(game.title)},
-                            ${JSON.stringify(game.description)},
-                            ${JSON.stringify(game.image)},
-                            ${JSON.stringify(game.platform)},
-                            ${JSON.stringify(game.genre)},
-                            ${JSON.stringify(game.year)},
-                            ${JSON.stringify(game.size)}
-                        )'
-                    >
-                        ℹ️ معلومات اللعبة
-                    </button>
+<button
+class="info-btn"
+onclick='showInfo(
+${JSON.stringify(game.title)},
+${JSON.stringify(game.description)},
+${JSON.stringify(game.image)},
+${JSON.stringify(game.platform)},
+${JSON.stringify(game.genre)},
+${JSON.stringify(game.year)},
+${JSON.stringify(game.size)}
+)'>
+ℹ️ معلومات اللعبة
+</button>
 
-                    <button
-                        class="download-btn"
-                        onclick="downloadGame()"
-                    >
-                        📥 تحميل
-                    </button>
+<button
+class="download-btn"
+onclick="downloadGame()">
+📥 تحميل
+</button>
 
-                </div>
+</div>
 
-            </div>
+</div>
+</div>
 
-        </div>
+`;
 
-    `;
 }
 
 
-function searchGames() {
+function searchGames(){
 
-    const input =
-        document.getElementById("searchInput").value
-        .trim()
-        .toLowerCase();
+const input=
+document.getElementById("searchInput").value
+.trim()
+.toLowerCase();
 
-    const results =
-        document.getElementById("searchResults");
+const results=
+document.getElementById("searchResults");
 
-    const title =
-        document.getElementById("searchResultTitle");
+const title=
+document.getElementById("searchResultTitle");
 
-    const noResults =
-        document.getElementById("noResults");
+const noResults=
+document.getElementById("noResults");
 
-    const platformSection =
-        document.getElementById("platformSection");
-
-
-    if (input === "") {
-
-        results.innerHTML = "";
-
-        results.style.display = "none";
-
-        title.style.display = "none";
-
-        noResults.style.display = "none";
-
-        platformSection.style.display = "block";
-
-        return;
-    }
+const platformSection=
+document.getElementById("platformSection");
 
 
-    platformSection.style.display = "none";
+if(input===""){
 
-    title.style.display = "block";
+results.innerHTML="";
 
-    results.style.display = "grid";
+results.style.display="none";
+
+title.style.display="none";
+
+noResults.style.display="none";
+
+platformSection.style.display="block";
+
+return;
+
+}
 
 
-    const foundGames =
-        games.filter(game =>
-            game.title.toLowerCase().includes(input)
-        );
+platformSection.style.display="none";
+
+title.style.display="block";
+
+results.style.display="grid";
 
 
-    results.innerHTML = "";
+const foundGames=
+games.filter(game=>
+game.title.toLowerCase().includes(input)
+);
 
 
-    if (foundGames.length === 0) {
+results.innerHTML="";
 
-        noResults.style.display = "block";
 
-    } else {
+if(foundGames.length===0){
 
-        noResults.style.display = "none";
+noResults.style.display="block";
 
-        foundGames.forEach(game => {
+}else{
 
-            results.innerHTML += createGameCard(game);
+noResults.style.display="none";
 
-        });
+foundGames.forEach(game=>{
+results.innerHTML+=createGameCard(game);
+});
 
-    }
+}
+
 }
 
 
 function showInfo(
-    title,
-    description,
-    image,
-    platform,
-    genre,
-    year,
-    size
-) {
+title,
+description,
+image,
+platform,
+genre,
+year,
+size
+){
 
-    document.getElementById("modalTitle").textContent = title;
+document.getElementById("modalTitle").textContent=title;
 
-    document.getElementById("modalDescription").textContent =
-        description;
+document.getElementById("modalDescription").textContent=description;
 
-    document.getElementById("modalImage").src = image;
+document.getElementById("modalImage").src=image;
 
-    document.getElementById("modalPlatform").textContent =
-        platform;
+document.getElementById("modalPlatform").textContent=platform;
 
-    document.getElementById("modalGenre").textContent =
-        genre;
+document.getElementById("modalGenre").textContent=genre;
 
-    document.getElementById("modalYear").textContent =
-        year;
+document.getElementById("modalYear").textContent=year;
 
-    document.getElementById("modalSize").textContent =
-        size;
+document.getElementById("modalSize").textContent=size;
 
-    document.getElementById("infoModal").style.display = "block";
+document.getElementById("infoModal").style.display="block";
 
-    document.body.style.overflow = "hidden";
-}
-
-
-function closeInfo() {
-
-    document.getElementById("infoModal").style.display = "none";
-
-    document.body.style.overflow = "auto";
-}
-
-
-function closeOutside(event) {
-
-    if (
-        event.target ===
-        document.getElementById("infoModal")
-    ) {
-
-        closeInfo();
-
-    }
+document.body.style.overflow="hidden";
 
 }
 
 
-/*
-   ألعاب PS2 التجارية الحالية
-   ما عدنا إلها روابط تحميل قانونية مجانية،
-   لذلك نخلي زرها حاليًا بدون رابط.
-*/
+function closeInfo(){
 
-function downloadGame() {
+document.getElementById("infoModal").style.display="none";
 
-    alert(
-        "📥 رابط التحميل الرسمي غير متوفر حاليًا لهذه اللعبة."
-    );
+document.body.style.overflow="auto";
+
+}
+
+
+function closeOutside(event){
+
+if(event.target===document.getElementById("infoModal")){
+
+closeInfo();
+
+}
+
+}
+
+
+function downloadGame(){
+
+alert("📥 رابط التحميل الرسمي غير متوفر حاليًا لهذه اللعبة.");
 
 }
 
