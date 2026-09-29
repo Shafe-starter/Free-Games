@@ -53,8 +53,6 @@ header {
     margin: auto;
 }
 
-/* أزرار المنصات */
-
 .categories {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -130,6 +128,7 @@ button {
 🎮 Free Games
 </header>
 
+
 <!-- الصفحة الرئيسية -->
 
 <div id="home">
@@ -180,14 +179,15 @@ button {
 
 </div>
 
+
 <h2>🔥 ألعاب مميزة</h2>
 
 <div class="games">
 
 <div class="card">
-<div class="icon">🎮</div>
-<h3>God of War</h3>
-<p>لعبة أكشن ومغامرات - PS2</p>
+<div class="icon">⚔️</div>
+<h3>Adventure Quest</h3>
+<p>مغامرات وأكشن</p>
 <button>📥 تحميل</button>
 </div>
 
@@ -219,7 +219,7 @@ button {
 </div>
 
 
-<!-- صفحات المنصات -->
+<!-- صفحة المنصة -->
 
 <div id="platformPage" class="platform-page">
 
@@ -231,16 +231,41 @@ button {
 
 <h1 id="platformTitle" class="platform-title"></h1>
 
+
+<!-- ألعاب PS2 -->
+
+<div id="PS2Games" style="display:none;">
+
 <div class="games">
 
 <div class="card">
-<div class="icon">🎮</div>
-<h3 id="gameName">ألعاب المنصة</h3>
-<p>سيتم إضافة الألعاب هنا</p>
+<div class="icon">⚔️</div>
+<h3>God of War</h3>
+<p>لعبة أكشن ومغامرات - PS2</p>
 <button>📥 تحميل</button>
 </div>
 
 </div>
+
+</div>
+
+
+<!-- باقي المنصات -->
+
+<div id="OtherGames">
+
+<div class="card">
+
+<div class="icon">🎮</div>
+
+<h3 id="gameName">ألعاب المنصة</h3>
+
+<p>سيتم إضافة الألعاب هنا</p>
+
+</div>
+
+</div>
+
 
 </div>
 
@@ -258,11 +283,23 @@ function openPlatform(platform) {
     document.getElementById("platformTitle").innerText =
         "🎮 ألعاب " + platform;
 
-    document.getElementById("gameName").innerText =
-        "ألعاب " + platform;
+    if (platform === "PS2") {
+
+        document.getElementById("PS2Games").style.display = "block";
+
+        document.getElementById("OtherGames").style.display = "none";
+
+    } else {
+
+        document.getElementById("PS2Games").style.display = "none";
+
+        document.getElementById("OtherGames").style.display = "block";
+
+    }
 
     window.scrollTo(0, 0);
 }
+
 
 function goHome() {
 
