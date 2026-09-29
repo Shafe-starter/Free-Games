@@ -47,7 +47,6 @@ header {
     font-size: 16px;
 }
 
-/* البحث */
 .search-box {
     max-width: 650px;
     margin: 25px auto 35px;
@@ -67,7 +66,6 @@ header {
 
 .search-box input:focus {
     border-color: #6c63ff;
-    box-shadow: 0 0 12px rgba(108,99,255,0.2);
 }
 
 .search-result-title {
@@ -77,7 +75,6 @@ header {
     display: none;
 }
 
-/* المنصات */
 .platforms {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -102,7 +99,6 @@ header {
     transform: translateY(-2px);
 }
 
-/* صفحات المنصات */
 .platform-page {
     display: none;
     padding-bottom: 50px;
@@ -131,7 +127,6 @@ header {
     font-size: 14px;
 }
 
-/* الألعاب */
 .games-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -224,7 +219,6 @@ header {
     opacity: 0.85;
 }
 
-/* لا توجد نتائج */
 .no-results {
     display: none;
     text-align: center;
@@ -232,7 +226,60 @@ header {
     color: #999;
 }
 
-/* النافذة المنبثقة */
+.free-section {
+    margin-top: 45px;
+    margin-bottom: 50px;
+}
+
+.free-section h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.free-section p {
+    text-align: center;
+    color: #888;
+    margin-bottom: 25px;
+}
+
+.free-card {
+    background: #191922;
+    border: 1px solid #2b2b36;
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+}
+
+.free-icon {
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+
+.free-card h3 {
+    margin: 10px 0;
+    font-size: 23px;
+}
+
+.free-card p {
+    color: #aaa;
+    line-height: 1.7;
+    margin-bottom: 18px;
+}
+
+.official-download {
+    display: inline-block;
+    text-decoration: none;
+    background: #315f3b;
+    color: white;
+    padding: 13px 22px;
+    border-radius: 11px;
+    font-size: 15px;
+}
+
+.official-download:hover {
+    opacity: 0.85;
+}
+
 .modal {
     display: none;
     position: fixed;
@@ -260,6 +307,7 @@ header {
         opacity: 0;
         transform: scale(0.92);
     }
+
     to {
         opacity: 1;
         transform: scale(1);
@@ -341,7 +389,6 @@ footer {
     🎮 Free Games
 </header>
 
-<!-- الصفحة الرئيسية -->
 <div id="homePage" class="container">
 
     <section class="hero">
@@ -349,7 +396,6 @@ footer {
         <p>اختر منصتك واستمتع بالألعاب</p>
     </section>
 
-    <!-- البحث -->
     <div class="search-box">
         <input
             type="text"
@@ -363,7 +409,6 @@ footer {
         نتائج البحث
     </div>
 
-    <!-- نتائج البحث -->
     <div id="searchResults" class="games-grid"></div>
 
     <div id="noResults" class="no-results">
@@ -377,6 +422,7 @@ footer {
         </h2>
 
         <div class="platforms">
+
             <button class="platform-btn" onclick="openPlatform('Android')">
                 📱 Android
             </button>
@@ -404,36 +450,80 @@ footer {
             <button class="platform-btn" onclick="openPlatform('Emulators')">
                 ⚙️ Emulators
             </button>
+
         </div>
 
     </div>
 
+    <!-- الألعاب المجانية القانونية -->
+
+    <section class="free-section">
+
+        <h2>🆓 ألعاب مجانية وقانونية</h2>
+
+        <p>
+            ألعاب مجانية من مشاريع رسمية ومفتوحة المصدر.
+        </p>
+
+        <div class="free-card">
+
+            <div class="free-icon">
+                🐧
+            </div>
+
+            <h3>SuperTux</h3>
+
+            <p>
+                لعبة منصات مجانية ومفتوحة المصدر مستوحاة من ألعاب
+                المنصات الكلاسيكية. تتوفر إصدارات رسمية من المشروع.
+            </p>
+
+            <a
+                class="official-download"
+                href="https://github.com/SuperTux/supertux/releases"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                📥 التحميل الرسمي
+            </a>
+
+        </div>
+
+    </section>
+
 </div>
 
+
 <!-- صفحة المنصة -->
+
 <div id="platformPage" class="container platform-page">
 
     <div class="platform-header">
+
         <h2 id="platformTitle"></h2>
 
         <button class="back-btn" onclick="goHome()">
             ← الرئيسية
         </button>
+
     </div>
 
     <div id="gamesContainer" class="games-grid"></div>
 
-    <div id="otherGames" class="no-results" style="display:none;">
+    <div id="otherGames" class="no-results">
         🚧 سيتم إضافة الألعاب هنا قريبًا
     </div>
 
 </div>
 
+
 <footer>
     🎮 Free Games
 </footer>
 
-<!-- النافذة المنبثقة -->
+
+<!-- نافذة معلومات اللعبة -->
+
 <div id="infoModal" class="modal" onclick="closeOutside(event)">
 
     <div class="modal-content">
@@ -473,13 +563,11 @@ footer {
         </div>
 
     </div>
+
 </div>
 
-<script>
 
-/* =========================
-   بيانات الألعاب
-========================= */
+<script>
 
 const games = [
 
@@ -536,20 +624,20 @@ const games = [
 ];
 
 
-/* =========================
-   فتح صفحة المنصة
-========================= */
-
 function openPlatform(platform) {
 
     document.getElementById("homePage").style.display = "none";
+
     document.getElementById("platformPage").style.display = "block";
 
     document.getElementById("platformTitle").textContent =
         "🎮 ألعاب " + platform;
 
-    const container = document.getElementById("gamesContainer");
-    const otherGames = document.getElementById("otherGames");
+    const container =
+        document.getElementById("gamesContainer");
+
+    const otherGames =
+        document.getElementById("otherGames");
 
     container.innerHTML = "";
 
@@ -557,10 +645,13 @@ function openPlatform(platform) {
 
         otherGames.style.display = "none";
 
-        const ps2Games = games.filter(game => game.platform === "PS2");
+        const ps2Games =
+            games.filter(game => game.platform === "PS2");
 
         ps2Games.forEach(game => {
+
             container.innerHTML += createGameCard(game);
+
         });
 
     } else {
@@ -576,21 +667,20 @@ function openPlatform(platform) {
 }
 
 
-/* =========================
-   العودة للرئيسية
-========================= */
-
 function goHome() {
 
     document.getElementById("platformPage").style.display = "none";
+
     document.getElementById("homePage").style.display = "block";
 
     document.getElementById("searchInput").value = "";
 
     document.getElementById("searchResults").innerHTML = "";
+
     document.getElementById("searchResults").style.display = "none";
 
     document.getElementById("searchResultTitle").style.display = "none";
+
     document.getElementById("noResults").style.display = "none";
 
     document.getElementById("platformSection").style.display = "block";
@@ -602,13 +692,10 @@ function goHome() {
 }
 
 
-/* =========================
-   إنشاء بطاقة اللعبة
-========================= */
-
 function createGameCard(game) {
 
     return `
+
         <div class="game-card">
 
             <img src="${game.image}" alt="${game.title}">
@@ -674,13 +761,10 @@ function createGameCard(game) {
             </div>
 
         </div>
+
     `;
 }
 
-
-/* =========================
-   البحث الحقيقي
-========================= */
 
 function searchGames() {
 
@@ -701,13 +785,15 @@ function searchGames() {
     const platformSection =
         document.getElementById("platformSection");
 
-    /* إذا البحث فارغ */
+
     if (input === "") {
 
         results.innerHTML = "";
+
         results.style.display = "none";
 
         title.style.display = "none";
+
         noResults.style.display = "none";
 
         platformSection.style.display = "block";
@@ -715,18 +801,22 @@ function searchGames() {
         return;
     }
 
-    /* نخفي المنصات أثناء البحث */
+
     platformSection.style.display = "none";
 
     title.style.display = "block";
+
     results.style.display = "grid";
 
-    /* البحث باسم اللعبة */
-    const foundGames = games.filter(game =>
-        game.title.toLowerCase().includes(input)
-    );
+
+    const foundGames =
+        games.filter(game =>
+            game.title.toLowerCase().includes(input)
+        );
+
 
     results.innerHTML = "";
+
 
     if (foundGames.length === 0) {
 
@@ -737,16 +827,14 @@ function searchGames() {
         noResults.style.display = "none";
 
         foundGames.forEach(game => {
+
             results.innerHTML += createGameCard(game);
+
         });
 
     }
 }
 
-
-/* =========================
-   معلومات اللعبة
-========================= */
 
 function showInfo(
     title,
@@ -759,22 +847,29 @@ function showInfo(
 ) {
 
     document.getElementById("modalTitle").textContent = title;
-    document.getElementById("modalDescription").textContent = description;
+
+    document.getElementById("modalDescription").textContent =
+        description;
+
     document.getElementById("modalImage").src = image;
-    document.getElementById("modalPlatform").textContent = platform;
-    document.getElementById("modalGenre").textContent = genre;
-    document.getElementById("modalYear").textContent = year;
-    document.getElementById("modalSize").textContent = size;
+
+    document.getElementById("modalPlatform").textContent =
+        platform;
+
+    document.getElementById("modalGenre").textContent =
+        genre;
+
+    document.getElementById("modalYear").textContent =
+        year;
+
+    document.getElementById("modalSize").textContent =
+        size;
 
     document.getElementById("infoModal").style.display = "block";
 
     document.body.style.overflow = "hidden";
 }
 
-
-/* =========================
-   إغلاق المعلومات
-========================= */
 
 function closeInfo() {
 
@@ -784,24 +879,31 @@ function closeInfo() {
 }
 
 
-/* إغلاق عند الضغط خارج النافذة */
-
 function closeOutside(event) {
 
-    if (event.target === document.getElementById("infoModal")) {
+    if (
+        event.target ===
+        document.getElementById("infoModal")
+    ) {
+
         closeInfo();
+
     }
 
 }
 
 
-/* =========================
-   زر التحميل
-========================= */
+/*
+   ألعاب PS2 التجارية الحالية
+   ما عدنا إلها روابط تحميل قانونية مجانية،
+   لذلك نخلي زرها حاليًا بدون رابط.
+*/
 
 function downloadGame() {
 
-    alert("📥 رابط التحميل سيتم إضافته قريبًا.");
+    alert(
+        "📥 رابط التحميل الرسمي غير متوفر حاليًا لهذه اللعبة."
+    );
 
 }
 
