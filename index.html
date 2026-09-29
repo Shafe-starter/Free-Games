@@ -174,6 +174,66 @@ header {
     color: #aaa;
 }
 
+
+/* نافذة معلومات اللعبة */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.modal-box {
+    background: #111827;
+    width: 90%;
+    max-width: 500px;
+    margin: 8% auto;
+    padding: 25px;
+    border-radius: 18px;
+    border: 1px solid #374151;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.modal-box h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.modal-box p {
+    color: #ccc;
+    line-height: 1.8;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    background: #ef4444;
+    color: white;
+    border: 0;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.modal-info {
+    background: #0b0f19;
+    padding: 15px;
+    border-radius: 12px;
+    line-height: 2;
+    margin-top: 15px;
+}
+
 </style>
 
 </head>
@@ -413,46 +473,45 @@ style="display:none;"
 
 <div class="card">
 
-
 <img
 class="game-image"
 src="a54009d4ebdb37adb97e8257734fb4b2.jpg"
 alt="God of War"
 >
 
-
 <h3>
 God of War
 </h3>
-
 
 <p class="description">
 أكشن ومغامرات
 </p>
 
-
 <div class="info">
 
 🎮 المنصة: PS2<br>
-
 📦 النوع: أكشن ومغامرات<br>
-
 🌐 اللغة: حسب النسخة<br>
-
 ⭐ لعبة شهيرة
 
 </div>
 
-
-<button class="info-button">
+<button
+class="info-button"
+onclick="showInfo(
+'God of War',
+'تدور اللعبة حول كريتوس ورحلته في عالم مليء بالأساطير والمخاطر.',
+'PS2',
+'أكشن ومغامرات',
+'2005'
+)"
+>
 ℹ️ معلومات اللعبة
 </button>
-
 
 <button class="download">
 📥 تحميل
 </button>
-
 
 </div>
 
@@ -461,46 +520,45 @@ God of War
 
 <div class="card">
 
-
 <img
 class="game-image"
 src="f5cc170d31edbacf8be1cfb4a0a46180.jpg"
 alt="GTA San Andreas"
 >
 
-
 <h3>
 GTA San Andreas
 </h3>
-
 
 <p class="description">
 عالم مفتوح وأكشن
 </p>
 
-
 <div class="info">
 
 🎮 المنصة: PS2<br>
-
 📦 النوع: عالم مفتوح<br>
-
 🌐 اللغة: حسب النسخة<br>
-
 ⭐ لعبة شهيرة
 
 </div>
 
-
-<button class="info-button">
+<button
+class="info-button"
+onclick="showInfo(
+'GTA San Andreas',
+'لعبة عالم مفتوح تتابع قصة Carl Johnson في مدينة San Andreas.',
+'PS2',
+'عالم مفتوح وأكشن',
+'2004'
+)"
+>
 ℹ️ معلومات اللعبة
 </button>
-
 
 <button class="download">
 📥 تحميل
 </button>
-
 
 </div>
 
@@ -509,54 +567,52 @@ GTA San Andreas
 
 <div class="card">
 
-
 <img
 class="game-image"
 src="1562a6801c37f3f7dd6d4684245b8b16.jpg"
 alt="Resident Evil 4"
 >
 
-
 <h3>
 Resident Evil 4
 </h3>
-
 
 <p class="description">
 رعب وأكشن
 </p>
 
-
 <div class="info">
 
 🎮 المنصة: PS2<br>
-
 📦 النوع: رعب وأكشن<br>
-
 🌐 اللغة: حسب النسخة<br>
-
 ⭐ لعبة شهيرة
 
 </div>
 
-
-<button class="info-button">
+<button
+class="info-button"
+onclick="showInfo(
+'Resident Evil 4',
+'تتابع اللعبة مهمة Leon S. Kennedy في مهمة لإنقاذ ابنة الرئيس.',
+'PS2',
+'رعب وأكشن',
+'2005'
+)"
+>
 ℹ️ معلومات اللعبة
 </button>
-
 
 <button class="download">
 📥 تحميل
 </button>
 
-
 </div>
 
 
-<!-- Need for Speed -->
+<!-- Need for Speed Most Wanted -->
 
 <div class="card">
-
 
 <img
 class="game-image"
@@ -564,39 +620,39 @@ src="c67803d869623cda4e274619934dd9ed.jpg"
 alt="Need for Speed Most Wanted"
 >
 
-
 <h3>
 Need for Speed Most Wanted
 </h3>
-
 
 <p class="description">
 سباقات سيارات
 </p>
 
-
 <div class="info">
 
 🎮 المنصة: PS2<br>
-
 📦 النوع: سباقات<br>
-
 🌐 اللغة: حسب النسخة<br>
-
 ⭐ لعبة شهيرة
 
 </div>
 
-
-<button class="info-button">
+<button
+class="info-button"
+onclick="showInfo(
+'Need for Speed Most Wanted',
+'لعبة سباقات تركز على المنافسة ومطاردات الشرطة والوصول إلى قمة قائمة المتسابقين.',
+'PS2',
+'سباقات سيارات',
+'2005'
+)"
+>
 ℹ️ معلومات اللعبة
 </button>
-
 
 <button class="download">
 📥 تحميل
 </button>
-
 
 </div>
 
@@ -605,47 +661,46 @@ Need for Speed Most Wanted
 
 <div class="card">
 
-
 <img
 class="game-image"
 src="4d54f38bbc54bc578ea0f510831bf7e5.jpg"
 alt="Tekken 5"
 >
 
-
 <h3>
 Tekken 5
 </h3>
-
 
 <p class="description">
 قتال
 </p>
 
-
 <div class="info">
 
 🎮 المنصة: PS2<br>
-
 📦 النوع: قتال<br>
-
 🌐 اللغة: حسب النسخة<br>
-
 ⭐ لعبة شهيرة
 
 </div>
 
-
-<button class="info-button">
+<button
+class="info-button"
+onclick="showInfo(
+'Tekken 5',
+'لعبة قتال تضم مجموعة من الشخصيات والعديد من أنماط اللعب.',
+'PS2',
+'قتال',
+'2004'
+)"
+>
 ℹ️ معلومات اللعبة
 </button>
-
 
 <button class="download">
 📥 تحميل
 </button>
 
-
 </div>
 
 
@@ -654,13 +709,12 @@ Tekken 5
 </div>
 
 
-<!-- رسالة المنصات الأخرى -->
+<!-- باقي المنصات -->
 
 <div
 id="OtherGames"
 style="display:none;"
 >
-
 
 <div class="platform-message">
 
@@ -674,9 +728,54 @@ style="display:none;"
 
 </div>
 
+</div>
+
 
 </div>
 
+</div>
+
+
+<!-- نافذة معلومات اللعبة -->
+
+<div
+id="gameModal"
+class="modal"
+onclick="closeOutside(event)"
+>
+
+<div class="modal-box">
+
+<button
+class="close-button"
+onclick="closeInfo()"
+>
+×
+</button>
+
+<h2 id="modalTitle">
+معلومات اللعبة
+</h2>
+
+<p id="modalDescription">
+</p>
+
+<div class="modal-info">
+
+🎮 المنصة:
+<span id="modalPlatform"></span>
+
+<br>
+
+📦 النوع:
+<span id="modalGenre"></span>
+
+<br>
+
+📅 سنة الإصدار:
+<span id="modalYear"></span>
+
+</div>
 
 </div>
 
@@ -688,58 +787,78 @@ style="display:none;"
 
 function openPlatform(platform) {
 
+document.getElementById("home").style.display = "none";
 
-    document.getElementById("home").style.display = "none";
+document.getElementById("platformPage").style.display = "block";
 
-
-    document.getElementById("platformPage").style.display = "block";
-
-
-    document.getElementById("platformTitle").innerText =
-        "🎮 ألعاب " + platform;
+document.getElementById("platformTitle").innerText =
+"🎮 ألعاب " + platform;
 
 
-    if (platform === "PS2") {
+if (platform === "PS2") {
 
+document.getElementById("PS2Games").style.display = "block";
 
-        document.getElementById("PS2Games").style.display = "block";
+document.getElementById("OtherGames").style.display = "none";
 
+} else {
 
-        document.getElementById("OtherGames").style.display = "none";
+document.getElementById("PS2Games").style.display = "none";
 
+document.getElementById("OtherGames").style.display = "block";
 
-    } else {
+document.getElementById("otherTitle").innerText =
+"🎮 ألعاب " + platform;
 
+}
 
-        document.getElementById("PS2Games").style.display = "none";
-
-
-        document.getElementById("OtherGames").style.display = "block";
-
-
-        document.getElementById("otherTitle").innerText =
-            "🎮 ألعاب " + platform;
-
-
-    }
-
-
-    window.scrollTo(0, 0);
+window.scrollTo(0, 0);
 
 }
 
 
-
 function goHome() {
 
+document.getElementById("platformPage").style.display = "none";
 
-    document.getElementById("platformPage").style.display = "none";
+document.getElementById("home").style.display = "block";
+
+window.scrollTo(0, 0);
+
+}
 
 
-    document.getElementById("home").style.display = "block";
+function showInfo(title, description, platform, genre, year) {
+
+document.getElementById("modalTitle").innerText = title;
+
+document.getElementById("modalDescription").innerText = description;
+
+document.getElementById("modalPlatform").innerText = platform;
+
+document.getElementById("modalGenre").innerText = genre;
+
+document.getElementById("modalYear").innerText = year;
+
+document.getElementById("gameModal").style.display = "block";
+
+}
 
 
-    window.scrollTo(0, 0);
+function closeInfo() {
+
+document.getElementById("gameModal").style.display = "none";
+
+}
+
+
+function closeOutside(event) {
+
+if (event.target === document.getElementById("gameModal")) {
+
+closeInfo();
+
+}
 
 }
 
