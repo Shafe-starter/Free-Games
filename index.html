@@ -2,7 +2,9 @@
 <html lang="ar" dir="rtl">
 
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Free Games</title>
@@ -13,7 +15,7 @@ body {
     margin: 0;
     background: #0b0f19;
     color: white;
-    font-family: Arial;
+    font-family: Arial, sans-serif;
 }
 
 header {
@@ -147,12 +149,12 @@ header {
 .back {
     background: #374151;
     color: white;
-    margin-bottom: 25px;
     border: 0;
     padding: 12px 25px;
     border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
+    margin-bottom: 25px;
 }
 
 .platform-page {
@@ -164,11 +166,21 @@ header {
     margin-bottom: 30px;
 }
 
+.platform-message {
+    text-align: center;
+    background: #111827;
+    padding: 30px;
+    border-radius: 15px;
+    color: #aaa;
+}
+
 </style>
 
 </head>
 
+
 <body>
+
 
 <header>
 🎮 Free Games
@@ -185,7 +197,10 @@ header {
 
 <p>اكتشف ألعاب مجانية وحمّلها بسهولة</p>
 
-<input class="search" placeholder="🔍 ابحث عن لعبة...">
+<input
+class="search"
+placeholder="🔍 ابحث عن لعبة..."
+>
 
 </section>
 
@@ -194,48 +209,84 @@ header {
 
 <h2>🎮 اختر منصتك</h2>
 
+
 <div class="categories">
 
-<div class="category" onclick="openPlatform('Android')">
+
+<div
+class="category"
+onclick="openPlatform('Android')"
+>
 📱 Android
 </div>
 
-<div class="category" onclick="openPlatform('PSP')">
+
+<div
+class="category"
+onclick="openPlatform('PSP')"
+>
 🟢 PSP
 </div>
 
-<div class="category" onclick="openPlatform('PS1')">
+
+<div
+class="category"
+onclick="openPlatform('PS1')"
+>
 🔵 PS1
 </div>
 
-<div class="category" onclick="openPlatform('PS2')">
+
+<div
+class="category"
+onclick="openPlatform('PS2')"
+>
 🟣 PS2
 </div>
 
-<div class="category" onclick="openPlatform('Nintendo')">
+
+<div
+class="category"
+onclick="openPlatform('Nintendo')"
+>
 🔴 Nintendo
 </div>
 
-<div class="category" onclick="openPlatform('PC')">
+
+<div
+class="category"
+onclick="openPlatform('PC')"
+>
 💻 PC
 </div>
 
-<div class="category" onclick="openPlatform('Emulators')">
+
+<div
+class="category"
+onclick="openPlatform('Emulators')"
+>
 ⚙️ Emulators
 </div>
+
 
 </div>
 
 
 <h2>🔥 ألعاب مميزة</h2>
 
+
 <div class="games">
+
 
 <div class="card">
 
-<div class="icon">⚔️</div>
+<div style="font-size:60px;">
+⚔️
+</div>
 
-<h3>Adventure Quest</h3>
+<h3>
+Adventure Quest
+</h3>
 
 <p class="description">
 مغامرات وأكشن
@@ -250,9 +301,13 @@ header {
 
 <div class="card">
 
-<div class="icon">🏎️</div>
+<div style="font-size:60px;">
+🏎️
+</div>
 
-<h3>Speed Racing</h3>
+<h3>
+Speed Racing
+</h3>
 
 <p class="description">
 سباقات سيارات
@@ -267,9 +322,13 @@ header {
 
 <div class="card">
 
-<div class="icon">⚽</div>
+<div style="font-size:60px;">
+⚽
+</div>
 
-<h3>Football Stars</h3>
+<h3>
+Football Stars
+</h3>
 
 <p class="description">
 كرة قدم
@@ -284,9 +343,13 @@ header {
 
 <div class="card">
 
-<div class="icon">🚀</div>
+<div style="font-size:60px;">
+🚀
+</div>
 
-<h3>Space War</h3>
+<h3>
+Space War
+</h3>
 
 <p class="description">
 خيال علمي
@@ -298,6 +361,7 @@ header {
 
 </div>
 
+
 </div>
 
 </div>
@@ -307,22 +371,40 @@ header {
 
 <!-- صفحة المنصة -->
 
-<div id="platformPage" class="platform-page">
+<div
+id="platformPage"
+class="platform-page"
+>
+
 
 <div class="container">
 
+
 <br>
 
-<button class="back" onclick="goHome()">
+
+<button
+class="back"
+onclick="goHome()"
+>
 ⬅️ الرئيسية
 </button>
 
-<h1 id="platformTitle" class="platform-title"></h1>
+
+<h1
+id="platformTitle"
+class="platform-title"
+>
+</h1>
 
 
 <!-- ألعاب PS2 -->
 
-<div id="PS2Games" style="display:none;">
+<div
+id="PS2Games"
+style="display:none;"
+>
+
 
 <div class="games">
 
@@ -331,32 +413,46 @@ header {
 
 <div class="card">
 
-<img class="game-image"
-src="a54009d4ebdb37adb97e8257734fb4b2.jpg"
-alt="God of War">
 
-<h3>God of War</h3>
+<img
+class="game-image"
+src="a54009d4ebdb37adb97e8257734fb4b2.jpg"
+alt="God of War"
+>
+
+
+<h3>
+God of War
+</h3>
+
 
 <p class="description">
 أكشن ومغامرات
 </p>
 
+
 <div class="info">
 
 🎮 المنصة: PS2<br>
+
 📦 النوع: أكشن ومغامرات<br>
+
 🌐 اللغة: حسب النسخة<br>
-⭐ التقييم: لعبة شهيرة
+
+⭐ لعبة شهيرة
 
 </div>
+
 
 <button class="info-button">
 ℹ️ معلومات اللعبة
 </button>
 
+
 <button class="download">
 📥 تحميل
 </button>
+
 
 </div>
 
@@ -365,32 +461,46 @@ alt="God of War">
 
 <div class="card">
 
-<img class="game-image"
-src="f5cc170d31edbacf8be1cfb4a0a46180.jpg"
-alt="GTA San Andreas">
 
-<h3>GTA San Andreas</h3>
+<img
+class="game-image"
+src="f5cc170d31edbacf8be1cfb4a0a46180.jpg"
+alt="GTA San Andreas"
+>
+
+
+<h3>
+GTA San Andreas
+</h3>
+
 
 <p class="description">
 عالم مفتوح وأكشن
 </p>
 
+
 <div class="info">
 
 🎮 المنصة: PS2<br>
+
 📦 النوع: عالم مفتوح<br>
+
 🌐 اللغة: حسب النسخة<br>
-⭐ التقييم: لعبة شهيرة
+
+⭐ لعبة شهيرة
 
 </div>
+
 
 <button class="info-button">
 ℹ️ معلومات اللعبة
 </button>
 
+
 <button class="download">
 📥 تحميل
 </button>
+
 
 </div>
 
@@ -399,66 +509,94 @@ alt="GTA San Andreas">
 
 <div class="card">
 
-<img class="game-image"
-src="1562a6801c37f3f7dd6d4684245b8b16.jpg"
-alt="Resident Evil 4">
 
-<h3>Resident Evil 4</h3>
+<img
+class="game-image"
+src="1562a6801c37f3f7dd6d4684245b8b16.jpg"
+alt="Resident Evil 4"
+>
+
+
+<h3>
+Resident Evil 4
+</h3>
+
 
 <p class="description">
 رعب وأكشن
 </p>
 
+
 <div class="info">
 
 🎮 المنصة: PS2<br>
+
 📦 النوع: رعب وأكشن<br>
+
 🌐 اللغة: حسب النسخة<br>
-⭐ التقييم: لعبة شهيرة
+
+⭐ لعبة شهيرة
 
 </div>
+
 
 <button class="info-button">
 ℹ️ معلومات اللعبة
 </button>
 
+
 <button class="download">
 📥 تحميل
 </button>
 
+
 </div>
 
 
-<!-- Need for Speed Most Wanted -->
+<!-- Need for Speed -->
 
 <div class="card">
 
-<img class="game-image"
-src="c67803d869623cda4e274619934dd9ed.jpg"
-alt="Need for Speed Most Wanted">
 
-<h3>Need for Speed Most Wanted</h3>
+<img
+class="game-image"
+src="c67803d869623cda4e274619934dd9ed.jpg"
+alt="Need for Speed Most Wanted"
+>
+
+
+<h3>
+Need for Speed Most Wanted
+</h3>
+
 
 <p class="description">
 سباقات سيارات
 </p>
 
+
 <div class="info">
 
 🎮 المنصة: PS2<br>
+
 📦 النوع: سباقات<br>
+
 🌐 اللغة: حسب النسخة<br>
-⭐ التقييم: لعبة شهيرة
+
+⭐ لعبة شهيرة
 
 </div>
+
 
 <button class="info-button">
 ℹ️ معلومات اللعبة
 </button>
 
+
 <button class="download">
 📥 تحميل
 </button>
+
 
 </div>
 
@@ -467,60 +605,75 @@ alt="Need for Speed Most Wanted">
 
 <div class="card">
 
-<img class="game-image"
-src="4d54f38bbc54bc578ea0f510831bf7e5.jpg"
-alt="Tekken 5">
 
-<h3>Tekken 5</h3>
+<img
+class="game-image"
+src="4d54f38bbc54bc578ea0f510831bf7e5.jpg"
+alt="Tekken 5"
+>
+
+
+<h3>
+Tekken 5
+</h3>
+
 
 <p class="description">
 قتال
 </p>
 
+
 <div class="info">
 
 🎮 المنصة: PS2<br>
+
 📦 النوع: قتال<br>
+
 🌐 اللغة: حسب النسخة<br>
-⭐ التقييم: لعبة شهيرة
+
+⭐ لعبة شهيرة
 
 </div>
+
 
 <button class="info-button">
 ℹ️ معلومات اللعبة
 </button>
 
+
 <button class="download">
 📥 تحميل
 </button>
 
-</div>
-
-
-</div>
 
 </div>
 
 
-<!-- باقي المنصات -->
-
-<div id="OtherGames">
-
-<div class="card">
-
-<div class="icon">
-🎮
 </div>
 
-<h3>
-ألعاب المنصة
-</h3>
+</div>
+
+
+<!-- رسالة المنصات الأخرى -->
+
+<div
+id="OtherGames"
+style="display:none;"
+>
+
+
+<div class="platform-message">
+
+<h2 id="otherTitle">
+🎮 ألعاب المنصة
+</h2>
 
 <p>
 سيتم إضافة الألعاب هنا
 </p>
 
 </div>
+
 
 </div>
 
@@ -532,35 +685,68 @@ alt="Tekken 5">
 
 <script>
 
+
 function openPlatform(platform) {
 
-document.getElementById("home").style.display = "none";
 
-document.getElementById("platformPage").style.display = "block";
-
-document.getElementById("platformTitle").innerText =
-"🎮 ألعاب " + platform;
+    document.getElementById("home").style.display = "none";
 
 
-if (platform === "PS2") {
+    document.getElementById("platformPage").style.display = "block";
 
-document.getElementById("PS2Games").style.display = "block";
 
-document.getElementById("OtherGames").style.display = "none";
+    document.getElementById("platformTitle").innerText =
+        "🎮 ألعاب " + platform;
 
-} else {
 
-document.getElementById("PS2Games").style.display = "none";
+    if (platform === "PS2") {
 
-document.getElementById("OtherGames").style.display = "block";
+
+        document.getElementById("PS2Games").style.display = "block";
+
+
+        document.getElementById("OtherGames").style.display = "none";
+
+
+    } else {
+
+
+        document.getElementById("PS2Games").style.display = "none";
+
+
+        document.getElementById("OtherGames").style.display = "block";
+
+
+        document.getElementById("otherTitle").innerText =
+            "🎮 ألعاب " + platform;
+
+
+    }
+
+
+    window.scrollTo(0, 0);
 
 }
 
-window.scrollTo(0, 0);
-
-}
 
 
 function goHome() {
 
-document.getElementById("platformPage").style
+
+    document.getElementById("platformPage").style.display = "none";
+
+
+    document.getElementById("home").style.display = "block";
+
+
+    window.scrollTo(0, 0);
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
