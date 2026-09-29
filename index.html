@@ -1,1185 +1,811 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Free Games</title>
 
 <style>
+* {
+    box-sizing: border-box;
+}
 
 body {
     margin: 0;
-    background: #0b0f19;
-    color: white;
     font-family: Arial, sans-serif;
+    background: #0f0f14;
+    color: white;
 }
 
 header {
-    background: #111827;
-    padding: 20px;
+    background: #17171f;
+    padding: 18px;
     text-align: center;
     font-size: 25px;
     font-weight: bold;
+    border-bottom: 1px solid #292933;
+}
+
+.container {
+    width: 92%;
+    max-width: 1100px;
+    margin: auto;
 }
 
 .hero {
     text-align: center;
-    padding: 50px 20px;
+    padding: 45px 10px 25px;
 }
 
 .hero h1 {
-    font-size: 35px;
+    font-size: 32px;
+    margin-bottom: 12px;
 }
 
 .hero p {
     color: #aaa;
+    font-size: 16px;
 }
 
-.search {
-    width: 90%;
-    max-width: 500px;
-    padding: 15px;
-    border-radius: 10px;
-    border: 1px solid #333;
-    background: #1f2937;
+/* البحث */
+.search-box {
+    max-width: 650px;
+    margin: 25px auto 35px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 16px 20px;
+    border-radius: 14px;
+    border: 1px solid #33333f;
+    background: #191922;
     color: white;
-    box-sizing: border-box;
+    font-size: 16px;
+    outline: none;
+    text-align: right;
 }
 
-.container {
-    width: 90%;
-    max-width: 1000px;
-    margin: auto;
+.search-box input:focus {
+    border-color: #6c63ff;
+    box-shadow: 0 0 12px rgba(108,99,255,0.2);
 }
 
-.categories {
+.search-result-title {
+    text-align: center;
+    color: #aaa;
+    margin-bottom: 20px;
+    display: none;
+}
+
+/* المنصات */
+.platforms {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
     margin-bottom: 40px;
 }
 
-.category {
-    background: #111827;
-    padding: 20px;
-    border-radius: 15px;
-    text-align: center;
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: bold;
-    border: 1px solid #1f2937;
-    transition: 0.2s;
-}
-
-.category:hover {
-    background: #1f2937;
-    transform: translateY(-3px);
-}
-
-.games {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-}
-
-.card {
-    background: #111827;
-    padding: 15px;
-    border-radius: 15px;
-    text-align: center;
-    overflow: hidden;
-    border: 1px solid #1f2937;
-}
-
-.game-image {
-    width: 100%;
-    height: 280px;
-    object-fit: cover;
-    border-radius: 10px;
-    display: block;
-}
-
-.card h3 {
-    margin-bottom: 8px;
-}
-
-.description {
-    color: #aaa;
-    font-size: 14px;
-}
-
-.info {
-    margin-top: 15px;
-    background: #0b0f19;
-    padding: 10px;
-    border-radius: 10px;
-    text-align: right;
-    font-size: 14px;
-    line-height: 1.8;
-}
-
-.download {
-    background: #4ade80;
-    color: #07130b;
-    border: 0;
-    padding: 12px 25px;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 15px;
-    width: 100%;
-}
-
-.info-button {
-    background: #374151;
+.platform-btn {
+    padding: 18px 10px;
+    border: none;
+    border-radius: 14px;
+    background: #1c1c27;
     color: white;
-    border: 0;
-    padding: 12px 25px;
-    border-radius: 8px;
-    font-weight: bold;
+    font-size: 17px;
     cursor: pointer;
-    margin-top: 10px;
-    width: 100%;
+    transition: 0.25s;
+    border: 1px solid #2d2d3a;
 }
 
-.back {
-    background: #374151;
-    color: white;
-    border: 0;
-    padding: 12px 25px;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
+.platform-btn:hover {
+    background: #29293a;
+    transform: translateY(-2px);
+}
+
+/* صفحات المنصات */
+.platform-page {
+    display: none;
+    padding-bottom: 50px;
+}
+
+.platform-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
     margin-bottom: 25px;
 }
 
-.platform-page {
-    display: none;
+.platform-header h2 {
+    margin: 0;
+    font-size: 27px;
 }
 
-.platform-title {
-    text-align: center;
-    margin-bottom: 30px;
+.back-btn {
+    border: none;
+    background: #292936;
+    color: white;
+    padding: 11px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
 }
 
-.platform-message {
-    text-align: center;
-    background: #111827;
-    padding: 30px;
-    border-radius: 15px;
-    color: #aaa;
+/* الألعاب */
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
 }
 
+.game-card {
+    background: #191922;
+    border: 1px solid #2b2b36;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: 0.25s;
+}
 
-/* ========================= */
-/* نافذة معلومات اللعبة */
-/* ========================= */
+.game-card:hover {
+    transform: translateY(-4px);
+    border-color: #45455a;
+}
 
-.modal {
-
-    display: none;
-
-    position: fixed;
-
-    z-index: 1000;
-
-    left: 0;
-
-    top: 0;
-
+.game-card img {
     width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+}
 
-    height: 100%;
+.game-content {
+    padding: 16px;
+}
 
-    background: rgba(0, 0, 0, 0.82);
+.game-content h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+}
 
+.game-description {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.7;
+    min-height: 48px;
+}
+
+.game-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 15px 0;
+}
+
+.info-box {
+    background: #121219;
+    border-radius: 9px;
+    padding: 9px;
+    font-size: 12px;
+    color: #bbb;
+}
+
+.info-box strong {
+    display: block;
+    color: white;
+    margin-top: 4px;
+}
+
+.buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.info-btn,
+.download-btn {
+    flex: 1;
+    padding: 12px 8px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    font-size: 13px;
+}
+
+.info-btn {
+    background: #303044;
+}
+
+.download-btn {
+    background: #315f3b;
+}
+
+.info-btn:hover,
+.download-btn:hover {
+    opacity: 0.85;
+}
+
+/* لا توجد نتائج */
+.no-results {
+    display: none;
+    text-align: center;
+    padding: 35px 10px;
+    color: #999;
+}
+
+/* النافذة المنبثقة */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.78);
+    z-index: 9999;
     padding: 20px;
-
-    box-sizing: border-box;
-
     overflow-y: auto;
 }
 
-
-.modal-box {
-
-    background: #111827;
-
+.modal-content {
     width: 100%;
-
-    max-width: 520px;
-
-    margin: 30px auto;
-
+    max-width: 600px;
+    margin: 50px auto;
+    background: #191922;
+    border: 1px solid #343444;
     border-radius: 20px;
-
-    overflow: hidden;
-
-    border: 1px solid #374151;
-
-    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-
-    animation: modalOpen 0.25s ease;
-
+    padding: 20px;
+    position: relative;
+    animation: popup 0.25s ease;
 }
 
-
-@keyframes modalOpen {
-
+@keyframes popup {
     from {
-
-        transform: scale(0.9);
-
         opacity: 0;
-
+        transform: scale(0.92);
     }
-
     to {
-
-        transform: scale(1);
-
         opacity: 1;
-
+        transform: scale(1);
     }
-
 }
 
+.close-btn {
+    position: absolute;
+    left: 15px;
+    top: 12px;
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 50%;
+    background: #30303c;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
 
 .modal-image {
-
     width: 100%;
-
-    height: 300px;
-
+    max-height: 350px;
     object-fit: cover;
-
-    display: block;
-
+    border-radius: 14px;
+    margin-bottom: 18px;
 }
 
-
-.modal-content {
-
-    padding: 22px;
-
-}
-
-
-.modal-title {
-
+.modal-content h2 {
+    margin: 5px 0 12px;
     font-size: 27px;
-
-    margin: 0 0 10px 0;
-
-    text-align: center;
-
 }
-
 
 .modal-description {
-
-    color: #ccc;
-
-    line-height: 1.9;
-
-    text-align: center;
-
+    color: #bbb;
+    line-height: 1.8;
     margin-bottom: 20px;
-
 }
-
 
 .modal-details {
-
     display: grid;
-
     grid-template-columns: 1fr 1fr;
-
     gap: 10px;
-
 }
 
-
-.detail-box {
-
-    background: #0b0f19;
-
+.modal-detail {
+    background: #111118;
     padding: 13px;
-
-    border-radius: 12px;
-
-    font-size: 14px;
-
+    border-radius: 11px;
+    color: #aaa;
+    font-size: 13px;
 }
 
-
-.detail-box strong {
-
+.modal-detail strong {
     display: block;
-
-    margin-bottom: 5px;
-
-    color: #4ade80;
-
-}
-
-
-.close-button {
-
-    width: 100%;
-
-    background: #ef4444;
-
     color: white;
-
-    border: 0;
-
-    padding: 13px;
-
-    border-radius: 10px;
-
-    font-size: 16px;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    margin-top: 20px;
-
+    margin-top: 5px;
+    font-size: 14px;
 }
 
+footer {
+    text-align: center;
+    color: #666;
+    padding: 35px 10px;
+    font-size: 13px;
+}
 
+@media (min-width: 700px) {
+    .platforms {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
 </style>
-
 </head>
-
 
 <body>
 
-
 <header>
-🎮 Free Games
+    🎮 Free Games
 </header>
 
-
-<!-- ========================= -->
 <!-- الصفحة الرئيسية -->
-<!-- ========================= -->
+<div id="homePage" class="container">
 
-<div id="home">
+    <section class="hero">
+        <h1>🎮 ألعاب مجانية للجميع</h1>
+        <p>اختر منصتك واستمتع بالألعاب</p>
+    </section>
 
+    <!-- البحث -->
+    <div class="search-box">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="🔎 ابحث عن لعبة..."
+            oninput="searchGames()"
+        >
+    </div>
 
-<section class="hero">
+    <div id="searchResultTitle" class="search-result-title">
+        نتائج البحث
+    </div>
 
-<h1>
-🎮 ألعاب مجانية للجميع
-</h1>
+    <!-- نتائج البحث -->
+    <div id="searchResults" class="games-grid"></div>
 
-<p>
-اكتشف ألعاب مجانية وحمّلها بسهولة
-</p>
+    <div id="noResults" class="no-results">
+        😕 ما لگينا لعبة بهذا الاسم
+    </div>
 
-<input
-class="search"
-placeholder="🔍 ابحث عن لعبة..."
->
+    <div id="platformSection">
 
-</section>
+        <h2 style="text-align:center; margin-bottom:20px;">
+            اختر منصتك 🎮
+        </h2>
 
+        <div class="platforms">
+            <button class="platform-btn" onclick="openPlatform('Android')">
+                📱 Android
+            </button>
 
-<div class="container">
+            <button class="platform-btn" onclick="openPlatform('PSP')">
+                🎮 PSP
+            </button>
 
+            <button class="platform-btn" onclick="openPlatform('PS1')">
+                🎮 PS1
+            </button>
 
-<h2>
-🎮 اختر منصتك
-</h2>
+            <button class="platform-btn" onclick="openPlatform('PS2')">
+                🎮 PS2
+            </button>
 
+            <button class="platform-btn" onclick="openPlatform('Nintendo')">
+                🕹️ Nintendo
+            </button>
 
-<div class="categories">
+            <button class="platform-btn" onclick="openPlatform('PC')">
+                💻 PC
+            </button>
 
+            <button class="platform-btn" onclick="openPlatform('Emulators')">
+                ⚙️ Emulators
+            </button>
+        </div>
 
-<div
-class="category"
-onclick="openPlatform('Android')"
->
-📱 Android
-</div>
-
-
-<div
-class="category"
-onclick="openPlatform('PSP')"
->
-🟢 PSP
-</div>
-
-
-<div
-class="category"
-onclick="openPlatform('PS1')"
->
-🔵 PS1
-</div>
-
-
-<div
-class="category"
-onclick="openPlatform('PS2')"
->
-🟣 PS2
-</div>
-
-
-<div
-class="category"
-onclick="openPlatform('Nintendo')"
->
-🔴 Nintendo
-</div>
-
-
-<div
-class="category"
-onclick="openPlatform('PC')"
->
-💻 PC
-</div>
-
-
-<div
-class="category"
-onclick="openPlatform('Emulators')"
->
-⚙️ Emulators
-</div>
-
+    </div>
 
 </div>
 
-
-<h2>
-🔥 ألعاب مميزة
-</h2>
-
-
-<div class="games">
-
-
-<div class="card">
-
-<div style="font-size:60px;">
-⚔️
-</div>
-
-<h3>
-Adventure Quest
-</h3>
-
-<p class="description">
-مغامرات وأكشن
-</p>
-
-<button class="download">
-📥 تحميل
-</button>
-
-</div>
-
-
-<div class="card">
-
-<div style="font-size:60px;">
-🏎️
-</div>
-
-<h3>
-Speed Racing
-</h3>
-
-<p class="description">
-سباقات سيارات
-</p>
-
-<button class="download">
-📥 تحميل
-</button>
-
-</div>
-
-
-<div class="card">
-
-<div style="font-size:60px;">
-⚽
-</div>
-
-<h3>
-Football Stars
-</h3>
-
-<p class="description">
-كرة قدم
-</p>
-
-<button class="download">
-📥 تحميل
-</button>
-
-</div>
-
-
-<div class="card">
-
-<div style="font-size:60px;">
-🚀
-</div>
-
-<h3>
-Space War
-</h3>
-
-<p class="description">
-خيال علمي
-</p>
-
-<button class="download">
-📥 تحميل
-</button>
-
-</div>
-
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- ========================= -->
 <!-- صفحة المنصة -->
-<!-- ========================= -->
+<div id="platformPage" class="container platform-page">
 
-<div
-id="platformPage"
-class="platform-page"
->
+    <div class="platform-header">
+        <h2 id="platformTitle"></h2>
 
+        <button class="back-btn" onclick="goHome()">
+            ← الرئيسية
+        </button>
+    </div>
 
-<div class="container">
+    <div id="gamesContainer" class="games-grid"></div>
 
-
-<br>
-
-
-<button
-class="back"
-onclick="goHome()"
->
-⬅️ الرئيسية
-</button>
-
-
-<h1
-id="platformTitle"
-class="platform-title"
->
-</h1>
-
-
-<!-- ========================= -->
-<!-- PS2 -->
-<!-- ========================= -->
-
-<div
-id="PS2Games"
-style="display:none;"
->
-
-
-<div class="games">
-
-
-<!-- God of War -->
-
-<div class="card">
-
-
-<img
-class="game-image"
-src="a54009d4ebdb37adb97e8257734fb4b2.jpg"
-alt="God of War"
->
-
-
-<h3>
-God of War
-</h3>
-
-
-<p class="description">
-أكشن ومغامرات
-</p>
-
-
-<div class="info">
-
-🎮 المنصة: PS2<br>
-
-📦 الحجم: يحدد حسب النسخة<br>
-
-🎯 النوع: أكشن ومغامرات<br>
-
-📅 الإصدار: 2005
+    <div id="otherGames" class="no-results" style="display:none;">
+        🚧 سيتم إضافة الألعاب هنا قريبًا
+    </div>
 
 </div>
 
+<footer>
+    🎮 Free Games
+</footer>
 
-<button
-class="info-button"
-onclick="showInfo(
-'God of War',
-'تدور أحداث اللعبة حول كريتوس ورحلته في عالم مليء بالأساطير والمخاطر.',
-'a54009d4ebdb37adb97e8257734fb4b2.jpg',
-'PS2',
-'أكشن ومغامرات',
-'2005',
-'يحدد حسب النسخة'
-)"
->
-ℹ️ معلومات اللعبة
-</button>
+<!-- النافذة المنبثقة -->
+<div id="infoModal" class="modal" onclick="closeOutside(event)">
 
+    <div class="modal-content">
 
-<button class="download">
-📥 تحميل
-</button>
+        <button class="close-btn" onclick="closeInfo()">
+            ×
+        </button>
 
+        <img id="modalImage" class="modal-image" src="" alt="Game">
 
+        <h2 id="modalTitle"></h2>
+
+        <div id="modalDescription" class="modal-description"></div>
+
+        <div class="modal-details">
+
+            <div class="modal-detail">
+                المنصة
+                <strong id="modalPlatform"></strong>
+            </div>
+
+            <div class="modal-detail">
+                النوع
+                <strong id="modalGenre"></strong>
+            </div>
+
+            <div class="modal-detail">
+                سنة الإصدار
+                <strong id="modalYear"></strong>
+            </div>
+
+            <div class="modal-detail">
+                الحجم
+                <strong id="modalSize"></strong>
+            </div>
+
+        </div>
+
+    </div>
 </div>
-
-
-<!-- GTA San Andreas -->
-
-<div class="card">
-
-
-<img
-class="game-image"
-src="f5cc170d31edbacf8be1cfb4a0a46180.jpg"
-alt="GTA San Andreas"
->
-
-
-<h3>
-GTA San Andreas
-</h3>
-
-
-<p class="description">
-عالم مفتوح وأكشن
-</p>
-
-
-<div class="info">
-
-🎮 المنصة: PS2<br>
-
-📦 الحجم: يحدد حسب النسخة<br>
-
-🎯 النوع: عالم مفتوح وأكشن<br>
-
-📅 الإصدار: 2004
-
-</div>
-
-
-<button
-class="info-button"
-onclick="showInfo(
-'GTA San Andreas',
-'تتابع اللعبة قصة Carl Johnson في عالم مفتوح مليء بالمغامرات والمهام.',
-'f5cc170d31edbacf8be1cfb4a0a46180.jpg',
-'PS2',
-'عالم مفتوح وأكشن',
-'2004',
-'يحدد حسب النسخة'
-)"
->
-ℹ️ معلومات اللعبة
-</button>
-
-
-<button class="download">
-📥 تحميل
-</button>
-
-
-</div>
-
-
-<!-- Resident Evil 4 -->
-
-<div class="card">
-
-
-<img
-class="game-image"
-src="1562a6801c37f3f7dd6d4684245b8b16.jpg"
-alt="Resident Evil 4"
->
-
-
-<h3>
-Resident Evil 4
-</h3>
-
-
-<p class="description">
-رعب وأكشن
-</p>
-
-
-<div class="info">
-
-🎮 المنصة: PS2<br>
-
-📦 الحجم: يُحدد حسب النسخة<br>
-
-🎯 النوع: رعب وأكشن<br>
-
-📅 الإصدار: 2005
-
-</div>
-
-
-<button
-class="info-button"
-onclick="showInfo(
-'Resident Evil 4',
-'تتابع اللعبة مهمة Leon S. Kennedy في محاولة لإنقاذ ابنة الرئيس وسط أحداث مليئة بالمخاطر.',
-'1562a6801c37f3f7dd6d4684245b8b16.jpg',
-'PS2',
-'رعب وأكشن',
-'2005',
-'يُحدد حسب النسخة'
-)"
->
-ℹ️ معلومات اللعبة
-</button>
-
-
-<button class="download">
-📥 تحميل
-</button>
-
-
-</div>
-
-
-<!-- Need for Speed Most Wanted -->
-
-<div class="card">
-
-
-<img
-class="game-image"
-src="c67803d869623cda4e274619934dd9ed.jpg"
-alt="Need for Speed Most Wanted"
->
-
-
-<h3>
-Need for Speed Most Wanted
-</h3>
-
-
-<p class="description">
-سباقات سيارات
-</p>
-
-
-<div class="info">
-
-🎮 المنصة: PS2<br>
-
-📦 الحجم: يحدد حسب النسخة<br>
-
-🎯 النوع: سباقات سيارات<br>
-
-📅 الإصدار: 2005
-
-</div>
-
-
-<button
-class="info-button"
-onclick="showInfo(
-'Need for Speed Most Wanted',
-'لعبة سباقات تركز على المنافسة وسباقات الشوارع ومطاردات الشرطة.',
-'c67803d869623cda4e274619934dd9ed.jpg',
-'PS2',
-'سباقات سيارات',
-'2005',
-'يحدد حسب النسخة'
-)"
->
-ℹ️ معلومات اللعبة
-</button>
-
-
-<button class="download">
-📥 تحميل
-</button>
-
-
-</div>
-
-
-<!-- Tekken 5 -->
-
-<div class="card">
-
-
-<img
-class="game-image"
-src="4d54f38bbc54bc578ea0f510831bf7e5.jpg"
-alt="Tekken 5"
->
-
-
-<h3>
-Tekken 5
-</h3>
-
-
-<p class="description">
-قتال
-</p>
-
-
-<div class="info">
-
-🎮 المنصة: PS2<br>
-
-📦 الحجم: يحدد حسب النسخة<br>
-
-🎯 النوع: قتال<br>
-
-📅 الإصدار: 2004
-
-</div>
-
-
-<button
-class="info-button"
-onclick="showInfo(
-'Tekken 5',
-'لعبة قتال تضم مجموعة كبيرة من الشخصيات والعديد من أنماط اللعب.',
-'4d54f38bbc54bc578ea0f510831bf7e5.jpg',
-'PS2',
-'قتال',
-'2004',
-'يحدد حسب النسخة'
-)"
->
-ℹ️ معلومات اللعبة
-</button>
-
-
-<button class="download">
-📥 تحميل
-</button>
-
-
-</div>
-
-
-</div>
-
-</div>
-
-
-<!-- باقي المنصات -->
-
-<div
-id="OtherGames"
-style="display:none;"
->
-
-<div class="platform-message">
-
-<h2 id="otherTitle">
-🎮 ألعاب المنصة
-</h2>
-
-<p>
-سيتم إضافة الألعاب هنا
-</p>
-
-</div>
-
-</div>
-
-
-</div>
-
-</div>
-
-
-<!-- ========================= -->
-<!-- نافذة المعلومات -->
-<!-- ========================= -->
-
-<div
-id="gameModal"
-class="modal"
-onclick="closeOutside(event)"
->
-
-
-<div class="modal-box">
-
-
-<img
-id="modalImage"
-class="modal-image"
-src=""
-alt=""
->
-
-
-<div class="modal-content">
-
-
-<h2
-id="modalTitle"
-class="modal-title"
->
-معلومات اللعبة
-</h2>
-
-
-<p
-id="modalDescription"
-class="modal-description"
->
-</p>
-
-
-<div class="modal-details">
-
-
-<div class="detail-box">
-
-<strong>
-🎮 المنصة
-</strong>
-
-<span id="modalPlatform">
-</span>
-
-</div>
-
-
-<div class="detail-box">
-
-<strong>
-🎯 النوع
-</strong>
-
-<span id="modalGenre">
-</span>
-
-</div>
-
-
-<div class="detail-box">
-
-<strong>
-📅 سنة الإصدار
-</strong>
-
-<span id="modalYear">
-</span>
-
-</div>
-
-
-<div class="detail-box">
-
-<strong>
-📦 الحجم
-</strong>
-
-<span id="modalSize">
-</span>
-
-</div>
-
-
-</div>
-
-
-<button
-class="close-button"
-onclick="closeInfo()"
->
-إغلاق ✕
-</button>
-
-
-</div>
-
-</div>
-
-</div>
-
 
 <script>
 
+/* =========================
+   بيانات الألعاب
+========================= */
+
+const games = [
+
+    {
+        title: "God of War",
+        image: "a54009d4ebdb37adb97e8257734fb4b2.jpg",
+        description: "تبدأ رحلة كريتوس وسط عالم الأساطير اليونانية في مغامرة مليئة بالأكشن والمعارك.",
+        platform: "PS2",
+        genre: "أكشن ومغامرات",
+        year: "2005",
+        size: "يحدد حسب النسخة"
+    },
+
+    {
+        title: "GTA San Andreas",
+        image: "f5cc170d31edbacf8be1cfb4a0a46180.jpg",
+        description: "يعود كارل جونسون إلى مدينته ليبدأ رحلة مليئة بالمهمات والمطاردات والعالم المفتوح.",
+        platform: "PS2",
+        genre: "عالم مفتوح وأكشن",
+        year: "2004",
+        size: "يحدد حسب النسخة"
+    },
+
+    {
+        title: "Resident Evil 4",
+        image: "1562a6801c37f3f7dd6d4684245b8b16.jpg",
+        description: "يخوض ليون إس كينيدي مهمة خطيرة لإنقاذ ابنة الرئيس وسط أحداث مليئة بالرعب والأكشن.",
+        platform: "PS2",
+        genre: "رعب وأكشن",
+        year: "2005",
+        size: "يُحدد حسب النسخة"
+    },
+
+    {
+        title: "Need for Speed Most Wanted",
+        image: "c67803d869623cda4e274619934dd9ed.jpg",
+        description: "سباقات شوارع ومطاردات شرطة وتحديات للوصول إلى قمة قائمة المطلوبين.",
+        platform: "PS2",
+        genre: "سباقات سيارات",
+        year: "2005",
+        size: "يحدد حسب النسخة"
+    },
+
+    {
+        title: "Tekken 5",
+        image: "4d54f38bbc54bc578ea0f510831bf7e5.jpg",
+        description: "واحدة من أشهر ألعاب القتال، تضم مجموعة كبيرة من الشخصيات وأنماط لعب متعددة.",
+        platform: "PS2",
+        genre: "قتال",
+        year: "2004",
+        size: "يحدد حسب النسخة"
+    }
+
+];
+
+
+/* =========================
+   فتح صفحة المنصة
+========================= */
 
 function openPlatform(platform) {
 
+    document.getElementById("homePage").style.display = "none";
+    document.getElementById("platformPage").style.display = "block";
 
-document.getElementById("home").style.display = "none";
+    document.getElementById("platformTitle").textContent =
+        "🎮 ألعاب " + platform;
 
+    const container = document.getElementById("gamesContainer");
+    const otherGames = document.getElementById("otherGames");
 
-document.getElementById("platformPage").style.display = "block";
+    container.innerHTML = "";
 
+    if (platform === "PS2") {
 
-document.getElementById("platformTitle").innerText =
-"🎮 ألعاب " + platform;
+        otherGames.style.display = "none";
 
+        const ps2Games = games.filter(game => game.platform === "PS2");
 
-if (platform === "PS2") {
+        ps2Games.forEach(game => {
+            container.innerHTML += createGameCard(game);
+        });
 
+    } else {
 
-document.getElementById("PS2Games").style.display = "block";
+        otherGames.style.display = "block";
 
+    }
 
-document.getElementById("OtherGames").style.display = "none";
-
-
-} else {
-
-
-document.getElementById("PS2Games").style.display = "none";
-
-
-document.getElementById("OtherGames").style.display = "block";
-
-
-document.getElementById("otherTitle").innerText =
-"🎮 ألعاب " + platform;
-
-
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 }
 
 
-window.scrollTo(0, 0);
-
-}
-
-
+/* =========================
+   العودة للرئيسية
+========================= */
 
 function goHome() {
 
+    document.getElementById("platformPage").style.display = "none";
+    document.getElementById("homePage").style.display = "block";
 
-document.getElementById("platformPage").style.display = "none";
+    document.getElementById("searchInput").value = "";
 
+    document.getElementById("searchResults").innerHTML = "";
+    document.getElementById("searchResults").style.display = "none";
 
-document.getElementById("home").style.display = "block";
+    document.getElementById("searchResultTitle").style.display = "none";
+    document.getElementById("noResults").style.display = "none";
 
+    document.getElementById("platformSection").style.display = "block";
 
-window.scrollTo(0, 0);
-
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 }
 
 
+/* =========================
+   إنشاء بطاقة اللعبة
+========================= */
+
+function createGameCard(game) {
+
+    return `
+        <div class="game-card">
+
+            <img src="${game.image}" alt="${game.title}">
+
+            <div class="game-content">
+
+                <h3>${game.title}</h3>
+
+                <div class="game-description">
+                    ${game.description}
+                </div>
+
+                <div class="game-info">
+
+                    <div class="info-box">
+                        المنصة
+                        <strong>${game.platform}</strong>
+                    </div>
+
+                    <div class="info-box">
+                        النوع
+                        <strong>${game.genre}</strong>
+                    </div>
+
+                    <div class="info-box">
+                        السنة
+                        <strong>${game.year}</strong>
+                    </div>
+
+                    <div class="info-box">
+                        الحجم
+                        <strong>${game.size}</strong>
+                    </div>
+
+                </div>
+
+                <div class="buttons">
+
+                    <button
+                        class="info-btn"
+                        onclick='showInfo(
+                            ${JSON.stringify(game.title)},
+                            ${JSON.stringify(game.description)},
+                            ${JSON.stringify(game.image)},
+                            ${JSON.stringify(game.platform)},
+                            ${JSON.stringify(game.genre)},
+                            ${JSON.stringify(game.year)},
+                            ${JSON.stringify(game.size)}
+                        )'
+                    >
+                        ℹ️ معلومات اللعبة
+                    </button>
+
+                    <button
+                        class="download-btn"
+                        onclick="downloadGame()"
+                    >
+                        📥 تحميل
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+    `;
+}
+
+
+/* =========================
+   البحث الحقيقي
+========================= */
+
+function searchGames() {
+
+    const input =
+        document.getElementById("searchInput").value
+        .trim()
+        .toLowerCase();
+
+    const results =
+        document.getElementById("searchResults");
+
+    const title =
+        document.getElementById("searchResultTitle");
+
+    const noResults =
+        document.getElementById("noResults");
+
+    const platformSection =
+        document.getElementById("platformSection");
+
+    /* إذا البحث فارغ */
+    if (input === "") {
+
+        results.innerHTML = "";
+        results.style.display = "none";
+
+        title.style.display = "none";
+        noResults.style.display = "none";
+
+        platformSection.style.display = "block";
+
+        return;
+    }
+
+    /* نخفي المنصات أثناء البحث */
+    platformSection.style.display = "none";
+
+    title.style.display = "block";
+    results.style.display = "grid";
+
+    /* البحث باسم اللعبة */
+    const foundGames = games.filter(game =>
+        game.title.toLowerCase().includes(input)
+    );
+
+    results.innerHTML = "";
+
+    if (foundGames.length === 0) {
+
+        noResults.style.display = "block";
+
+    } else {
+
+        noResults.style.display = "none";
+
+        foundGames.forEach(game => {
+            results.innerHTML += createGameCard(game);
+        });
+
+    }
+}
+
+
+/* =========================
+   معلومات اللعبة
+========================= */
 
 function showInfo(
-title,
-description,
-image,
-platform,
-genre,
-year,
-size
+    title,
+    description,
+    image,
+    platform,
+    genre,
+    year,
+    size
 ) {
 
+    document.getElementById("modalTitle").textContent = title;
+    document.getElementById("modalDescription").textContent = description;
+    document.getElementById("modalImage").src = image;
+    document.getElementById("modalPlatform").textContent = platform;
+    document.getElementById("modalGenre").textContent = genre;
+    document.getElementById("modalYear").textContent = year;
+    document.getElementById("modalSize").textContent = size;
 
-document.getElementById("modalTitle").innerText =
-title;
+    document.getElementById("infoModal").style.display = "block";
 
-
-document.getElementById("modalDescription").innerText =
-description;
-
-
-document.getElementById("modalImage").src =
-image;
-
-
-document.getElementById("modalImage").alt =
-title;
-
-
-document.getElementById("modalPlatform").innerText =
-platform;
-
-
-document.getElementById("modalGenre").innerText =
-genre;
-
-
-document.getElementById("modalYear").innerText =
-year;
-
-
-document.getElementById("modalSize").innerText =
-size;
-
-
-document.getElementById("gameModal").style.display =
-"block";
-
+    document.body.style.overflow = "hidden";
 }
 
 
+/* =========================
+   إغلاق المعلومات
+========================= */
 
 function closeInfo() {
 
+    document.getElementById("infoModal").style.display = "none";
 
-document.getElementById("gameModal").style.display =
-"none";
-
+    document.body.style.overflow = "auto";
 }
 
 
+/* إغلاق عند الضغط خارج النافذة */
 
 function closeOutside(event) {
 
-
-if (
-event.target ===
-document.getElementById("gameModal")
-) {
-
-closeInfo();
+    if (event.target === document.getElementById("infoModal")) {
+        closeInfo();
+    }
 
 }
 
-}
 
+/* =========================
+   زر التحميل
+========================= */
+
+function downloadGame() {
+
+    alert("📥 رابط التحميل سيتم إضافته قريبًا.");
+
+}
 
 </script>
 
-
 </body>
-
 </html>
