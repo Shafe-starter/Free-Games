@@ -1,36 +1,139 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Games | ألعاب مجانية</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Games</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
+<style>
 
-        body {
-            background: #0b0f19;
-            color: white;
-        }
+body {
+    margin: 0;
+    background: #0b0f19;
+    color: white;
+    font-family: Arial;
+}
 
-        header {
-            background: #111827;
-            padding: 18px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            border-bottom: 1px solid #1f2937;
-        }
+header {
+    background: #111827;
+    padding: 20px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
 
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-        }
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.hero h1 {
+    font-size: 35px;
+}
+
+.hero p {
+    color: #aaa;
+}
+
+.search {
+    width: 90%;
+    max-width: 500px;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    background: #1f2937;
+    color: white;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.games {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #111827;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.card .icon {
+    font-size: 60px;
+}
+
+button {
+    background: #4ade80;
+    border: 0;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+🎮 Free Games
+</header>
+
+<section class="hero">
+
+<h1>🎮 ألعاب مجانية للجميع</h1>
+
+<p>اكتشف ألعاب مجانية وحمّلها بسهولة</p>
+
+<input class="search" placeholder="🔍 ابحث عن لعبة...">
+
+</section>
+
+<div class="container">
+
+<h2>🔥 ألعاب مميزة</h2>
+
+<div class="games">
+
+<div class="card">
+<div class="icon">⚔️</div>
+<h3>Adventure Quest</h3>
+<p>مغامرات وأكشن</p>
+<button>📥 تحميل</button>
+</div>
+
+<div class="card">
+<div class="icon">🏎️</div>
+<h3>Speed Racing</h3>
+<p>سباقات سيارات</p>
+<button>📥 تحميل</button>
+</div>
+
+<div class="card">
+<div class="icon">⚽</div>
+<h3>Football Stars</h3>
+<p>كرة قدم</p>
+<button>📥 تحميل</button>
+</div>
+
+<div class="card">
+<div class="icon">🚀</div>
+<h3>Space War</h3>
+<p>خيال علمي</p>
+<button>📥 تحميل</button>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
