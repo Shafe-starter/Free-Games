@@ -326,6 +326,7 @@ footer{
 }
 
 @media(max-width:500px){
+
     .games-grid{
         grid-template-columns:repeat(2,1fr);
         gap:10px;
@@ -364,103 +365,150 @@ footer{
 
 <div class="container">
 
-    <section id="homePage">
+<section id="homePage">
 
-        <div class="hero">
-            <h2>🎮 ألعاب مجانية للجميع</h2>
-            <p>اختار منصتك واستكشف الألعاب</p>
-        </div>
+    <div class="hero">
+        <h2>🎮 ألعاب مجانية للجميع</h2>
+        <p>اختار منصتك واستكشف الألعاب</p>
+    </div>
 
-        <div class="search-box">
-            <input
-                type="text"
-                id="searchInput"
-                placeholder="🔎 ابحث عن لعبة..."
-                oninput="searchGames()"
-            >
-        </div>
+    <div class="search-box">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="🔎 ابحث عن لعبة..."
+            oninput="searchGames()"
+        >
+    </div>
 
-        <div class="platforms">
+    <div class="platforms">
 
-            <button onclick="openPlatform('Android')">📱 Android</button>
+        <button onclick="openPlatform('Android')">
+            📱 Android
+        </button>
 
-            <button onclick="openPlatform('PSP')">🎮 PSP</button>
+        <button onclick="openPlatform('PSP')">
+            🎮 PSP
+        </button>
 
-            <button onclick="openPlatform('PS1')">🎮 PS1</button>
+        <button onclick="openPlatform('PS1')">
+            🎮 PS1
+        </button>
 
-            <button onclick="openPlatform('PS2')">🎮 PS2</button>
+        <button onclick="openPlatform('PS2')">
+            🎮 PS2
+        </button>
 
-            <button onclick="openPlatform('Nintendo')">🕹️ Nintendo</button>
+        <button onclick="openPlatform('Nintendo')">
+            🕹️ Nintendo
+        </button>
 
-            <button onclick="openPlatform('PC')">💻 PC</button>
+        <button onclick="openPlatform('PC')">
+            💻 PC
+        </button>
 
-            <button onclick="openPlatform('Emulators')">⚙️ Emulators</button>
+        <button onclick="openPlatform('Emulators')">
+            ⚙️ Emulators
+        </button>
 
-        </div>
+    </div>
 
-        <div id="searchResults"></div>
+    <div id="searchResults"></div>
 
-        <div class="free-section">
+    <div class="free-section">
 
-            <h2 class="section-title">🆓 ألعاب مجانية وقانونية</h2>
+        <h2 class="section-title">
+            🆓 ألعاب مجانية وقانونية
+        </h2>
 
-            <div class="games-grid">
+        <div class="games-grid">
 
-                <div class="free-card">
-                    <h3>🐧 SuperTux</h3>
-                    <p>لعبة منصات مجانية ومفتوحة المصدر.</p>
-                    <a href="https://github.com/SuperTux/supertux/releases" target="_blank">
-                        📥 المصدر الرسمي
-                    </a>
-                </div>
+            <div class="free-card">
+                <h3>🐧 SuperTux</h3>
+                <p>
+                    لعبة منصات مجانية ومفتوحة المصدر.
+                </p>
+                <a
+                    href="https://github.com/SuperTux/supertux/releases"
+                    target="_blank"
+                >
+                    📥 المصدر الرسمي
+                </a>
+            </div>
 
-                <div class="free-card">
-                    <h3>⚔️ Battle for Wesnoth</h3>
-                    <p>لعبة استراتيجية مجانية ومفتوحة المصدر.</p>
-                    <a href="https://wesnoth.itch.io/battle-for-wesnoth" target="_blank">
-                        📥 المصدر الرسمي
-                    </a>
-                </div>
+            <div class="free-card">
+                <h3>⚔️ Battle for Wesnoth</h3>
+                <p>
+                    لعبة استراتيجية مجانية ومفتوحة المصدر.
+                </p>
+                <a
+                    href="https://wesnoth.itch.io/battle-for-wesnoth"
+                    target="_blank"
+                >
+                    📥 المصدر الرسمي
+                </a>
+            </div>
 
-                <div class="free-card">
-                    <h3>🏛️ 0 A.D.</h3>
-                    <p>لعبة استراتيجية تاريخية مجانية ومفتوحة المصدر.</p>
-                    <a href="https://play0ad.com/download/" target="_blank">
-                        📥 المصدر الرسمي
-                    </a>
-                </div>
-
+            <div class="free-card">
+                <h3>🏛️ 0 A.D.</h3>
+                <p>
+                    لعبة استراتيجية تاريخية مجانية ومفتوحة المصدر.
+                </p>
+                <a
+                    href="https://play0ad.com/download/"
+                    target="_blank"
+                >
+                    📥 المصدر الرسمي
+                </a>
             </div>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <section id="platformPage" class="hidden">
+<section id="platformPage" class="hidden">
 
-        <button class="back-btn" onclick="goHome()">⬅️ رجوع</button>
+    <button class="back-btn" onclick="goHome()">
+        ⬅️ رجوع
+    </button>
 
-        <h2 id="platformTitle" class="section-title"></h2>
+    <h2 id="platformTitle" class="section-title"></h2>
 
-        <div id="platformGames" class="games-grid"></div>
+    <div id="platformGames" class="games-grid"></div>
 
-    </section>
+</section>
 
 </div>
 
 
-<div id="infoModal" class="modal" onclick="closeOutside(event)">
+<div
+    id="infoModal"
+    class="modal"
+    onclick="closeOutside(event)"
+>
 
     <div class="modal-box">
 
-        <button class="close" onclick="closeInfo()">×</button>
+        <button class="close" onclick="closeInfo()">
+            ×
+        </button>
 
-        <img id="modalImage" class="modal-cover" src="" alt="">
+        <img
+            id="modalImage"
+            class="modal-cover"
+            src=""
+            alt=""
+        >
 
         <h2 id="modalTitle"></h2>
 
-        <p id="modalStory" class="modal-story"></p>
+        <p
+            id="modalStory"
+            class="modal-story"
+        ></p>
 
         <div class="modal-info">
 
@@ -504,553 +552,571 @@ footer{
 
 const games = [
 
-/* الألعاب الموجودة عندك */
+/* =========================
+   الألعاب الخمس الأصلية
+========================= */
 
 {
-title:"God of War",
-platform:"PS2",
-genre:"أكشن ومغامرات",
-year:"2005",
-size:"يحدد حسب النسخة",
-description:"مغامرة Kratos في عالم الأساطير اليونانية.",
-story:"تدور أحداث اللعبة حول Kratos ورحلته وسط عالم الأساطير اليونانية، حيث يواجه العديد من الأعداء والمخلوقات الأسطورية.",
-image:"a54009d4ebdb37adb97e8257734fb4b2.jpg"
+    title:"God of War",
+    platform:"PS2",
+    genre:"أكشن ومغامرات",
+    year:"2005",
+    size:"يحدد حسب النسخة",
+    description:"مغامرة Kratos في عالم الأساطير اليونانية.",
+    story:"تدور أحداث اللعبة حول Kratos ورحلته وسط عالم الأساطير اليونانية، حيث يواجه العديد من الأعداء والمخلوقات الأسطورية.",
+    image:"a54009d4ebdb37adb97e8257734fb4b2.jpg"
 },
 
 {
-title:"GTA San Andreas",
-platform:"PS2",
-genre:"عالم مفتوح وأكشن",
-year:"2004",
-size:"يحدد حسب النسخة",
-description:"عالم مفتوح مليء بالمهمات والاستكشاف.",
-story:"تتابع اللعبة قصة Carl Johnson الذي يعود إلى Los Santos ويحاول استعادة حياته وعائلته وسط عالم مفتوح مليء بالمهمات.",
-image:"f5cc170d31edbacf8be1cfb4a0a46180.jpg"
+    title:"GTA San Andreas",
+    platform:"PS2",
+    genre:"عالم مفتوح وأكشن",
+    year:"2004",
+    size:"يحدد حسب النسخة",
+    description:"عالم مفتوح مليء بالمهمات والاستكشاف.",
+    story:"تتابع اللعبة قصة Carl Johnson الذي يعود إلى Los Santos ويحاول استعادة حياته وعائلته وسط عالم مفتوح مليء بالمهمات.",
+    image:"f5cc170d31edbacf8be1cfb4a0a46180.jpg"
 },
 
 {
-title:"Resident Evil 4",
-platform:"PS2",
-genre:"رعب وأكشن",
-year:"2005",
-size:"يُحدد حسب النسخة",
-description:"مهمة Leon لإنقاذ ابنة الرئيس.",
-story:"يذهب Leon S. Kennedy في مهمة لإنقاذ ابنة الرئيس وسط أحداث مليئة بالمخاطر والأعداء.",
-image:"1562a6801c37f3f7dd6d4684245b8b16.jpg"
+    title:"Resident Evil 4",
+    platform:"PS2",
+    genre:"رعب وأكشن",
+    year:"2005",
+    size:"يُحدد حسب النسخة",
+    description:"مهمة Leon لإنقاذ ابنة الرئيس.",
+    story:"يذهب Leon S. Kennedy في مهمة لإنقاذ ابنة الرئيس وسط أحداث مليئة بالمخاطر والأعداء.",
+    image:"1562a6801c37f3f7dd6d4684245b8b16.jpg"
 },
 
 {
-title:"Need for Speed Most Wanted",
-platform:"PS2",
-genre:"سباقات سيارات",
-year:"2005",
-size:"يحدد حسب النسخة",
-description:"سباقات شوارع ومطاردات الشرطة.",
-story:"يخوض اللاعب سباقات شوارع ويحاول الوصول إلى قمة قائمة المتسابقين مع الهروب من مطاردات الشرطة.",
-image:"c67803d869623cda4e274619934dd9ed.jpg"
+    title:"Need for Speed Most Wanted",
+    platform:"PS2",
+    genre:"سباقات سيارات",
+    year:"2005",
+    size:"يحدد حسب النسخة",
+    description:"سباقات شوارع ومطاردات الشرطة.",
+    story:"يخوض اللاعب سباقات شوارع ويحاول الوصول إلى قمة قائمة المتسابقين مع الهروب من مطاردات الشرطة.",
+    image:"c67803d869623cda4e274619934dd9ed.jpg"
 },
 
 {
-title:"Tekken 5",
-platform:"PS2",
-genre:"قتال",
-year:"2004",
-size:"يحدد حسب النسخة",
-description:"واحدة من أشهر ألعاب القتال على PS2.",
-story:"تضم اللعبة مجموعة كبيرة من المقاتلين والعديد من أنماط اللعب والمعارك.",
-image:"4d54f38bbc54bc578ea0f510831bf7e5.jpg"
+    title:"Tekken 5",
+    platform:"PS2",
+    genre:"قتال",
+    year:"2004",
+    size:"يحدد حسب النسخة",
+    description:"واحدة من أشهر ألعاب القتال على PS2.",
+    story:"تضم اللعبة مجموعة كبيرة من المقاتلين والعديد من أنماط اللعب والمعارك.",
+    image:"4d54f38bbc54bc578ea0f510831bf7e5.jpg"
 },
 
 
-/* 45 لعبة إضافية */
+/* =========================
+   45 لعبة إضافية
+========================= */
 
 {
-title:"God of War II",
-platform:"PS2",
-genre:"أكشن ومغامرات",
-year:"2007",
-description:"مغامرة Kratos الجديدة.",
-story:"يكمل Kratos رحلته الأسطورية في مواجهة أعداء وأحداث جديدة.",
+    title:"God of War II",
+    platform:"PS2",
+    genre:"أكشن ومغامرات",
+    year:"2007",
+    description:"مغامرة Kratos الجديدة.",
+    story:"يكمل Kratos رحلته الأسطورية في مواجهة أعداء وأحداث جديدة."
 },
 
 {
-title:"Grand Theft Auto III",
-platform:"PS2",
-genre:"عالم مفتوح",
-year:"2001",
-description:"بداية حقبة GTA ثلاثية الأبعاد.",
-story:"يعيش اللاعب مغامرة في Liberty City ضمن عالم مفتوح مليء بالمهمات.",
+    title:"Grand Theft Auto III",
+    platform:"PS2",
+    genre:"عالم مفتوح",
+    year:"2001",
+    description:"بداية حقبة GTA ثلاثية الأبعاد.",
+    story:"يعيش اللاعب مغامرة في Liberty City ضمن عالم مفتوح مليء بالمهمات."
 },
 
 {
-title:"Grand Theft Auto Vice City",
-platform:"PS2",
-genre:"عالم مفتوح",
-year:"2002",
-description:"مدينة Vice City وأجواء الثمانينات.",
-story:"يبدأ Tommy Vercetti رحلة جديدة في Vice City ويحاول بناء نفوذه.",
+    title:"Grand Theft Auto Vice City",
+    platform:"PS2",
+    genre:"عالم مفتوح",
+    year:"2002",
+    description:"مدينة Vice City وأجواء الثمانينات.",
+    story:"يبدأ Tommy Vercetti رحلة جديدة في Vice City ويحاول بناء نفوذه."
 },
 
 {
-title:"Metal Gear Solid 2",
-platform:"PS2",
-genre:"تخفي وأكشن",
-year:"2001",
-description:"مغامرة تجسس وتخفي.",
-story:"مهمة تجسس مليئة بالتسلل والأحداث السياسية.",
+    title:"Metal Gear Solid 2",
+    platform:"PS2",
+    genre:"تخفي وأكشن",
+    year:"2001",
+    description:"مغامرة تجسس وتخفي.",
+    story:"مهمة تجسس مليئة بالتسلل والأحداث السياسية."
 },
 
 {
-title:"Metal Gear Solid 3 Snake Eater",
-platform:"PS2",
-genre:"تخفي وأكشن",
-year:"2004",
-description:"مهمة تجسس في الغابة.",
-story:"يخوض Snake مهمة خطيرة وسط بيئة طبيعية مليئة بالمخاطر.",
+    title:"Metal Gear Solid 3 Snake Eater",
+    platform:"PS2",
+    genre:"تخفي وأكشن",
+    year:"2004",
+    description:"مهمة تجسس في الغابة.",
+    story:"يخوض Snake مهمة خطيرة وسط بيئة طبيعية مليئة بالمخاطر."
 },
 
 {
-title:"Shadow of the Colossus",
-platform:"PS2",
-genre:"مغامرات",
-year:"2005",
-description:"مواجهة العمالقة في عالم غامض.",
-story:"يسافر البطل إلى أرض غامضة لمواجهة مخلوقات عملاقة.",
+    title:"Shadow of the Colossus",
+    platform:"PS2",
+    genre:"مغامرات",
+    year:"2005",
+    description:"مواجهة العمالقة في عالم غامض.",
+    story:"يسافر البطل إلى أرض غامضة لمواجهة مخلوقات عملاقة."
 },
 
 {
-title:"Silent Hill 2",
-platform:"PS2",
-genre:"رعب",
-year:"2001",
-description:"قصة غامضة في مدينة Silent Hill.",
-story:"يصل James إلى مدينة غامضة بحثًا عن إجابات حول رسالة تلقاها.",
+    title:"Silent Hill 2",
+    platform:"PS2",
+    genre:"رعب",
+    year:"2001",
+    description:"قصة غامضة في مدينة Silent Hill.",
+    story:"يصل James إلى مدينة غامضة بحثًا عن إجابات حول رسالة تلقاها."
 },
 
 {
-title:"Silent Hill 3",
-platform:"PS2",
-genre:"رعب",
-year:"2003",
-description:"مغامرة رعب جديدة.",
-story:"تدخل Heather في أحداث غامضة مرتبطة بمدينة Silent Hill.",
+    title:"Silent Hill 3",
+    platform:"PS2",
+    genre:"رعب",
+    year:"2003",
+    description:"مغامرة رعب جديدة.",
+    story:"تدخل Heather في أحداث غامضة مرتبطة بمدينة Silent Hill."
 },
 
 {
-title:"Devil May Cry",
-platform:"PS2",
-genre:"أكشن",
-year:"2001",
-description:"معارك سريعة ضد الأعداء.",
-story:"يخوض Dante مغامرة داخل قلعة غامضة مليئة بالأعداء.",
+    title:"Devil May Cry",
+    platform:"PS2",
+    genre:"أكشن",
+    year:"2001",
+    description:"معارك سريعة ضد الأعداء.",
+    story:"يخوض Dante مغامرة داخل قلعة غامضة مليئة بالأعداء."
 },
 
 {
-title:"Devil May Cry 3",
-platform:"PS2",
-genre:"أكشن",
-year:"2005",
-description:"واحدة من أشهر ألعاب الأكشن.",
-story:"يواجه Dante وVergil أحداثًا مرتبطة بماضيهما وقوتهما.",
+    title:"Devil May Cry 3",
+    platform:"PS2",
+    genre:"أكشن",
+    year:"2005",
+    description:"واحدة من أشهر ألعاب الأكشن.",
+    story:"يواجه Dante وVergil أحداثًا مرتبطة بماضيهما وقوتهما."
 },
 
 {
-title:"Final Fantasy X",
-platform:"PS2",
-genre:"RPG",
-year:"2001",
-description:"رحلة Tidus في عالم Spira.",
-story:"ينضم Tidus إلى Yuna ومجموعة من الأبطال في رحلة لإنقاذ عالم Spira.",
+    title:"Final Fantasy X",
+    platform:"PS2",
+    genre:"RPG",
+    year:"2001",
+    description:"رحلة Tidus في عالم Spira.",
+    story:"ينضم Tidus إلى Yuna ومجموعة من الأبطال في رحلة لإنقاذ عالم Spira."
 },
 
 {
-title:"Final Fantasy X-2",
-platform:"PS2",
-genre:"RPG",
-year:"2003",
-description:"مغامرة جديدة في عالم Spira.",
-story:"تبدأ Yuna رحلة جديدة بعد أحداث Final Fantasy X.",
+    title:"Final Fantasy X-2",
+    platform:"PS2",
+    genre:"RPG",
+    year:"2003",
+    description:"مغامرة جديدة في عالم Spira.",
+    story:"تبدأ Yuna رحلة جديدة بعد أحداث Final Fantasy X."
 },
 
 {
-title:"Kingdom Hearts",
-platform:"PS2",
-genre:"RPG وأكشن",
-year:"2002",
-description:"عالم يجمع بين Disney وFinal Fantasy.",
-story:"يسافر Sora بين عوالم مختلفة بحثًا عن أصدقائه.",
+    title:"Kingdom Hearts",
+    platform:"PS2",
+    genre:"RPG وأكشن",
+    year:"2002",
+    description:"عالم يجمع بين Disney وFinal Fantasy.",
+    story:"يسافر Sora بين عوالم مختلفة بحثًا عن أصدقائه."
 },
 
 {
-title:"Kingdom Hearts II",
-platform:"PS2",
-genre:"RPG وأكشن",
-year:"2005",
-description:"تكملة مغامرة Sora.",
-story:"يعود Sora في مغامرة جديدة عبر العديد من العوالم.",
+    title:"Kingdom Hearts II",
+    platform:"PS2",
+    genre:"RPG وأكشن",
+    year:"2005",
+    description:"تكملة مغامرة Sora.",
+    story:"يعود Sora في مغامرة جديدة عبر العديد من العوالم."
 },
 
 {
-title:"Gran Turismo 4",
-platform:"PS2",
-genre:"سباقات",
-year:"2004",
-description:"محاكاة قيادة شهيرة.",
-story:"تقدم اللعبة عددًا كبيرًا من السيارات والسباقات والمسارات.",
+    title:"Gran Turismo 4",
+    platform:"PS2",
+    genre:"سباقات",
+    year:"2004",
+    description:"محاكاة قيادة شهيرة.",
+    story:"تقدم اللعبة عددًا كبيرًا من السيارات والسباقات والمسارات."
 },
 
 {
-title:"Burnout 3 Takedown",
-platform:"PS2",
-genre:"سباقات",
-year:"2004",
-description:"سباقات سريعة وحماسية.",
-story:"تجمع اللعبة بين السرعة والسباقات وأحداث التصادم.",
+    title:"Burnout 3 Takedown",
+    platform:"PS2",
+    genre:"سباقات",
+    year:"2004",
+    description:"سباقات سريعة وحماسية.",
+    story:"تجمع اللعبة بين السرعة والسباقات وأحداث التصادم."
 },
 
 {
-title:"Burnout Revenge",
-platform:"PS2",
-genre:"سباقات",
-year:"2005",
-description:"سباقات أركيد سريعة.",
-story:"يتنافس اللاعب في سباقات مليئة بالسرعة والمواجهات.",
+    title:"Burnout Revenge",
+    platform:"PS2",
+    genre:"سباقات",
+    year:"2005",
+    description:"سباقات أركيد سريعة.",
+    story:"يتنافس اللاعب في سباقات مليئة بالسرعة والمواجهات."
 },
 
 {
-title:"Need for Speed Underground 2",
-platform:"PS2",
-genre:"سباقات",
-year:"2004",
-description:"تعديل السيارات وسباقات الشوارع.",
-story:"يبدأ اللاعب مسيرته في عالم سباقات الشوارع وتعديل السيارات.",
+    title:"Need for Speed Underground 2",
+    platform:"PS2",
+    genre:"سباقات",
+    year:"2004",
+    description:"تعديل السيارات وسباقات الشوارع.",
+    story:"يبدأ اللاعب مسيرته في عالم سباقات الشوارع وتعديل السيارات."
 },
 
 {
-title:"Need for Speed Hot Pursuit 2",
-platform:"PS2",
-genre:"سباقات",
-year:"2002",
-description:"سباقات ومطاردات الشرطة.",
-story:"سباقات سريعة تتخللها مطاردات الشرطة.",
+    title:"Need for Speed Hot Pursuit 2",
+    platform:"PS2",
+    genre:"سباقات",
+    year:"2002",
+    description:"سباقات ومطاردات الشرطة.",
+    story:"سباقات سريعة تتخللها مطاردات الشرطة."
 },
 
 {
-title:"Midnight Club 3 DUB Edition",
-platform:"PS2",
-genre:"سباقات",
-year:"2005",
-description:"سباقات شوارع وتعديل السيارات.",
-story:"يشارك اللاعب في سباقات شوارع عبر مدن مختلفة.",
+    title:"Midnight Club 3 DUB Edition",
+    platform:"PS2",
+    genre:"سباقات",
+    year:"2005",
+    description:"سباقات شوارع وتعديل السيارات.",
+    story:"يشارك اللاعب في سباقات شوارع عبر مدن مختلفة."
 },
 
 {
-title:"Tekken Tag Tournament",
-platform:"PS2",
-genre:"قتال",
-year:"2000",
-description:"معارك قتالية بين شخصيات Tekken.",
-story:"تجمع اللعبة العديد من شخصيات سلسلة Tekken في معارك جماعية.",
+    title:"Tekken Tag Tournament",
+    platform:"PS2",
+    genre:"قتال",
+    year:"2000",
+    description:"معارك قتالية بين شخصيات Tekken.",
+    story:"تجمع اللعبة العديد من شخصيات سلسلة Tekken في معارك جماعية."
 },
 
 {
-title:"SoulCalibur II",
-platform:"PS2",
-genre:"قتال",
-year:"2003",
-description:"قتالات تعتمد على الأسلحة.",
-story:"تتنافس مجموعة من المقاتلين بحثًا عن السلاح الأسطوري.",
+    title:"SoulCalibur II",
+    platform:"PS2",
+    genre:"قتال",
+    year:"2003",
+    description:"قتالات تعتمد على الأسلحة.",
+    story:"تتنافس مجموعة من المقاتلين بحثًا عن السلاح الأسطوري."
 },
 
 {
-title:"SoulCalibur III",
-platform:"PS2",
-genre:"قتال",
-year:"2005",
-description:"جزء متقدم من سلسلة القتال.",
-story:"معارك متنوعة بين مجموعة كبيرة من المقاتلين.",
+    title:"SoulCalibur III",
+    platform:"PS2",
+    genre:"قتال",
+    year:"2005",
+    description:"جزء متقدم من سلسلة القتال.",
+    story:"معارك متنوعة بين مجموعة كبيرة من المقاتلين."
 },
 
 {
-title:"Dragon Ball Z Budokai Tenkaichi 3",
-platform:"PS2",
-genre:"قتال",
-year:"2007",
-description:"معارك Dragon Ball الشهيرة.",
-story:"تضم اللعبة عددًا كبيرًا من شخصيات عالم Dragon Ball ومعاركها.",
+    title:"Dragon Ball Z Budokai Tenkaichi 3",
+    platform:"PS2",
+    genre:"قتال",
+    year:"2007",
+    description:"معارك Dragon Ball الشهيرة.",
+    story:"تضم اللعبة عددًا كبيرًا من شخصيات عالم Dragon Ball ومعاركها."
 },
 
 {
-title:"Ratchet & Clank",
-platform:"PS2",
-genre:"أكشن ومغامرات",
-year:"2002",
-description:"مغامرة Ratchet وClank.",
-story:"ينطلق Ratchet وClank في مغامرة عبر الكواكب.",
+    title:"Ratchet & Clank",
+    platform:"PS2",
+    genre:"أكشن ومغامرات",
+    year:"2002",
+    description:"مغامرة Ratchet وClank.",
+    story:"ينطلق Ratchet وClank في مغامرة عبر الكواكب."
 },
 
 {
-title:"Ratchet & Clank Going Commando",
-platform:"PS2",
-genre:"أكشن ومغامرات",
-year:"2003",
-description:"مغامرة جديدة للثنائي.",
-story:"يواجه Ratchet وClank مجموعة جديدة من التحديات والأعداء.",
+    title:"Ratchet & Clank Going Commando",
+    platform:"PS2",
+    genre:"أكشن ومغامرات",
+    year:"2003",
+    description:"مغامرة جديدة للثنائي.",
+    story:"يواجه Ratchet وClank مجموعة جديدة من التحديات والأعداء."
 },
 
 {
-title:"Ratchet & Clank Up Your Arsenal",
-platform:"PS2",
-genre:"أكشن ومغامرات",
-year:"2004",
-description:"جزء مليء بالأسلحة والمغامرات.",
-story:"يواجه الثنائي تهديدًا جديدًا في مغامرة مليئة بالأحداث.",
+    title:"Ratchet & Clank Up Your Arsenal",
+    platform:"PS2",
+    genre:"أكشن ومغامرات",
+    year:"2004",
+    description:"جزء مليء بالأسلحة والمغامرات.",
+    story:"يواجه الثنائي تهديدًا جديدًا في مغامرة مليئة بالأحداث."
 },
 
 {
-title:"Jak and Daxter",
-platform:"PS2",
-genre:"منصات ومغامرات",
-year:"2001",
-description:"مغامرة Jak وDaxter.",
-story:"ينطلق Jak للبحث عن طريقة لإعادة صديقه Daxter إلى حالته الطبيعية.",
+    title:"Jak and Daxter",
+    platform:"PS2",
+    genre:"منصات ومغامرات",
+    year:"2001",
+    description:"مغامرة Jak وDaxter.",
+    story:"ينطلق Jak للبحث عن طريقة لإعادة صديقه Daxter إلى حالته الطبيعية."
 },
 
 {
-title:"Jak II",
-platform:"PS2",
-genre:"أكشن ومغامرات",
-year:"2003",
-description:"مغامرة أكبر في عالم Jak.",
-story:"يجد Jak نفسه في مدينة ضخمة ويبدأ رحلة مليئة بالمخاطر.",
+    title:"Jak II",
+    platform:"PS2",
+    genre:"أكشن ومغامرات",
+    year:"2003",
+    description:"مغامرة أكبر في عالم Jak.",
+    story:"يجد Jak نفسه في مدينة ضخمة ويبدأ رحلة مليئة بالمخاطر."
 },
 
 {
-title:"Jak 3",
-platform:"PS2",
-genre:"أكشن ومغامرات",
-year:"2004",
-description:"الفصل الثالث من مغامرة Jak.",
-story:"يواصل Jak مغامرته في عالم واسع مليء بالمهمات.",
+    title:"Jak 3",
+    platform:"PS2",
+    genre:"أكشن ومغامرات",
+    year:"2004",
+    description:"الفصل الثالث من مغامرة Jak.",
+    story:"يواصل Jak مغامرته في عالم واسع مليء بالمهمات."
 },
 
 {
-title:"Sly Cooper",
-platform:"PS2",
-genre:"منصات وتخفي",
-year:"2002",
-description:"مغامرات اللص الظريف Sly.",
-story:"يستخدم Sly مهاراته في التخفي والسرقة لاستعادة إرث عائلته.",
+    title:"Sly Cooper",
+    platform:"PS2",
+    genre:"منصات وتخفي",
+    year:"2002",
+    description:"مغامرات اللص الظريف Sly.",
+    story:"يستخدم Sly مهاراته في التخفي والسرقة لاستعادة إرث عائلته."
 },
 
 {
-title:"Sly 2 Band of Thieves",
-platform:"PS2",
-genre:"مغامرات",
-year:"2004",
-description:"مغامرة جماعية جديدة.",
-story:"يعمل Sly وفريقه معًا لتنفيذ مجموعة من الخطط.",
+    title:"Sly 2 Band of Thieves",
+    platform:"PS2",
+    genre:"مغامرات",
+    year:"2004",
+    description:"مغامرة جماعية جديدة.",
+    story:"يعمل Sly وفريقه معًا لتنفيذ مجموعة من الخطط."
 },
 
 {
-title:"Sly 3 Honor Among Thieves",
-platform:"PS2",
-genre:"مغامرات",
-year:"2005",
-description:"الفصل الثالث من السلسلة.",
-story:"يعود Sly وفريقه في مغامرة جديدة.",
+    title:"Sly 3 Honor Among Thieves",
+    platform:"PS2",
+    genre:"مغامرات",
+    year:"2005",
+    description:"الفصل الثالث من السلسلة.",
+    story:"يعود Sly وفريقه في مغامرة جديدة."
 },
 
 {
-title:"Prince of Persia The Sands of Time",
-platform:"PS2",
-genre:"أكشن ومغامرات",
-year:"2003",
-description:"مغامرة الأمير وسيفه الأسطوري.",
-story:"يستخدم الأمير قدراته للتعامل مع قوة رمل الزمن.",
+    title:"Prince of Persia The Sands of Time",
+    platform:"PS2",
+    genre:"أكشن ومغامرات",
+    year:"2003",
+    description:"مغامرة الأمير وسيفه الأسطوري.",
+    story:"يستخدم الأمير قدراته للتعامل مع قوة رمل الزمن."
 },
 
 {
-title:"Prince of Persia Warrior Within",
-platform:"PS2",
-genre:"أكشن ومغامرات",
-year:"2004",
-description:"مغامرة أكثر قتالية.",
-story:"يبدأ الأمير رحلة للهروب من مصيره ومطاردة غامضة.",
+    title:"Prince of Persia Warrior Within",
+    platform:"PS2",
+    genre:"أكشن ومغامرات",
+    year:"2004",
+    description:"مغامرة أكثر قتالية.",
+    story:"يبدأ الأمير رحلة للهروب من مصيره ومطاردة غامضة."
 },
 
 {
-title:"Spider-Man 2",
-platform:"PS2",
-genre:"أكشن",
-year:"2004",
-description:"تجربة Spider-Man في مدينة مفتوحة.",
-story:"يتحرك Spider-Man بحرية في المدينة ويواجه مجموعة من الأعداء.",
+    title:"Spider-Man 2",
+    platform:"PS2",
+    genre:"أكشن",
+    year:"2004",
+    description:"تجربة Spider-Man في مدينة مفتوحة.",
+    story:"يتحرك Spider-Man بحرية في المدينة ويواجه مجموعة من الأعداء."
 },
 
 {
-title:"The Simpsons Hit & Run",
-platform:"PS2",
-genre:"أكشن وقيادة",
-year:"2003",
-description:"عالم Simpsons في تجربة قيادة.",
-story:"يحقق أفراد عائلة Simpsons في أحداث غريبة داخل Springfield.",
+    title:"The Simpsons Hit & Run",
+    platform:"PS2",
+    genre:"أكشن وقيادة",
+    year:"2003",
+    description:"عالم Simpsons في تجربة قيادة.",
+    story:"يحقق أفراد عائلة Simpsons في أحداث غريبة داخل Springfield."
 },
 
 {
-title:"Bully",
-platform:"PS2",
-genre:"مغامرات وعالم مفتوح",
-year:"2006",
-description:"حياة طالب داخل مدرسة مليئة بالأحداث.",
-story:"يدخل Jimmy مدرسة جديدة ويواجه مجموعة من المواقف والمهمات.",
+    title:"Bully",
+    platform:"PS2",
+    genre:"مغامرات وعالم مفتوح",
+    year:"2006",
+    description:"حياة طالب داخل مدرسة مليئة بالأحداث.",
+    story:"يدخل Jimmy مدرسة جديدة ويواجه مجموعة من المواقف والمهمات."
 },
 
 {
-title:"The Warriors",
-platform:"PS2",
-genre:"أكشن",
-year:"2005",
-description:"مغامرات عصابات الشوارع.",
-story:"تدور الأحداث حول مجموعة من الشخصيات في مدينة مليئة بالمواجهات.",
+    title:"The Warriors",
+    platform:"PS2",
+    genre:"أكشن",
+    year:"2005",
+    description:"مغامرات عصابات الشوارع.",
+    story:"تدور الأحداث حول مجموعة من الشخصيات في مدينة مليئة بالمواجهات."
 },
 
 {
-title:"Black",
-platform:"PS2",
-genre:"تصويب وأكشن",
-year:"2006",
-description:"أكشن عسكري سريع.",
-story:"يخوض اللاعب مجموعة من المهمات القتالية.",
+    title:"Black",
+    platform:"PS2",
+    genre:"تصويب وأكشن",
+    year:"2006",
+    description:"أكشن عسكري سريع.",
+    story:"يخوض اللاعب مجموعة من المهمات القتالية."
 },
 
 {
-title:"Star Wars Battlefront II",
-platform:"PS2",
-genre:"أكشن",
-year:"2005",
-description:"معارك Star Wars واسعة.",
-story:"يشارك اللاعب في معارك مستوحاة من عالم Star Wars.",
+    title:"Star Wars Battlefront II",
+    platform:"PS2",
+    genre:"أكشن",
+    year:"2005",
+    description:"معارك Star Wars واسعة.",
+    story:"يشارك اللاعب في معارك مستوحاة من عالم Star Wars."
 },
 
 {
-title:"Okami",
-platform:"PS2",
-genre:"مغامرات",
-year:"2006",
-description:"مغامرة فنية مستوحاة من الأساطير اليابانية.",
-story:"تظهر Amaterasu في هيئة ذئب أبيض لإنقاذ العالم من الظلام.",
+    title:"Okami",
+    platform:"PS2",
+    genre:"مغامرات",
+    year:"2006",
+    description:"مغامرة فنية مستوحاة من الأساطير اليابانية.",
+    story:"تظهر Amaterasu في هيئة ذئب أبيض لإنقاذ العالم من الظلام."
 },
 
 {
-title:"Ico",
-platform:"PS2",
-genre:"مغامرات وألغاز",
-year:"2001",
-description:"مغامرة غامضة داخل قلعة.",
-story:"يحاول Ico الهروب من قلعة غامضة ومساعدة فتاة تدعى Yorda.",
+    title:"Ico",
+    platform:"PS2",
+    genre:"مغامرات وألغاز",
+    year:"2001",
+    description:"مغامرة غامضة داخل قلعة.",
+    story:"يحاول Ico الهروب من قلعة غامضة ومساعدة فتاة تدعى Yorda."
 },
 
 {
-title:"Katamari Damacy",
-platform:"PS2",
-genre:"ألغاز",
-year:"2004",
-description:"لعبة غريبة وممتعة تعتمد على جمع الأشياء.",
-story:"يتحكم اللاعب بكرة تكبر تدريجيًا عبر جمع الأشياء من البيئة.",
+    title:"Katamari Damacy",
+    platform:"PS2",
+    genre:"ألغاز",
+    year:"2004",
+    description:"لعبة غريبة وممتعة تعتمد على جمع الأشياء.",
+    story:"يتحكم اللاعب بكرة تكبر تدريجيًا عبر جمع الأشياء من البيئة."
 },
 
 {
-title:"SSX 3",
-platform:"PS2",
-genre:"رياضة وتزلج",
-year:"2003",
-description:"تزلج سريع ومليء بالحركات.",
-story:"يتنافس اللاعب في سباقات وتحديات التزلج.",
+    title:"SSX 3",
+    platform:"PS2",
+    genre:"رياضة وتزلج",
+    year:"2003",
+    description:"تزلج سريع ومليء بالحركات.",
+    story:"يتنافس اللاعب في سباقات وتحديات التزلج."
 },
 
 {
-title:"Tony Hawk's Underground",
-platform:"PS2",
-genre:"رياضة",
-year:"2003",
-description:"تجربة تزلج مليئة بالحركات.",
-story:"يبني اللاعب مسيرته في عالم التزلج ويشارك في تحديات مختلفة.",
+    title:"Tony Hawk's Underground",
+    platform:"PS2",
+    genre:"رياضة",
+    year:"2003",
+    description:"تجربة تزلج مليئة بالحركات.",
+    story:"يبني اللاعب مسيرته في عالم التزلج ويشارك في تحديات مختلفة."
 },
 
 {
-title:"TimeSplitters 2",
-platform:"PS2",
-genre:"أكشن",
-year:"2002",
-description:"أكشن ومغامرة عبر فترات زمنية.",
-story:"يسافر اللاعب عبر عصور مختلفة لمواجهة تهديدات متنوعة.",
+    title:"TimeSplitters 2",
+    platform:"PS2",
+    genre:"أكشن",
+    year:"2002",
+    description:"أكشن ومغامرة عبر فترات زمنية.",
+    story:"يسافر اللاعب عبر عصور مختلفة لمواجهة تهديدات متنوعة."
 },
 
 {
-title:"TimeSplitters Future Perfect",
-platform:"PS2",
-genre:"أكشن",
-year:"2005",
-description:"جزء جديد من سلسلة TimeSplitters.",
-story:"مغامرة تجمع بين السفر عبر الزمن والقتال.",
+    title:"TimeSplitters Future Perfect",
+    platform:"PS2",
+    genre:"أكشن",
+    year:"2005",
+    description:"جزء جديد من سلسلة TimeSplitters.",
+    story:"مغامرة تجمع بين السفر عبر الزمن والقتال."
 },
 
 {
-title:"Twisted Metal Black",
-platform:"PS2",
-genre:"سيارات وأكشن",
-year:"2001",
-description:"معارك سيارات مليئة بالإثارة.",
-story:"تتنافس مجموعة من السائقين في مواجهات سيارات مختلفة.",
+    title:"Twisted Metal Black",
+    platform:"PS2",
+    genre:"سيارات وأكشن",
+    year:"2001",
+    description:"معارك سيارات مليئة بالإثارة.",
+    story:"تتنافس مجموعة من السائقين في مواجهات سيارات مختلفة."
 },
 
 {
-title:"Ace Combat 5",
-platform:"PS2",
-genre:"طيران",
-year:"2004",
-description:"معارك جوية بطائرات مقاتلة.",
-story:"يشارك اللاعب في مجموعة من المهمات الجوية.",
+    title:"Ace Combat 5",
+    platform:"PS2",
+    genre:"طيران",
+    year:"2004",
+    description:"معارك جوية بطائرات مقاتلة.",
+    story:"يشارك اللاعب في مجموعة من المهمات الجوية."
 },
 
 {
-title:"Onimusha 3",
-platform:"PS2",
-genre:"أكشن ومغامرات",
-year:"2004",
-description:"مغامرة ساموراي مليئة بالأحداث.",
-story:"يواجه الأبطال أعداءً خارقين في مغامرة تجمع بين التاريخ والخيال.",
+    title:"Onimusha 3",
+    platform:"PS2",
+    genre:"أكشن ومغامرات",
+    year:"2004",
+    description:"مغامرة ساموراي مليئة بالأحداث.",
+    story:"يواجه الأبطال أعداءً خارقين في مغامرة تجمع بين التاريخ والخيال."
 },
 
 {
-title:"Odin Sphere",
-platform:"PS2",
-genre:"RPG وأكشن",
-year:"2007",
-description:"مغامرة RPG بأسلوب فني مميز.",
-story:"تتقاطع قصص عدة شخصيات في عالم مليء بالأساطير.",
+    title:"Odin Sphere",
+    platform:"PS2",
+    genre:"RPG وأكشن",
+    year:"2007",
+    description:"مغامرة RPG بأسلوب فني مميز.",
+    story:"تتقاطع قصص عدة شخصيات في عالم مليء بالأساطير."
 },
 
 {
-title:"Rogue Galaxy",
-platform:"PS2",
-genre:"RPG",
-year:"2005",
-description:"مغامرة RPG في الفضاء.",
-story:"ينطلق البطل في رحلة فضائية عبر عوالم وكواكب مختلفة.",
+    title:"Rogue Galaxy",
+    platform:"PS2",
+    genre:"RPG",
+    year:"2005",
+    description:"مغامرة RPG في الفضاء.",
+    story:"ينطلق البطل في رحلة فضائية عبر عوالم وكواكب مختلفة."
 },
 
 {
-title:"Dragon Quest VIII",
-platform:"PS2",
-genre:"RPG",
-year:"2004",
-description:"مغامرة RPG كلاسيكية.",
-story:"ينطلق البطل ورفاقه في رحلة لإنقاذ المملكة.",
+    title:"Dragon Quest VIII",
+    platform:"PS2",
+    genre:"RPG",
+    year:"2004",
+    description:"مغامرة RPG كلاسيكية.",
+    story:"ينطلق البطل ورفاقه في رحلة لإنقاذ المملكة."
 }
 
 ];
+
+
+/* =========================
+   نظام الصور التلقائي
+========================= */
+
+const coverCache = {};
+
+
+function fallbackImage(title){
+
+    return "https://placehold.co/600x800/111827/ffffff?text="
+        + encodeURIComponent(title);
+}
 
 
 function getImage(game){
@@ -1059,11 +1125,92 @@ function getImage(game){
         return game.image;
     }
 
-    return "https://placehold.co/600x800/111827/ffffff?text="
-        + encodeURIComponent("PS2\n" + game.title);
-
+    return fallbackImage(game.title);
 }
 
+
+async function findGameCover(game){
+
+    if(game.image){
+        return game.image;
+    }
+
+    if(coverCache[game.title]){
+        return coverCache[game.title];
+    }
+
+    try{
+
+        const apiURL =
+            "https://en.wikipedia.org/api/rest_v1/page/summary/"
+            + encodeURIComponent(game.title);
+
+        const response =
+            await fetch(apiURL);
+
+        if(!response.ok){
+            throw new Error("Cover not found");
+        }
+
+        const data =
+            await response.json();
+
+        if(
+            data.thumbnail &&
+            data.thumbnail.source
+        ){
+
+            coverCache[game.title] =
+                data.thumbnail.source;
+
+            return data.thumbnail.source;
+        }
+
+    }catch(error){
+
+        console.log(
+            "لم يتم العثور على غلاف:",
+            game.title
+        );
+
+    }
+
+    return fallbackImage(game.title);
+}
+
+
+async function loadCovers(){
+
+    const images =
+        document.querySelectorAll(
+            ".game-cover[data-game-title]"
+        );
+
+    for(const img of images){
+
+        const title =
+            img.dataset.gameTitle;
+
+        const game =
+            games.find(
+                g => g.title === title
+            );
+
+        if(!game){
+            continue;
+        }
+
+        const cover =
+            await findGameCover(game);
+
+        img.src = cover;
+    }
+}
+
+
+/* =========================
+   إنشاء بطاقة اللعبة
+========================= */
 
 function createGameCard(game){
 
@@ -1073,7 +1220,9 @@ function createGameCard(game){
         <img
             class="game-cover"
             src="${getImage(game)}"
+            data-game-title="${game.title}"
             alt="${game.title}"
+            onerror="this.src=fallbackImage(this.dataset.gameTitle)"
         >
 
         <div class="game-content">
@@ -1127,24 +1276,48 @@ function createGameCard(game){
 }
 
 
+/* =========================
+   فتح المنصة
+========================= */
+
 function openPlatform(platform){
 
-    document.getElementById("homePage").classList.add("hidden");
-    document.getElementById("platformPage").classList.remove("hidden");
+    document
+        .getElementById("homePage")
+        .classList.add("hidden");
 
-    document.getElementById("platformTitle").innerText =
+    document
+        .getElementById("platformPage")
+        .classList.remove("hidden");
+
+    document
+        .getElementById("platformTitle")
+        .innerText =
         "🎮 ألعاب " + platform;
 
     const container =
-        document.getElementById("platformGames");
+        document.getElementById(
+            "platformGames"
+        );
 
     if(platform === "PS2"){
 
         const ps2Games =
-            games.filter(game => game.platform === "PS2");
+            games.filter(
+                game => game.platform === "PS2"
+            );
 
         container.innerHTML =
-            ps2Games.map(createGameCard).join("");
+            ps2Games
+                .map(createGameCard)
+                .join("");
+
+        /*
+          ننتظر ظهور البطاقات ثم
+          نبدأ جلب الأغلفة تلقائيًا
+        */
+
+        loadCovers();
 
     }else{
 
@@ -1159,105 +1332,177 @@ function openPlatform(platform){
 }
 
 
+/* =========================
+   العودة للرئيسية
+========================= */
+
 function goHome(){
 
-    document.getElementById("platformPage").classList.add("hidden");
-    document.getElementById("homePage").classList.remove("hidden");
+    document
+        .getElementById("platformPage")
+        .classList.add("hidden");
 
-    document.getElementById("searchInput").value="";
-    document.getElementById("searchResults").innerHTML="";
+    document
+        .getElementById("homePage")
+        .classList.remove("hidden");
+
+    document
+        .getElementById("searchInput")
+        .value = "";
+
+    document
+        .getElementById("searchResults")
+        .innerHTML = "";
 
     window.scrollTo(0,0);
 }
 
 
+/* =========================
+   البحث
+========================= */
+
 function searchGames(){
 
     const text =
-        document.getElementById("searchInput")
-        .value
-        .toLowerCase()
-        .trim();
+        document
+            .getElementById("searchInput")
+            .value
+            .toLowerCase()
+            .trim();
 
     const results =
-        document.getElementById("searchResults");
+        document.getElementById(
+            "searchResults"
+        );
 
     if(!text){
 
-        results.innerHTML="";
+        results.innerHTML = "";
+
         return;
     }
 
     const found =
-        games.filter(game =>
-            game.title.toLowerCase().includes(text)
+        games.filter(
+            game =>
+                game.title
+                    .toLowerCase()
+                    .includes(text)
         );
 
     if(found.length === 0){
 
         results.innerHTML =
-            `<div class="no-results">❌ ما لگينا لعبة بهذا الاسم</div>`;
+            `
+            <div class="no-results">
+                ❌ ما لگينا لعبة بهذا الاسم
+            </div>
+            `;
 
         return;
     }
 
     results.innerHTML = `
-        <h2 class="section-title">🔎 نتائج البحث</h2>
+        <h2 class="section-title">
+            🔎 نتائج البحث
+        </h2>
+
         <div class="games-grid">
-            ${found.map(createGameCard).join("")}
+
+            ${found
+                .map(createGameCard)
+                .join("")}
+
         </div>
     `;
+
+    loadCovers();
 }
 
+
+/* =========================
+   معلومات اللعبة
+========================= */
 
 function showInfo(game){
 
-    document.getElementById("modalImage").src =
-        getImage(game);
+    document
+        .getElementById("modalImage")
+        .src = getImage(game);
 
-    document.getElementById("modalTitle").innerText =
-        game.title;
+    document
+        .getElementById("modalTitle")
+        .innerText = game.title;
 
-    document.getElementById("modalStory").innerText =
-        game.story || game.description;
+    document
+        .getElementById("modalStory")
+        .innerText =
+        game.story ||
+        game.description;
 
-    document.getElementById("modalPlatform").innerText =
-        game.platform;
+    document
+        .getElementById("modalPlatform")
+        .innerText = game.platform;
 
-    document.getElementById("modalGenre").innerText =
-        game.genre;
+    document
+        .getElementById("modalGenre")
+        .innerText = game.genre;
 
-    document.getElementById("modalYear").innerText =
-        game.year;
+    document
+        .getElementById("modalYear")
+        .innerText = game.year;
 
-    document.getElementById("modalSize").innerText =
-        game.size || "يحدد حسب النسخة";
+    document
+        .getElementById("modalSize")
+        .innerText =
+        game.size ||
+        "يحدد حسب النسخة";
 
-    document.getElementById("infoModal")
+    document
+        .getElementById("infoModal")
         .classList.add("show");
+
 }
 
 
+/* =========================
+   إغلاق المعلومات
+========================= */
+
 function closeInfo(){
 
-    document.getElementById("infoModal")
+    document
+        .getElementById("infoModal")
         .classList.remove("show");
 }
 
 
 function closeOutside(event){
 
-    if(event.target.id === "infoModal"){
+    if(
+        event.target.id ===
+        "infoModal"
+    ){
+
         closeInfo();
+
     }
 }
 
+
+/* =========================
+   زر التحميل
+========================= */
 
 function downloadGame(){
 
     alert(
         "📥 رابط التحميل الرسمي غير متوفر حاليًا لهذه اللعبة."
-        + "\n\nنضيف روابط المصادر القانونية والمجانية فقط."
+        +
+        "\n\n"
+        +
+        "نضيف روابط المصادر القانونية والمجانية فقط."
     );
 
 }
