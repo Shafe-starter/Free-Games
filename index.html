@@ -44,12 +44,39 @@ header {
     border: 1px solid #333;
     background: #1f2937;
     color: white;
+    box-sizing: border-box;
 }
 
 .container {
     width: 90%;
     max-width: 1000px;
     margin: auto;
+}
+
+/* أزرار المنصات */
+
+.categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.category {
+    background: #111827;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    border: 1px solid #1f2937;
+    transition: 0.2s;
+}
+
+.category:hover {
+    background: #1f2937;
+    transform: translateY(-3px);
 }
 
 .games {
@@ -75,6 +102,22 @@ button {
     padding: 12px 25px;
     border-radius: 8px;
     font-weight: bold;
+    cursor: pointer;
+}
+
+.back {
+    background: #374151;
+    color: white;
+    margin-bottom: 25px;
+}
+
+.platform-page {
+    display: none;
+}
+
+.platform-title {
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 </style>
@@ -87,6 +130,10 @@ button {
 🎮 Free Games
 </header>
 
+<!-- الصفحة الرئيسية -->
+
+<div id="home">
+
 <section class="hero">
 
 <h1>🎮 ألعاب مجانية للجميع</h1>
@@ -98,19 +145,41 @@ button {
 </section>
 
 <div class="container">
+
 <h2>🎮 اختر منصتك</h2>
 
 <div class="categories">
 
-    <div class="category">📱 Android</div>
-    <div class="category">🟢 PSP</div>
-    <div class="category">🔵 PS1</div>
-    <div class="category">🟣 PS2</div>
-    <div class="category">🔴 Nintendo</div>
-    <div class="category">💻 PC</div>
-    <div class="category">⚙️ Emulators</div>
+    <div class="category" onclick="openPlatform('Android')">
+        📱 Android
+    </div>
+
+    <div class="category" onclick="openPlatform('PSP')">
+        🟢 PSP
+    </div>
+
+    <div class="category" onclick="openPlatform('PS1')">
+        🔵 PS1
+    </div>
+
+    <div class="category" onclick="openPlatform('PS2')">
+        🟣 PS2
+    </div>
+
+    <div class="category" onclick="openPlatform('Nintendo')">
+        🔴 Nintendo
+    </div>
+
+    <div class="category" onclick="openPlatform('PC')">
+        💻 PC
+    </div>
+
+    <div class="category" onclick="openPlatform('Emulators')">
+        ⚙️ Emulators
+    </div>
 
 </div>
+
 <h2>🔥 ألعاب مميزة</h2>
 
 <div class="games">
@@ -146,6 +215,65 @@ button {
 </div>
 
 </div>
+
+</div>
+
+
+<!-- صفحات المنصات -->
+
+<div id="platformPage" class="platform-page">
+
+<div class="container">
+
+<br>
+
+<button class="back" onclick="goHome()">⬅️ الرئيسية</button>
+
+<h1 id="platformTitle" class="platform-title"></h1>
+
+<div class="games">
+
+<div class="card">
+<div class="icon">🎮</div>
+<h3 id="gameName">ألعاب المنصة</h3>
+<p>سيتم إضافة الألعاب هنا</p>
+<button>📥 تحميل</button>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+function openPlatform(platform) {
+
+    document.getElementById("home").style.display = "none";
+
+    document.getElementById("platformPage").style.display = "block";
+
+    document.getElementById("platformTitle").innerText =
+        "🎮 ألعاب " + platform;
+
+    document.getElementById("gameName").innerText =
+        "ألعاب " + platform;
+
+    window.scrollTo(0, 0);
+}
+
+function goHome() {
+
+    document.getElementById("platformPage").style.display = "none";
+
+    document.getElementById("home").style.display = "block";
+
+    window.scrollTo(0, 0);
+}
+
+</script>
 
 </body>
 </html>
