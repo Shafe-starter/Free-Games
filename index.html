@@ -425,45 +425,29 @@ footer{
 
             <div class="free-card">
                 <h3>🐧 SuperTux</h3>
-                <p>
-                    لعبة منصات مجانية ومفتوحة المصدر.
-                </p>
-                <a
-                    href="https://github.com/SuperTux/supertux/releases"
-                    target="_blank"
-                >
+                <p>لعبة منصات مجانية ومفتوحة المصدر.</p>
+                <a href="https://github.com/SuperTux/supertux/releases" target="_blank">
                     📥 المصدر الرسمي
                 </a>
             </div>
 
             <div class="free-card">
                 <h3>⚔️ Battle for Wesnoth</h3>
-                <p>
-                    لعبة استراتيجية مجانية ومفتوحة المصدر.
-                </p>
-                <a
-                    href="https://wesnoth.itch.io/battle-for-wesnoth"
-                    target="_blank"
-                >
+                <p>لعبة استراتيجية مجانية ومفتوحة المصدر.</p>
+                <a href="https://wesnoth.itch.io/battle-for-wesnoth" target="_blank">
                     📥 المصدر الرسمي
                 </a>
             </div>
 
             <div class="free-card">
                 <h3>🏛️ 0 A.D.</h3>
-                <p>
-                    لعبة استراتيجية تاريخية مجانية ومفتوحة المصدر.
-                </p>
-                <a
-                    href="https://play0ad.com/download/"
-                    target="_blank"
-                >
+                <p>لعبة استراتيجية تاريخية مجانية ومفتوحة المصدر.</p>
+                <a href="https://play0ad.com/download/" target="_blank">
                     📥 المصدر الرسمي
                 </a>
             </div>
 
         </div>
-
     </div>
 
 </section>
@@ -484,17 +468,11 @@ footer{
 </div>
 
 
-<div
-    id="infoModal"
-    class="modal"
-    onclick="closeOutside(event)"
->
+<div id="infoModal" class="modal" onclick="closeOutside(event)">
 
     <div class="modal-box">
 
-        <button class="close" onclick="closeInfo()">
-            ×
-        </button>
+        <button class="close" onclick="closeInfo()">×</button>
 
         <img
             id="modalImage"
@@ -505,10 +483,7 @@ footer{
 
         <h2 id="modalTitle"></h2>
 
-        <p
-            id="modalStory"
-            class="modal-story"
-        ></p>
+        <p id="modalStory" class="modal-story"></p>
 
         <div class="modal-info">
 
@@ -552,9 +527,9 @@ footer{
 
 const games = [
 
-/* =========================
-   الألعاب الخمس الأصلية
-========================= */
+/* =====================================================
+   PS2 — الألعاب الموجودة عندنا سابقًا
+===================================================== */
 
 {
     title:"God of War",
@@ -611,10 +586,7 @@ const games = [
     image:"4d54f38bbc54bc578ea0f510831bf7e5.jpg"
 },
 
-
-/* =========================
-   45 لعبة إضافية
-========================= */
+/* PS2 باقي الألعاب */
 
 {
     title:"God of War II",
@@ -1100,14 +1072,537 @@ const games = [
     year:"2004",
     description:"مغامرة RPG كلاسيكية.",
     story:"ينطلق البطل ورفاقه في رحلة لإنقاذ المملكة."
+},
+
+
+/* =====================================================
+   PS1 — 50 لعبة
+===================================================== */
+
+{
+    title:"Final Fantasy VII",
+    platform:"PS1",
+    genre:"RPG",
+    year:"1997",
+    description:"رحلة Cloud وأصدقائه ضد Shinra.",
+    story:"ينضم Cloud إلى مجموعة من المقاتلين في رحلة لإنقاذ الكوكب."
+},
+
+{
+    title:"Final Fantasy VIII",
+    platform:"PS1",
+    genre:"RPG",
+    year:"1999",
+    description:"مغامرة Squall في عالم مليء بالأحداث.",
+    story:"يخوض Squall رحلة مع مجموعة من الشخصيات لمواجهة تهديدات عالمهم."
+},
+
+{
+    title:"Final Fantasy IX",
+    platform:"PS1",
+    genre:"RPG",
+    year:"2000",
+    description:"مغامرة Zidane وأصدقائه.",
+    story:"تبدأ مغامرة Zidane بعد عملية اختطاف تقوده إلى أحداث أكبر."
+},
+
+{
+    title:"Metal Gear Solid",
+    platform:"PS1",
+    genre:"تخفي وأكشن",
+    year:"1998",
+    description:"مغامرة تجسس شهيرة.",
+    story:"يعود Solid Snake إلى مهمة خطيرة في منشأة عسكرية."
+},
+
+{
+    title:"Resident Evil",
+    platform:"PS1",
+    genre:"رعب وبقاء",
+    year:"1996",
+    description:"بداية سلسلة الرعب الشهيرة.",
+    story:"يحقق فريق من القوات الخاصة في أحداث غامضة داخل قصر معزول."
+},
+
+{
+    title:"Resident Evil 2",
+    platform:"PS1",
+    genre:"رعب وبقاء",
+    year:"1998",
+    description:"مغامرة Leon وClaire في Raccoon City.",
+    story:"يحاول Leon وClaire النجاة واكتشاف ما حدث للمدينة."
+},
+
+{
+    title:"Resident Evil 3 Nemesis",
+    platform:"PS1",
+    genre:"رعب وبقاء",
+    year:"1999",
+    description:"مواجهة Jill مع Nemesis.",
+    story:"تحاول Jill النجاة من كارثة اجتاحت Raccoon City."
+},
+
+{
+    title:"Dino Crisis",
+    platform:"PS1",
+    genre:"رعب وأكشن",
+    year:"1999",
+    description:"مواجهة الديناصورات داخل منشأة غامضة.",
+    story:"تصل Regina إلى منشأة مليئة بالديناصورات وتحاول كشف الحقيقة."
+},
+
+{
+    title:"Crash Bandicoot",
+    platform:"PS1",
+    genre:"منصات",
+    year:"1996",
+    description:"مغامرة Crash الأولى.",
+    story:"يحاول Crash إنقاذ أصدقائه ومواجهة أعدائه عبر مراحل متنوعة."
+},
+
+{
+    title:"Crash Bandicoot 2 Cortex Strikes Back",
+    platform:"PS1",
+    genre:"منصات",
+    year:"1997",
+    description:"مغامرة جديدة لـ Crash.",
+    story:"يعود Crash في رحلة جديدة عبر مجموعة من المراحل."
+},
+
+{
+    title:"Crash Bandicoot Warped",
+    platform:"PS1",
+    genre:"منصات",
+    year:"1998",
+    description:"مغامرة Crash عبر الزمن.",
+    story:"يسافر Crash عبر فترات زمنية مختلفة لمواجهة Cortex."
+},
+
+{
+    title:"Crash Team Racing",
+    platform:"PS1",
+    genre:"سباقات",
+    year:"1999",
+    description:"سباقات كارت ممتعة بشخصيات Crash.",
+    story:"يتنافس Crash والشخصيات الأخرى في سباقات لإنقاذ كوكبهم."
+},
+
+{
+    title:"Spyro the Dragon",
+    platform:"PS1",
+    genre:"منصات ومغامرات",
+    year:"1998",
+    description:"مغامرة التنين Spyro.",
+    story:"ينطلق Spyro لإنقاذ التنانين وتحطيم خطط أعدائه."
+},
+
+{
+    title:"Spyro 2 Ripto's Rage",
+    platform:"PS1",
+    genre:"منصات ومغامرات",
+    year:"1999",
+    description:"مغامرة جديدة لـ Spyro.",
+    story:"يصل Spyro إلى عالم جديد ويواجه Ripto وأتباعه."
+},
+
+{
+    title:"Spyro Year of the Dragon",
+    platform:"PS1",
+    genre:"منصات ومغامرات",
+    year:"2000",
+    description:"مغامرة Spyro الثالثة.",
+    story:"يخوض Spyro مغامرة جديدة لاستعادة البيض المسروق."
+},
+
+{
+    title:"Tekken 3",
+    platform:"PS1",
+    genre:"قتال",
+    year:"1998",
+    description:"واحدة من أشهر ألعاب القتال على PS1.",
+    story:"تجمع اللعبة مجموعة كبيرة من المقاتلين في بطولة قتالية."
+},
+
+{
+    title:"Tekken 2",
+    platform:"PS1",
+    genre:"قتال",
+    year:"1996",
+    description:"جزء كلاسيكي من سلسلة Tekken.",
+    story:"تعود شخصيات السلسلة للمشاركة في مواجهات قتالية."
+},
+
+{
+    title:"Street Fighter Alpha 3",
+    platform:"PS1",
+    genre:"قتال",
+    year:"1998",
+    description:"معارك Street Fighter الكلاسيكية.",
+    story:"تضم اللعبة مجموعة كبيرة من شخصيات Street Fighter."
+},
+
+{
+    title:"Soul Blade",
+    platform:"PS1",
+    genre:"قتال",
+    year:"1996",
+    description:"قتال بالأسلحة من سلسلة Soul.",
+    story:"يتنافس المقاتلون للحصول على السيف الأسطوري."
+},
+
+{
+    title:"Castlevania Symphony of the Night",
+    platform:"PS1",
+    genre:"أكشن وRPG",
+    year:"1997",
+    description:"مغامرة Alucard داخل القلعة.",
+    story:"يدخل Alucard قلعة Dracula ويواجه مجموعة من الأعداء."
+},
+
+{
+    title:"Silent Hill",
+    platform:"PS1",
+    genre:"رعب",
+    year:"1999",
+    description:"بداية سلسلة Silent Hill.",
+    story:"يصل Harry Mason إلى مدينة غامضة بحثًا عن ابنته."
+},
+
+{
+    title:"Oddworld Abe's Oddysee",
+    platform:"PS1",
+    genre:"منصات وألغاز",
+    year:"1997",
+    description:"مغامرة Abe للهروب من المصنع.",
+    story:"يحاول Abe إنقاذ زملائه واكتشاف حقيقة المكان الذي يعمل فيه."
+},
+
+{
+    title:"Oddworld Abe's Exoddus",
+    platform:"PS1",
+    genre:"منصات وألغاز",
+    year:"1998",
+    description:"مغامرة جديدة لـ Abe.",
+    story:"يبدأ Abe مهمة جديدة لإنقاذ شعبه من خطر جديد."
+},
+
+{
+    title:"Tomb Raider",
+    platform:"PS1",
+    genre:"أكشن ومغامرات",
+    year:"1996",
+    description:"مغامرات Lara Croft.",
+    story:"تسافر Lara حول العالم بحثًا عن آثار وأسرار قديمة."
+},
+
+{
+    title:"Tomb Raider II",
+    platform:"PS1",
+    genre:"أكشن ومغامرات",
+    year:"1997",
+    description:"مغامرة جديدة لـ Lara Croft.",
+    story:"تبحث Lara عن خنجر أسطوري وسط مغامرات وألغاز."
+},
+
+{
+    title:"Tomb Raider III",
+    platform:"PS1",
+    genre:"أكشن ومغامرات",
+    year:"1998",
+    description:"رحلة جديدة حول العالم.",
+    story:"تخوض Lara مغامرة جديدة عبر مناطق مختلفة."
+},
+
+{
+    title:"Tony Hawk's Pro Skater",
+    platform:"PS1",
+    genre:"رياضة",
+    year:"1999",
+    description:"تزلج وحركات احترافية.",
+    story:"يشارك اللاعب في تحديات التزلج ويحاول تحقيق أعلى النتائج."
+},
+
+{
+    title:"Tony Hawk's Pro Skater 2",
+    platform:"PS1",
+    genre:"رياضة",
+    year:"2000",
+    description:"تجربة تزلج أكثر تطورًا.",
+    story:"يشارك اللاعب في مجموعة من تحديات التزلج والمراحل."
+},
+
+{
+    title:"Gran Turismo",
+    platform:"PS1",
+    genre:"سباقات",
+    year:"1997",
+    description:"محاكاة سباقات السيارات الشهيرة.",
+    story:"يخوض اللاعب سباقات متنوعة ويجمع السيارات ويطور مهاراته."
+},
+
+{
+    title:"Gran Turismo 2",
+    platform:"PS1",
+    genre:"سباقات",
+    year:"1999",
+    description:"جزء أكبر من سلسلة السباقات.",
+    story:"تقدم اللعبة عددًا كبيرًا من السيارات والحلبات."
+},
+
+{
+    title:"Wipeout 2097",
+    platform:"PS1",
+    genre:"سباقات",
+    year:"1996",
+    description:"سباقات مستقبلية سريعة.",
+    story:"يتنافس اللاعب في سباقات مستقبلية باستخدام مركبات مضادة للجاذبية."
+},
+
+{
+    title:"Ridge Racer Type 4",
+    platform:"PS1",
+    genre:"سباقات",
+    year:"1998",
+    description:"سباقات أركيد كلاسيكية.",
+    story:"يتنافس اللاعب في مجموعة من السباقات والمنافسات."
+},
+
+{
+    title:"Driver",
+    platform:"PS1",
+    genre:"قيادة وأكشن",
+    year:"1999",
+    description:"مطاردات ومهمات قيادة.",
+    story:"يعمل اللاعب كشرطي متخفٍ وينفذ مجموعة من مهمات القيادة."
+},
+
+{
+    title:"Driver 2",
+    platform:"PS1",
+    genre:"قيادة وأكشن",
+    year:"2000",
+    description:"مغامرة قيادة في مدن متعددة.",
+    story:"ينتقل اللاعب بين مدن مختلفة لتنفيذ مهمات ومطاردات."
+},
+
+{
+    title:"GTA 2",
+    platform:"PS1",
+    genre:"عالم مفتوح",
+    year:"1999",
+    description:"عالم GTA من منظور علوي.",
+    story:"ينفذ اللاعب مهمات مختلفة داخل مدينة تسيطر عليها عصابات متعددة."
+},
+
+{
+    title:"Syphon Filter",
+    platform:"PS1",
+    genre:"أكشن وتصويب",
+    year:"1999",
+    description:"مغامرة تجسس وأكشن.",
+    story:"يخوض Gabe Logan مهمات خطيرة حول العالم."
+},
+
+{
+    title:"Syphon Filter 2",
+    platform:"PS1",
+    genre:"أكشن وتصويب",
+    year:"2000",
+    description:"تكملة مغامرة Gabe Logan.",
+    story:"تستمر مهمات التجسس والمواجهة ضد خصوم جدد."
+},
+
+{
+    title:"Medal of Honor",
+    platform:"PS1",
+    genre:"تصويب وأكشن",
+    year:"1999",
+    description:"مهمات عسكرية في الحرب العالمية الثانية.",
+    story:"ينفذ اللاعب مجموعة من المهمات العسكرية خلف خطوط العدو."
+},
+
+{
+    title:"Medal of Honor Underground",
+    platform:"PS1",
+    genre:"تصويب وأكشن",
+    year:"2000",
+    description:"مغامرة عسكرية جديدة.",
+    story:"يشارك اللاعب في مهمات مختلفة خلال الحرب العالمية الثانية."
+},
+
+{
+    title:"Resident Evil Survivor",
+    platform:"PS1",
+    genre:"رعب وتصويب",
+    year:"2000",
+    description:"تجربة مختلفة من Resident Evil.",
+    story:"يواجه اللاعب أحداثًا غامضة وأعداء داخل عالم Resident Evil."
+},
+
+{
+    title:"Parasite Eve",
+    platform:"PS1",
+    genre:"RPG ورعب",
+    year:"1998",
+    description:"مغامرة Aya Brea.",
+    story:"تحاول Aya إيقاف تهديد غامض بعد أحداث غير طبيعية في نيويورك."
+},
+
+{
+    title:"Parasite Eve II",
+    platform:"PS1",
+    genre:"RPG وأكشن",
+    year:"1999",
+    description:"تكملة مغامرة Aya.",
+    story:"تواصل Aya مواجهة أحداث ومخلوقات غامضة."
+},
+
+{
+    title:"Final Fantasy Tactics",
+    platform:"PS1",
+    genre:"RPG تكتيكي",
+    year:"1997",
+    description:"معارك استراتيجية وأدوار.",
+    story:"يخوض Ramza رحلة طويلة وسط صراعات سياسية وحروب."
+},
+
+{
+    title:"Vagrant Story",
+    platform:"PS1",
+    genre:"RPG وأكشن",
+    year:"2000",
+    description:"RPG غامضة وعميقة.",
+    story:"يصل Ashley Riot إلى مدينة غامضة للتحقيق في أحداث خطيرة."
+},
+
+{
+    title:"Chrono Cross",
+    platform:"PS1",
+    genre:"RPG",
+    year:"1999",
+    description:"مغامرة عبر عوالم وأبعاد مختلفة.",
+    story:"يكتشف Serge وجود عوالم متوازية ويبدأ رحلة لمعرفة الحقيقة."
+},
+
+{
+    title:"Xenogears",
+    platform:"PS1",
+    genre:"RPG",
+    year:"1998",
+    description:"RPG بقصة خيالية واسعة.",
+    story:"يدخل Fei في أحداث معقدة مرتبطة بالروبوتات والحروب."
+},
+
+{
+    title:"Suikoden II",
+    platform:"PS1",
+    genre:"RPG",
+    year:"1998",
+    description:"مغامرة RPG وحروب.",
+    story:"يجد البطل نفسه وسط حرب كبيرة وصراع سياسي."
+},
+
+{
+    title:"Legend of Dragoon",
+    platform:"PS1",
+    genre:"RPG",
+    year:"1999",
+    description:"رحلة Dart وأصدقائه.",
+    story:"ينطلق Dart في رحلة طويلة مليئة بالمواجهات والأسرار."
+},
+
+{
+    title:"Rayman",
+    platform:"PS1",
+    genre:"منصات",
+    year:"1995",
+    description:"مغامرة Rayman الكلاسيكية.",
+    story:"يحاول Rayman إنقاذ العالم من الأعداء عبر مجموعة من المراحل."
+},
+
+{
+    title:"Mega Man X4",
+    platform:"PS1",
+    genre:"أكشن ومنصات",
+    year:"1997",
+    description:"معارك وأسلحة وقدرات متنوعة.",
+    story:"يخوض Mega Man X وZero سلسلة من المعارك ضد أعداء مختلفين."
+},
+
+{
+    title:"Castlevania Chronicles",
+    platform:"PS1",
+    genre:"أكشن",
+    year:"2001",
+    description:"مغامرة كلاسيكية من Castlevania.",
+    story:"يواجه اللاعب مجموعة من الأعداء داخل عالم القلعة."
+},
+
+{
+    title:"Dino Crisis 2",
+    platform:"PS1",
+    genre:"أكشن ورعب",
+    year:"2000",
+    description:"مواجهة الديناصورات بشكل أكثر سرعة.",
+    story:"تعود Regina إلى مهمة جديدة وسط عالم مليء بالديناصورات."
+},
+
+{
+    title:"Klonoa Door to Phantomile",
+    platform:"PS1",
+    genre:"منصات",
+    year:"1997",
+    description:"مغامرة Klonoa في عالم خيالي.",
+    story:"يستكشف Klonoa عالمًا غريبًا ويحاول إنقاذه من الخطر."
+},
+
+{
+    title:"Twisted Metal 2",
+    platform:"PS1",
+    genre:"سيارات وأكشن",
+    year:"1996",
+    description:"معارك سيارات وأسلحة.",
+    story:"يتنافس السائقون في مواجهات سيارات عبر مدن مختلفة."
+},
+
+{
+    title:"Harvest Moon Back to Nature",
+    platform:"PS1",
+    genre:"محاكاة ومغامرات",
+    year:"1999",
+    description:"إدارة مزرعة وحياة ريفية.",
+    story:"يبدأ اللاعب حياة جديدة في مزرعة ويحاول تطويرها وبناء علاقاته."
+},
+
+{
+    title:"Ape Escape",
+    platform:"PS1",
+    genre:"منصات ومغامرات",
+    year:"1999",
+    description:"مطاردة القرود باستخدام أدوات متنوعة.",
+    story:"يحاول Spike إيقاف القرود التي أصبحت خطرة بعد حصولها على أجهزة خاصة."
+},
+
+{
+    title:"The Legend of Dragoon",
+    platform:"PS1",
+    genre:"RPG",
+    year:"1999",
+    description:"رحلة ملحمية مليئة بالمعارك.",
+    story:"يبدأ Dart رحلة للبحث عن الحقيقة ومواجهة قوى خطيرة."
 }
+
+
+/* =====================================================
+   نهاية الألعاب
+===================================================== */
 
 ];
 
 
-/* =========================
+/* =====================================================
    نظام الصور التلقائي
-========================= */
+===================================================== */
 
 const coverCache = {};
 
@@ -1208,9 +1703,9 @@ async function loadCovers(){
 }
 
 
-/* =========================
+/* =====================================================
    إنشاء بطاقة اللعبة
-========================= */
+===================================================== */
 
 function createGameCard(game){
 
@@ -1276,9 +1771,9 @@ function createGameCard(game){
 }
 
 
-/* =========================
+/* =====================================================
    فتح المنصة
-========================= */
+===================================================== */
 
 function openPlatform(platform){
 
@@ -1300,22 +1795,26 @@ function openPlatform(platform){
             "platformGames"
         );
 
-    if(platform === "PS2"){
 
-        const ps2Games =
+    /*
+       الآن PS1 و PS2 يشتغلن بنفس النظام
+    */
+
+    if(
+        platform === "PS1" ||
+        platform === "PS2"
+    ){
+
+        const platformGames =
             games.filter(
-                game => game.platform === "PS2"
+                game =>
+                    game.platform === platform
             );
 
         container.innerHTML =
-            ps2Games
+            platformGames
                 .map(createGameCard)
                 .join("");
-
-        /*
-          ننتظر ظهور البطاقات ثم
-          نبدأ جلب الأغلفة تلقائيًا
-        */
 
         loadCovers();
 
@@ -1332,9 +1831,9 @@ function openPlatform(platform){
 }
 
 
-/* =========================
+/* =====================================================
    العودة للرئيسية
-========================= */
+===================================================== */
 
 function goHome(){
 
@@ -1358,9 +1857,9 @@ function goHome(){
 }
 
 
-/* =========================
+/* =====================================================
    البحث
-========================= */
+===================================================== */
 
 function searchGames(){
 
@@ -1421,9 +1920,9 @@ function searchGames(){
 }
 
 
-/* =========================
+/* =====================================================
    معلومات اللعبة
-========================= */
+===================================================== */
 
 function showInfo(game){
 
@@ -1462,13 +1961,12 @@ function showInfo(game){
     document
         .getElementById("infoModal")
         .classList.add("show");
-
 }
 
 
-/* =========================
+/* =====================================================
    إغلاق المعلومات
-========================= */
+===================================================== */
 
 function closeInfo(){
 
@@ -1491,9 +1989,9 @@ function closeOutside(event){
 }
 
 
-/* =========================
+/* =====================================================
    زر التحميل
-========================= */
+===================================================== */
 
 function downloadGame(){
 
