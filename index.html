@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<title>Free Games</title>
+<title>العب وخلص 🎮</title>
 
 <style>
+
+/* =====================================================
+   التصميم العام
+===================================================== */
 
 *{
 box-sizing:border-box;
@@ -17,19 +20,44 @@ padding:0
 
 body{
 font-family:Arial,Tahoma,sans-serif;
-background:#0b0f19;
-color:white
+background:
+linear-gradient(
+135deg,
+#f8fafc 0%,
+#eef2ff 50%,
+#f8fafc 100%
+);
+color:#111827;
+min-height:100vh
 }
 
 header{
-background:#111827;
-padding:20px;
+background:
+linear-gradient(
+135deg,
+#ffffff,
+#eef2ff
+);
+padding:22px 15px;
 text-align:center;
-border-bottom:1px solid #263044
+border-bottom:2px solid #e5e7eb;
+box-shadow:0 3px 15px rgba(0,0,0,.06);
+position:sticky;
+top:0;
+z-index:100
 }
 
 header h1{
-font-size:28px
+font-size:32px;
+font-weight:900;
+color:#111827;
+letter-spacing:.5px
+}
+
+header p{
+margin-top:6px;
+color:#6b7280;
+font-size:14px
 }
 
 .container{
@@ -38,35 +66,52 @@ max-width:1200px;
 margin:auto
 }
 
+/* =====================================================
+   الواجهة الرئيسية
+===================================================== */
+
 .hero{
 text-align:center;
-padding:35px 10px 20px
+padding:45px 10px 20px
 }
 
 .hero h2{
-font-size:30px;
-margin-bottom:10px
+font-size:32px;
+margin-bottom:10px;
+color:#111827
 }
 
 .hero p{
-color:#9ca3af
+color:#6b7280;
+font-size:16px
 }
 
 .search-box{
-margin:20px auto;
-max-width:600px
+margin:25px auto;
+max-width:650px
 }
 
 .search-box input{
 width:100%;
-padding:15px;
-border-radius:12px;
-border:1px solid #374151;
-background:#111827;
-color:white;
+padding:16px 18px;
+border-radius:15px;
+border:2px solid #e5e7eb;
+background:#ffffff;
+color:#111827;
 font-size:16px;
-outline:none
+outline:none;
+box-shadow:0 5px 18px rgba(0,0,0,.05);
+transition:.2s
 }
+
+.search-box input:focus{
+border-color:#6366f1;
+box-shadow:0 5px 20px rgba(99,102,241,.15)
+}
+
+/* =====================================================
+   المنصات
+===================================================== */
 
 .platforms{
 display:grid;
@@ -76,25 +121,39 @@ margin:25px 0
 }
 
 .platforms button{
-padding:15px 10px;
-border:none;
-border-radius:12px;
-background:#1f2937;
-color:white;
+padding:16px 10px;
+border:1px solid #e5e7eb;
+border-radius:14px;
+background:#ffffff;
+color:#111827;
 font-size:16px;
+font-weight:bold;
 cursor:pointer;
-transition:.2s
+transition:.2s;
+box-shadow:0 4px 12px rgba(0,0,0,.05)
 }
 
 .platforms button:hover{
-transform:translateY(-2px);
-background:#374151
+transform:translateY(-3px);
+background:#6366f1;
+color:white;
+border-color:#6366f1;
+box-shadow:0 8px 20px rgba(99,102,241,.25)
 }
 
+/* =====================================================
+   العناوين
+===================================================== */
+
 .section-title{
-margin:30px 0 18px;
-font-size:24px
+margin:35px 0 18px;
+font-size:25px;
+color:#111827
 }
+
+/* =====================================================
+   الألعاب
+===================================================== */
 
 .games-grid{
 display:grid;
@@ -103,23 +162,26 @@ gap:18px
 }
 
 .game-card{
-background:#111827;
-border:1px solid #263044;
-border-radius:16px;
+background:#ffffff;
+border:1px solid #e5e7eb;
+border-radius:17px;
 overflow:hidden;
-transition:.2s
+transition:.25s;
+box-shadow:0 5px 18px rgba(0,0,0,.06)
 }
 
 .game-card:hover{
-transform:translateY(-4px);
-border-color:#4b5563
+transform:translateY(-5px);
+border-color:#c7d2fe;
+box-shadow:0 12px 25px rgba(0,0,0,.1)
 }
 
 .game-cover{
 width:100%;
 height:290px;
 object-fit:cover;
-background:#1f2937
+background:#e5e7eb;
+display:block
 }
 
 .game-content{
@@ -128,11 +190,12 @@ padding:15px
 
 .game-content h3{
 font-size:19px;
-margin-bottom:8px
+margin-bottom:8px;
+color:#111827
 }
 
 .game-content p{
-color:#9ca3af;
+color:#6b7280;
 font-size:14px;
 line-height:1.6;
 min-height:45px
@@ -146,12 +209,12 @@ margin:12px 0
 }
 
 .info-box{
-background:#1f2937;
+background:#f3f4f6;
 padding:8px;
 border-radius:8px;
 font-size:12px;
 text-align:center;
-color:#d1d5db
+color:#4b5563
 }
 
 .card-buttons{
@@ -162,22 +225,36 @@ gap:8px
 .card-buttons button{
 flex:1;
 border:none;
-border-radius:9px;
+border-radius:10px;
 padding:11px 5px;
 cursor:pointer;
 text-align:center;
-font-size:14px
+font-size:14px;
+font-weight:bold;
+transition:.2s
 }
 
 .info-btn{
-background:#374151;
-color:white
+background:#e5e7eb;
+color:#111827
+}
+
+.info-btn:hover{
+background:#d1d5db
 }
 
 .download-btn{
-background:#2563eb;
+background:#4f46e5;
 color:white
 }
+
+.download-btn:hover{
+background:#4338ca
+}
+
+/* =====================================================
+   الألعاب المجانية
+===================================================== */
 
 .free-section{
 margin-top:45px;
@@ -185,10 +262,11 @@ padding-bottom:30px
 }
 
 .free-card{
-background:#111827;
-border:1px solid #263044;
+background:#ffffff;
+border:1px solid #e5e7eb;
 padding:20px;
-border-radius:16px
+border-radius:16px;
+box-shadow:0 5px 18px rgba(0,0,0,.05)
 }
 
 .free-card h3{
@@ -196,7 +274,7 @@ margin-bottom:8px
 }
 
 .free-card p{
-color:#9ca3af;
+color:#6b7280;
 margin-bottom:15px
 }
 
@@ -207,18 +285,32 @@ color:white;
 text-decoration:none;
 padding:12px;
 border-radius:9px;
-text-align:center
+text-align:center;
+font-weight:bold
 }
 
+.free-card a:hover{
+background:#15803d
+}
+
+/* =====================================================
+   زر الرجوع
+===================================================== */
+
 .back-btn{
-background:#374151;
+background:#111827;
 color:white;
 border:none;
 padding:12px 20px;
 border-radius:10px;
 cursor:pointer;
-margin-bottom:20px;
-font-size:15px
+margin:25px 0 20px;
+font-size:15px;
+font-weight:bold
+}
+
+.back-btn:hover{
+background:#374151
 }
 
 .hidden{
@@ -227,39 +319,18 @@ display:none
 
 .no-results{
 text-align:center;
-color:#9ca3af;
+color:#6b7280;
 padding:30px
 }
 
-.loading{
-text-align:center;
-padding:30px;
-color:#9ca3af;
-font-size:16px
-}
-
-.load-more{
-display:block;
-margin:25px auto;
-padding:13px 25px;
-border:none;
-border-radius:10px;
-background:#2563eb;
-color:white;
-font-size:15px;
-cursor:pointer
-}
-
-.stats{
-text-align:center;
-color:#9ca3af;
-margin:10px 0 20px
-}
+/* =====================================================
+   النافذة
+===================================================== */
 
 .modal{
 position:fixed;
 inset:0;
-background:rgba(0,0,0,.8);
+background:rgba(15,23,42,.75);
 display:none;
 align-items:center;
 justify-content:center;
@@ -276,12 +347,12 @@ width:100%;
 max-width:600px;
 max-height:90vh;
 overflow:auto;
-background:#111827;
-border:1px solid #374151;
-border-radius:18px;
+background:#ffffff;
+border-radius:20px;
 padding:20px;
 position:relative;
-animation:pop .2s ease
+animation:pop .2s ease;
+box-shadow:0 20px 60px rgba(0,0,0,.25)
 }
 
 @keyframes pop{
@@ -299,7 +370,7 @@ opacity:1
 position:absolute;
 top:10px;
 left:12px;
-background:#374151;
+background:#111827;
 color:white;
 border:none;
 width:35px;
@@ -315,16 +386,18 @@ height:240px;
 object-fit:cover;
 display:block;
 margin:10px auto 20px;
-border-radius:12px
+border-radius:12px;
+background:#e5e7eb
 }
 
 .modal-box h2{
 text-align:center;
-margin-bottom:15px
+margin-bottom:15px;
+color:#111827
 }
 
 .modal-story{
-color:#d1d5db;
+color:#4b5563;
 line-height:1.8;
 margin-bottom:20px
 }
@@ -336,22 +409,44 @@ gap:10px
 }
 
 .modal-info div{
-background:#1f2937;
+background:#f3f4f6;
 padding:12px;
 border-radius:10px;
 text-align:center;
-font-size:14px
+font-size:14px;
+color:#374151
 }
+
+/* =====================================================
+   الفوتر
+===================================================== */
 
 footer{
 text-align:center;
-padding:30px 10px;
+padding:35px 10px;
 color:#6b7280;
-border-top:1px solid #1f2937;
-margin-top:30px
+border-top:1px solid #e5e7eb;
+margin-top:40px;
+background:#ffffff
 }
 
+/* =====================================================
+   الهاتف
+===================================================== */
+
 @media(max-width:500px){
+
+header h1{
+font-size:27px
+}
+
+.hero{
+padding-top:35px
+}
+
+.hero h2{
+font-size:26px
+}
 
 .games-grid{
 grid-template-columns:repeat(2,1fr);
@@ -374,30 +469,77 @@ font-size:16px
 font-size:12px
 }
 
+.card-buttons{
+gap:5px
+}
+
 .card-buttons button{
 font-size:12px;
 padding:9px 3px
 }
 
+.platforms{
+grid-template-columns:repeat(2,1fr)
+}
+
+.platforms button{
+font-size:14px;
+padding:14px 5px
+}
+
+}
+
+/* =====================================================
+   شريط التمرير
+===================================================== */
+
+::-webkit-scrollbar{
+width:9px
+}
+
+::-webkit-scrollbar-track{
+background:#f1f5f9
+}
+
+::-webkit-scrollbar-thumb{
+background:#c7d2fe;
+border-radius:10px
+}
+
+::-webkit-scrollbar-thumb:hover{
+background:#818cf8
 }
 
 </style>
-
 </head>
 
 <body>
 
+<!-- =====================================================
+     الهيدر
+===================================================== -->
+
 <header>
-<h1>🎮 Free Games</h1>
+
+<h1>🎮 العب وخلص</h1>
+
+<p>
+مكتبة ألعابك... اختار، العب، وخلص 😂
+</p>
+
 </header>
 
 <div class="container">
+
+<!-- =====================================================
+     الصفحة الرئيسية
+===================================================== -->
 
 <section id="homePage">
 
 <div class="hero">
 
-<h2>🎮 ألعاب مجانية للجميع</h2>
+<h2>🎮 أهلاً بيك بموقع العب وخلص</h2>
 
 <p>
 اختار منصتك واستكشف الألعاب
@@ -405,16 +547,23 @@ padding:9px 3px
 
 </div>
 
+<!-- =====================================================
+     البحث
+===================================================== -->
+
 <div class="search-box">
 
 <input
 type="text"
 id="searchInput"
 placeholder="🔎 ابحث عن لعبة..."
-oninput="searchGames()"
->
+oninput="searchGames()">
 
 </div>
+
+<!-- =====================================================
+     المنصات
+===================================================== -->
 
 <div class="platforms">
 
@@ -423,7 +572,7 @@ oninput="searchGames()"
 </button>
 
 <button onclick="openPlatform('PPSSPP')">
-🎮 PSP
+🎮 PPSSPP
 </button>
 
 <button onclick="openPlatform('PS1')">
@@ -450,6 +599,10 @@ oninput="searchGames()"
 
 <div id="searchResults"></div>
 
+<!-- =====================================================
+     ألعاب مجانية وقانونية
+===================================================== -->
+
 <div class="free-section">
 
 <h2 class="section-title">
@@ -468,12 +621,14 @@ oninput="searchGames()"
 
 <a
 href="https://github.com/SuperTux/supertux/releases"
-target="_blank"
->
+target="_blank">
+
 📥 المصدر الرسمي
+
 </a>
 
 </div>
+
 
 <div class="free-card">
 
@@ -485,12 +640,14 @@ target="_blank"
 
 <a
 href="https://wesnoth.itch.io/battle-for-wesnoth"
-target="_blank"
->
+target="_blank">
+
 📥 المصدر الرسمي
+
 </a>
 
 </div>
+
 
 <div class="free-card">
 
@@ -502,9 +659,10 @@ target="_blank"
 
 <a
 href="https://play0ad.com/download/"
-target="_blank"
->
+target="_blank">
+
 📥 المصدر الرسمي
+
 </a>
 
 </div>
@@ -516,107 +674,108 @@ target="_blank"
 </section>
 
 
+<!-- =====================================================
+     صفحة المنصة
+===================================================== -->
+
 <section
 id="platformPage"
-class="hidden"
->
+class="hidden">
 
 <button
 class="back-btn"
-onclick="goHome()"
->
+onclick="goHome()">
+
 ⬅️ رجوع
+
 </button>
 
 <h2
 id="platformTitle"
-class="section-title"
-></h2>
-
-<div
-id="platformStats"
-class="stats"
-></div>
+class="section-title">
+</h2>
 
 <div
 id="platformGames"
-class="games-grid"
-></div>
-
-<div
-id="loading"
-class="loading hidden"
->
-⏳ جاري تحميل الألعاب...
+class="games-grid">
 </div>
-
-<button
-id="loadMoreButton"
-class="load-more hidden"
-onclick="loadMoreGames()"
->
-⬇️ تحميل المزيد
-</button>
 
 </section>
 
 </div>
 
 
+<!-- =====================================================
+     نافذة معلومات اللعبة
+===================================================== -->
+
 <div
 id="infoModal"
 class="modal"
-onclick="closeOutside(event)"
->
+onclick="closeOutside(event)">
 
 <div class="modal-box">
 
 <button
 class="close"
-onclick="closeInfo()"
->
+onclick="closeInfo()">
+
 ×
+
 </button>
 
 <img
 id="modalImage"
 class="modal-cover"
 src=""
-alt=""
->
+alt="">
 
 <h2 id="modalTitle"></h2>
 
 <p
 id="modalStory"
-class="modal-story"
-></p>
+class="modal-story">
+</p>
 
 <div class="modal-info">
 
 <div>
+
 🎮 المنصة
+
 <br>
+
 <b id="modalPlatform"></b>
+
 </div>
 
 <div>
+
 🎯 النوع
+
 <br>
+
 <b id="modalGenre"></b>
+
 </div>
 
 <div>
+
 📅 السنة
+
 <br>
+
 <b id="modalYear"></b>
+
 </div>
 
 <div>
+
 💾 الحجم
+
 <br>
+
 <b id="modalSize"></b>
-</div>
 
 </div>
 
@@ -624,10 +783,20 @@ class="modal-story"
 
 </div>
 
+</div>
+
+
+<!-- =====================================================
+     الفوتر
+===================================================== -->
 
 <footer>
 
-🎮 Free Games — موقع ألعاب تجريبي
+🎮 العب وخلص — موقع ألعاب تجريبي
+
+<br><br>
+
+😂 العب وخلص... لا تسأل شلون
 
 </footer>
 
@@ -635,10 +804,14 @@ class="modal-story"
 <script>
 
 /* =====================================================
-   قاعدة الألعاب الموجودة عندك
+   قاعدة الألعاب
 ===================================================== */
 
 const games = [
+
+/* =====================================================
+   PS2
+===================================================== */
 
 {
 title:"God of War",
@@ -795,12 +968,30 @@ story:"ينضم Tidus إلى Yuna في رحلة لإنقاذ Spira."
 },
 
 {
+title:"Final Fantasy X-2",
+platform:"PS2",
+genre:"RPG",
+year:"2003",
+description:"مغامرة جديدة في عالم Spira.",
+story:"تبدأ Yuna رحلة جديدة."
+},
+
+{
 title:"Kingdom Hearts",
 platform:"PS2",
 genre:"RPG وأكشن",
 year:"2002",
 description:"عالم يجمع Disney وFinal Fantasy.",
 story:"يسافر Sora بين عوالم مختلفة."
+},
+
+{
+title:"Kingdom Hearts II",
+platform:"PS2",
+genre:"RPG وأكشن",
+year:"2005",
+description:"تكملة مغامرة Sora.",
+story:"يعود Sora في مغامرة جديدة."
 },
 
 {
@@ -822,6 +1013,15 @@ story:"تجمع اللعبة السرعة والتصادم."
 },
 
 {
+title:"Burnout Revenge",
+platform:"PS2",
+genre:"سباقات",
+year:"2005",
+description:"سباقات أركيد سريعة.",
+story:"سباقات مليئة بالمواجهات."
+},
+
+{
 title:"Need for Speed Underground 2",
 platform:"PS2",
 genre:"سباقات",
@@ -831,12 +1031,48 @@ story:"يبدأ اللاعب مسيرته في سباقات الشوارع."
 },
 
 {
+title:"Need for Speed Hot Pursuit 2",
+platform:"PS2",
+genre:"سباقات",
+year:"2002",
+description:"سباقات ومطاردات الشرطة.",
+story:"سباقات سريعة ومطاردات."
+},
+
+{
+title:"Midnight Club 3 DUB Edition",
+platform:"PS2",
+genre:"سباقات",
+year:"2005",
+description:"سباقات شوارع وتعديل السيارات.",
+story:"يشارك اللاعب في سباقات شوارع."
+},
+
+{
 title:"Tekken Tag Tournament",
 platform:"PS2",
 genre:"قتال",
 year:"2000",
 description:"معارك بين شخصيات Tekken.",
 story:"تجمع اللعبة العديد من شخصيات Tekken."
+},
+
+{
+title:"SoulCalibur II",
+platform:"PS2",
+genre:"قتال",
+year:"2003",
+description:"قتالات تعتمد على الأسلحة.",
+story:"يتنافس المقاتلون على السلاح الأسطوري."
+},
+
+{
+title:"SoulCalibur III",
+platform:"PS2",
+genre:"قتال",
+year:"2005",
+description:"جزء متقدم من سلسلة القتال.",
+story:"معارك متنوعة."
 },
 
 {
@@ -858,12 +1094,75 @@ story:"ينطلق الثنائي في مغامرة عبر الكواكب."
 },
 
 {
+title:"Ratchet & Clank Going Commando",
+platform:"PS2",
+genre:"أكشن ومغامرات",
+year:"2003",
+description:"مغامرة جديدة للثنائي.",
+story:"يواجه Ratchet وClank تحديات جديدة."
+},
+
+{
+title:"Ratchet & Clank Up Your Arsenal",
+platform:"PS2",
+genre:"أكشن ومغامرات",
+year:"2004",
+description:"مغامرة مليئة بالأسلحة.",
+story:"يواجه الثنائي تهديدًا جديدًا."
+},
+
+{
 title:"Jak and Daxter",
 platform:"PS2",
 genre:"منصات ومغامرات",
 year:"2001",
 description:"مغامرة Jak وDaxter.",
 story:"ينطلق Jak للبحث عن طريقة لإنقاذ Daxter."
+},
+
+{
+title:"Jak II",
+platform:"PS2",
+genre:"أكشن ومغامرات",
+year:"2003",
+description:"مغامرة أكبر.",
+story:"يجد Jak نفسه في مدينة ضخمة."
+},
+
+{
+title:"Jak 3",
+platform:"PS2",
+genre:"أكشن ومغامرات",
+year:"2004",
+description:"الفصل الثالث.",
+story:"يواصل Jak مغامرته."
+},
+
+{
+title:"Sly Cooper",
+platform:"PS2",
+genre:"منصات وتخفي",
+year:"2002",
+description:"مغامرات اللص Sly.",
+story:"يستخدم Sly مهاراته لاستعادة إرث عائلته."
+},
+
+{
+title:"Sly 2 Band of Thieves",
+platform:"PS2",
+genre:"مغامرات",
+year:"2004",
+description:"مغامرة جماعية.",
+story:"يعمل Sly وفريقه معًا."
+},
+
+{
+title:"Sly 3 Honor Among Thieves",
+platform:"PS2",
+genre:"مغامرات",
+year:"2005",
+description:"الفصل الثالث.",
+story:"يعود Sly وفريقه."
 },
 
 {
@@ -876,6 +1175,15 @@ story:"يستخدم الأمير قوة رمال الزمن."
 },
 
 {
+title:"Prince of Persia Warrior Within",
+platform:"PS2",
+genre:"أكشن ومغامرات",
+year:"2004",
+description:"مغامرة أكثر قتالية.",
+story:"يحاول الأمير الهروب من مصيره."
+},
+
+{
 title:"Spider-Man 2",
 platform:"PS2",
 genre:"أكشن",
@@ -885,12 +1193,30 @@ story:"يتحرك Spider-Man بحرية في المدينة."
 },
 
 {
+title:"The Simpsons Hit & Run",
+platform:"PS2",
+genre:"أكشن وقيادة",
+year:"2003",
+description:"عالم Simpsons في تجربة قيادة.",
+story:"يحقق أفراد العائلة في أحداث غريبة."
+},
+
+{
 title:"Bully",
 platform:"PS2",
 genre:"مغامرات وعالم مفتوح",
 year:"2006",
 description:"حياة طالب داخل مدرسة.",
 story:"يدخل Jimmy مدرسة جديدة."
+},
+
+{
+title:"The Warriors",
+platform:"PS2",
+genre:"أكشن",
+year:"2005",
+description:"مغامرات عصابات الشوارع.",
+story:"مجموعة من الشخصيات في مدينة مليئة بالمواجهات."
 },
 
 {
@@ -930,6 +1256,87 @@ story:"يحاول Ico الهروب من قلعة غامضة."
 },
 
 {
+title:"Katamari Damacy",
+platform:"PS2",
+genre:"ألغاز",
+year:"2004",
+description:"جمع الأشياء في كرة تكبر تدريجيًا.",
+story:"يجمع اللاعب الأشياء من البيئة."
+},
+
+{
+title:"SSX 3",
+platform:"PS2",
+genre:"رياضة وتزلج",
+year:"2003",
+description:"تزلج سريع.",
+story:"يتنافس اللاعب في تحديات التزلج."
+},
+
+{
+title:"Tony Hawk's Underground",
+platform:"PS2",
+genre:"رياضة",
+year:"2003",
+description:"تزلج وحركات احترافية.",
+story:"يبني اللاعب مسيرته."
+},
+
+{
+title:"TimeSplitters 2",
+platform:"PS2",
+genre:"أكشن",
+year:"2002",
+description:"أكشن عبر فترات زمنية.",
+story:"يسافر اللاعب عبر عصور مختلفة."
+},
+
+{
+title:"TimeSplitters Future Perfect",
+platform:"PS2",
+genre:"أكشن",
+year:"2005",
+description:"سفر عبر الزمن.",
+story:"مغامرة تجمع السفر عبر الزمن والقتال."
+},
+
+{
+title:"Twisted Metal Black",
+platform:"PS2",
+genre:"سيارات وأكشن",
+year:"2001",
+description:"معارك سيارات.",
+story:"يتنافس السائقون في مواجهات مختلفة."
+},
+
+{
+title:"Ace Combat 5",
+platform:"PS2",
+genre:"طيران",
+year:"2004",
+description:"معارك جوية.",
+story:"مجموعة من المهمات الجوية."
+},
+
+{
+title:"Onimusha 3",
+platform:"PS2",
+genre:"أكشن ومغامرات",
+year:"2004",
+description:"مغامرة ساموراي.",
+story:"يواجه الأبطال أعداءً خارقين."
+},
+
+{
+title:"Odin Sphere",
+platform:"PS2",
+genre:"RPG وأكشن",
+year:"2007",
+description:"مغامرة RPG فنية.",
+story:"تتقاطع قصص عدة شخصيات."
+},
+
+{
 title:"Rogue Galaxy",
 platform:"PS2",
 genre:"RPG",
@@ -938,8 +1345,18 @@ description:"مغامرة RPG في الفضاء.",
 story:"ينطلق البطل عبر عوالم وكواكب."
 },
 
+{
+title:"Dragon Quest VIII",
+platform:"PS2",
+genre:"RPG",
+year:"2004",
+description:"مغامرة RPG كلاسيكية.",
+story:"ينطلق البطل ورفاقه لإنقاذ المملكة."
+},
 
-/* PS1 */
+/* =====================================================
+   PS1
+===================================================== */
 
 {
 title:"Final Fantasy VII",
@@ -1005,6 +1422,15 @@ story:"تحاول Jill النجاة من الكارثة."
 },
 
 {
+title:"Dino Crisis",
+platform:"PS1",
+genre:"رعب وأكشن",
+year:"1999",
+description:"مواجهة الديناصورات.",
+story:"تصل Regina إلى منشأة مليئة بالديناصورات."
+},
+
+{
 title:"Crash Bandicoot",
 platform:"PS1",
 genre:"منصات",
@@ -1050,12 +1476,57 @@ story:"ينطلق Spyro لإنقاذ التنانين."
 },
 
 {
+title:"Spyro 2 Ripto's Rage",
+platform:"PS1",
+genre:"منصات ومغامرات",
+year:"1999",
+description:"مغامرة جديدة.",
+story:"يواجه Spyro Ripto."
+},
+
+{
+title:"Spyro Year of the Dragon",
+platform:"PS1",
+genre:"منصات ومغامرات",
+year:"2000",
+description:"المغامرة الثالثة.",
+story:"يخوض Spyro مغامرة لاستعادة البيض."
+},
+
+{
 title:"Tekken 3",
 platform:"PS1",
 genre:"قتال",
 year:"1998",
 description:"من أشهر ألعاب القتال.",
 story:"مجموعة كبيرة من المقاتلين."
+},
+
+{
+title:"Tekken 2",
+platform:"PS1",
+genre:"قتال",
+year:"1996",
+description:"جزء كلاسيكي.",
+story:"تعود شخصيات السلسلة للمواجهات."
+},
+
+{
+title:"Street Fighter Alpha 3",
+platform:"PS1",
+genre:"قتال",
+year:"1998",
+description:"معارك Street Fighter.",
+story:"مجموعة كبيرة من الشخصيات."
+},
+
+{
+title:"Soul Blade",
+platform:"PS1",
+genre:"قتال",
+year:"1996",
+description:"قتال بالأسلحة.",
+story:"يتنافس المقاتلون للحصول على السيف."
 },
 
 {
@@ -1077,6 +1548,24 @@ story:"يصل Harry Mason إلى مدينة غامضة."
 },
 
 {
+title:"Oddworld Abe's Oddysee",
+platform:"PS1",
+genre:"منصات وألغاز",
+year:"1997",
+description:"مغامرة Abe.",
+story:"يحاول Abe إنقاذ زملائه."
+},
+
+{
+title:"Oddworld Abe's Exoddus",
+platform:"PS1",
+genre:"منصات وألغاز",
+year:"1998",
+description:"مغامرة جديدة.",
+story:"يبدأ Abe مهمة جديدة."
+},
+
+{
 title:"Tomb Raider",
 platform:"PS1",
 genre:"أكشن ومغامرات",
@@ -1092,6 +1581,24 @@ genre:"أكشن ومغامرات",
 year:"1997",
 description:"مغامرة جديدة.",
 story:"تبحث Lara عن خنجر أسطوري."
+},
+
+{
+title:"Tomb Raider III",
+platform:"PS1",
+genre:"أكشن ومغامرات",
+year:"1998",
+description:"رحلة حول العالم.",
+story:"تخوض Lara مغامرة جديدة."
+},
+
+{
+title:"Tony Hawk's Pro Skater",
+platform:"PS1",
+genre:"رياضة",
+year:"1999",
+description:"تزلج وحركات احترافية.",
+story:"يشارك اللاعب في تحديات التزلج."
 },
 
 {
@@ -1122,12 +1629,48 @@ story:"عدد كبير من السيارات والحلبات."
 },
 
 {
+title:"Wipeout 2097",
+platform:"PS1",
+genre:"سباقات",
+year:"1996",
+description:"سباقات مستقبلية.",
+story:"يتنافس اللاعب في سباقات مستقبلية."
+},
+
+{
+title:"Ridge Racer Type 4",
+platform:"PS1",
+genre:"سباقات",
+year:"1998",
+description:"سباقات أركيد.",
+story:"يتنافس اللاعب في مجموعة من السباقات."
+},
+
+{
 title:"Driver",
 platform:"PS1",
 genre:"قيادة وأكشن",
 year:"1999",
 description:"مطاردات ومهمات قيادة.",
 story:"يعمل اللاعب كشرطي متخفٍ."
+},
+
+{
+title:"Driver 2",
+platform:"PS1",
+genre:"قيادة وأكشن",
+year:"2000",
+description:"مغامرة قيادة.",
+story:"ينتقل اللاعب بين مدن مختلفة."
+},
+
+{
+title:"GTA 2",
+platform:"PS1",
+genre:"عالم مفتوح",
+year:"1999",
+description:"عالم GTA من منظور علوي.",
+story:"ينفذ اللاعب مهمات مختلفة."
 },
 
 {
@@ -1140,12 +1683,48 @@ story:"يخوض Gabe Logan مهمات خطيرة."
 },
 
 {
+title:"Syphon Filter 2",
+platform:"PS1",
+genre:"أكشن وتصويب",
+year:"2000",
+description:"تكملة المغامرة.",
+story:"تستمر مهمات التجسس."
+},
+
+{
+title:"Medal of Honor",
+platform:"PS1",
+genre:"تصويب وأكشن",
+year:"1999",
+description:"مهمات عسكرية.",
+story:"ينفذ اللاعب مهمات خلف خطوط العدو."
+},
+
+{
+title:"Medal of Honor Underground",
+platform:"PS1",
+genre:"تصويب وأكشن",
+year:"2000",
+description:"مغامرة عسكرية.",
+story:"مهمات مختلفة خلال الحرب."
+},
+
+{
 title:"Parasite Eve",
 platform:"PS1",
 genre:"RPG ورعب",
 year:"1998",
 description:"مغامرة Aya Brea.",
 story:"تحاول Aya إيقاف تهديد غامض."
+},
+
+{
+title:"Parasite Eve II",
+platform:"PS1",
+genre:"RPG وأكشن",
+year:"1999",
+description:"تكملة مغامرة Aya.",
+story:"تواصل Aya مواجهة أحداث غامضة."
 },
 
 {
@@ -1158,12 +1737,39 @@ story:"رحلة Ramza وسط الحروب."
 },
 
 {
+title:"Vagrant Story",
+platform:"PS1",
+genre:"RPG وأكشن",
+year:"2000",
+description:"RPG غامضة.",
+story:"يصل Ashley Riot إلى مدينة غامضة."
+},
+
+{
 title:"Chrono Cross",
 platform:"PS1",
 genre:"RPG",
 year:"1999",
 description:"مغامرة عبر عوالم مختلفة.",
 story:"يكتشف Serge وجود عوالم متوازية."
+},
+
+{
+title:"Xenogears",
+platform:"PS1",
+genre:"RPG",
+year:"1998",
+description:"RPG بقصة واسعة.",
+story:"يدخل Fei في أحداث مرتبطة بالروبوتات."
+},
+
+{
+title:"Suikoden II",
+platform:"PS1",
+genre:"RPG",
+year:"1998",
+description:"مغامرة RPG وحروب.",
+story:"يجد البطل نفسه وسط حرب كبيرة."
 },
 
 {
@@ -1185,6 +1791,51 @@ story:"يحاول Rayman إنقاذ العالم."
 },
 
 {
+title:"Mega Man X4",
+platform:"PS1",
+genre:"أكشن ومنصات",
+year:"1997",
+description:"معارك وقدرات متنوعة.",
+story:"يخوض X وZero سلسلة من المعارك."
+},
+
+{
+title:"Dino Crisis 2",
+platform:"PS1",
+genre:"أكشن ورعب",
+year:"2000",
+description:"مواجهة الديناصورات.",
+story:"تعود Regina إلى مهمة جديدة."
+},
+
+{
+title:"Klonoa Door to Phantomile",
+platform:"PS1",
+genre:"منصات",
+year:"1997",
+description:"مغامرة Klonoa.",
+story:"يستكشف Klonoa عالمًا غريبًا."
+},
+
+{
+title:"Twisted Metal 2",
+platform:"PS1",
+genre:"سيارات وأكشن",
+year:"1996",
+description:"معارك سيارات.",
+story:"يتنافس السائقون في مواجهات مختلفة."
+},
+
+{
+title:"Harvest Moon Back to Nature",
+platform:"PS1",
+genre:"محاكاة",
+year:"1999",
+description:"إدارة مزرعة.",
+story:"يبدأ اللاعب حياة جديدة في مزرعة."
+},
+
+{
 title:"Ape Escape",
 platform:"PS1",
 genre:"منصات ومغامرات",
@@ -1193,8 +1844,9 @@ description:"مطاردة القرود.",
 story:"يحاول Spike إيقاف القرود."
 },
 
-
-/* PSP */
+/* =====================================================
+   PSP
+===================================================== */
 
 {
 title:"God of War Chains of Olympus",
@@ -1248,6 +1900,15 @@ genre:"تخفي وأكشن",
 year:"2010",
 description:"مغامرة Snake على PSP.",
 story:"يقود Snake مجموعة من الجنود في مهمة جديدة."
+},
+
+{
+title:"Metal Gear Solid Portable Ops",
+platform:"PPSSPP",
+genre:"تخفي وأكشن",
+year:"2006",
+description:"مغامرة تجسس.",
+story:"يخوض Snake مهمة عسكرية خطيرة."
 },
 
 {
@@ -1305,6 +1966,15 @@ story:"يتحكم اللاعب بعدة شخصيات في قصة واحدة."
 },
 
 {
+title:"Final Fantasy Tactics The War of the Lions",
+platform:"PPSSPP",
+genre:"RPG تكتيكي",
+year:"2007",
+description:"نسخة PSP من Final Fantasy Tactics.",
+story:"صراعات وحروب سياسية واسعة."
+},
+
+{
 title:"Monster Hunter Freedom Unite",
 platform:"PPSSPP",
 genre:"أكشن وRPG",
@@ -1320,6 +1990,15 @@ genre:"أكشن وRPG",
 year:"2006",
 description:"صيد الوحوش.",
 story:"مغامرات وصيد وحوش مختلفة."
+},
+
+{
+title:"Monster Hunter 3rd",
+platform:"PPSSPP",
+genre:"أكشن وRPG",
+year:"2010",
+description:"صيد الوحوش في عالم جديد.",
+story:"يواجه اللاعب مجموعة متنوعة من الوحوش."
 },
 
 {
@@ -1368,6 +2047,15 @@ story:"سباقات وتعديل سيارات."
 },
 
 {
+title:"Need for Speed ProStreet",
+platform:"PPSSPP",
+genre:"سباقات",
+year:"2008",
+description:"سباقات احترافية.",
+story:"يتنافس اللاعب في بطولات مختلفة."
+},
+
+{
 title:"Midnight Club 3 DUB Edition",
 platform:"PPSSPP",
 genre:"سباقات",
@@ -1401,6 +2089,33 @@ genre:"سباقات",
 year:"2009",
 description:"محاكاة سيارات على PSP.",
 story:"مجموعة ضخمة من السيارات."
+},
+
+{
+title:"Ridge Racer",
+platform:"PPSSPP",
+genre:"سباقات",
+year:"2004",
+description:"سباقات أركيد.",
+story:"سباقات سريعة على حلبات متنوعة."
+},
+
+{
+title:"Ridge Racer 2",
+platform:"PPSSPP",
+genre:"سباقات",
+year:"2006",
+description:"جزء جديد من Ridge Racer.",
+story:"سباقات أركيد سريعة."
+},
+
+{
+title:"Tekken 5 Dark Resurrection",
+platform:"PPSSPP",
+genre:"قتال",
+year:"2006",
+description:"قتال سريع.",
+story:"مواجهات بين شخصيات Tekken."
 },
 
 {
@@ -1449,6 +2164,33 @@ story:"معارك وشخصيات من عالم Naruto."
 },
 
 {
+title:"Naruto Shippuden Legends Akatsuki Rising",
+platform:"PPSSPP",
+genre:"أكشن",
+year:"2009",
+description:"مغامرة Naruto.",
+story:"يواجه Naruto منظمة Akatsuki."
+},
+
+{
+title:"Yu-Gi-Oh GX Tag Force",
+platform:"PPSSPP",
+genre:"بطاقات",
+year:"2006",
+description:"مبارزات Yu-Gi-Oh.",
+story:"يدخل اللاعب عالم المبارزات."
+},
+
+{
+title:"Yu-Gi-Oh 5D's Tag Force 4",
+platform:"PPSSPP",
+genre:"بطاقات",
+year:"2009",
+description:"مبارزات البطاقات.",
+story:"منافسات ومبارزات متعددة."
+},
+
+{
 title:"WWE SmackDown vs Raw 2006",
 platform:"PPSSPP",
 genre:"مصارعة",
@@ -1464,6 +2206,24 @@ genre:"مصارعة",
 year:"2006",
 description:"مصارعة WWE.",
 story:"مباريات ومنافسات."
+},
+
+{
+title:"WWE SmackDown vs Raw 2008",
+platform:"PPSSPP",
+genre:"مصارعة",
+year:"2007",
+description:"جزء جديد من WWE.",
+story:"مباريات ومصارعين متعددين."
+},
+
+{
+title:"WWE SmackDown vs Raw 2009",
+platform:"PPSSPP",
+genre:"مصارعة",
+year:"2008",
+description:"مصارعة WWE.",
+story:"مجموعة من أنماط اللعب."
 },
 
 {
@@ -1503,12 +2263,57 @@ story:"مباريات وفرق متعددة."
 },
 
 {
+title:"Pro Evolution Soccer 2013",
+platform:"PPSSPP",
+genre:"رياضة",
+year:"2012",
+description:"كرة قدم.",
+story:"منافسات وبطولات."
+},
+
+{
 title:"PES 2011",
 platform:"PPSSPP",
 genre:"رياضة",
 year:"2010",
 description:"كرة قدم.",
 story:"مباريات وفرق."
+},
+
+{
+title:"NBA 2K13",
+platform:"PPSSPP",
+genre:"رياضة",
+year:"2012",
+description:"كرة سلة.",
+story:"مباريات ودوريات كرة السلة."
+},
+
+{
+title:"NBA Live 10",
+platform:"PPSSPP",
+genre:"رياضة",
+year:"2009",
+description:"كرة سلة.",
+story:"مباريات ومنافسات."
+},
+
+{
+title:"Virtua Tennis 3",
+platform:"PPSSPP",
+genre:"رياضة",
+year:"2007",
+description:"تنس.",
+story:"بطولات ومباريات تنس."
+},
+
+{
+title:"Everybody's Golf",
+platform:"PPSSPP",
+genre:"رياضة",
+year:"2004",
+description:"غولف.",
+story:"بطولات وتحديات الغولف."
 },
 
 {
@@ -1575,6 +2380,15 @@ story:"يبدأ Daxter رحلة لإنقاذ Jak."
 },
 
 {
+title:"Secret Agent Clank",
+platform:"PPSSPP",
+genre:"أكشن ومغامرات",
+year:"2008",
+description:"مغامرة Clank.",
+story:"يخوض Clank مهمة جديدة."
+},
+
+{
 title:"Ratchet & Clank Size Matters",
 platform:"PPSSPP",
 genre:"أكشن ومغامرات",
@@ -1584,12 +2398,48 @@ story:"يواجه الثنائي تهديدًا جديدًا."
 },
 
 {
+title:"Jak and Daxter The Lost Frontier",
+platform:"PPSSPP",
+genre:"أكشن ومغامرات",
+year:"2009",
+description:"مغامرة Jak.",
+story:"يبدأ Jak رحلة جديدة."
+},
+
+{
+title:"Prince of Persia Revelations",
+platform:"PPSSPP",
+genre:"أكشن ومغامرات",
+year:"2005",
+description:"مغامرة الأمير.",
+story:"يواجه الأمير أخطارًا جديدة."
+},
+
+{
+title:"Prince of Persia Rival Swords",
+platform:"PPSSPP",
+genre:"أكشن ومغامرات",
+year:"2007",
+description:"مغامرة الأمير.",
+story:"يكمل الأمير رحلته."
+},
+
+{
 title:"Assassin's Creed Bloodlines",
 platform:"PPSSPP",
 genre:"أكشن وتخفي",
 year:"2009",
 description:"مغامرة Assassin's Creed على PSP.",
 story:"يعود Altair في مهمة جديدة."
+},
+
+{
+title:"The 3rd Birthday",
+platform:"PPSSPP",
+genre:"أكشن وتصويب",
+year:"2010",
+description:"مغامرة Aya Brea.",
+story:"تواجه Aya تهديدًا جديدًا."
 },
 
 {
@@ -1620,12 +2470,30 @@ story:"يعود Gabe Logan في مهمة جديدة."
 },
 
 {
+title:"Syphon Filter Dark Mirror",
+platform:"PPSSPP",
+genre:"تصويب وتخفي",
+year:"2006",
+description:"مغامرة تجسس.",
+story:"ينفذ Gabe Logan مهمات خطيرة."
+},
+
+{
 title:"Medal of Honor Heroes",
 platform:"PPSSPP",
 genre:"تصويب",
 year:"2006",
 description:"مهمات عسكرية.",
 story:"يشارك اللاعب في معارك الحرب."
+},
+
+{
+title:"Medal of Honor Heroes 2",
+platform:"PPSSPP",
+genre:"تصويب",
+year:"2007",
+description:"تكملة Heroes.",
+story:"مهمات جديدة خلال الحرب."
 },
 
 {
@@ -1638,12 +2506,84 @@ story:"يشارك اللاعب في معارك الحرب العالمية ال�
 },
 
 {
+title:"SOCOM US Navy SEALs Fireteam Bravo",
+platform:"PPSSPP",
+genre:"تصويب تكتيكي",
+year:"2005",
+description:"مهمات عسكرية تكتيكية.",
+story:"ينفذ الفريق عمليات خاصة."
+},
+
+{
+title:"SOCOM US Navy SEALs Fireteam Bravo 2",
+platform:"PPSSPP",
+genre:"تصويب تكتيكي",
+year:"2006",
+description:"مهمات خاصة.",
+story:"يواجه الفريق تهديدات جديدة."
+},
+
+{
+title:"SOCOM US Navy SEALs Fireteam Bravo 3",
+platform:"PPSSPP",
+genre:"تصويب تكتيكي",
+year:"2010",
+description:"مغامرة عسكرية.",
+story:"عمليات خاصة في مناطق مختلفة."
+},
+
+{
+title:"Manhunt 2",
+platform:"PPSSPP",
+genre:"أكشن",
+year:"2009",
+description:"مغامرة مظلمة.",
+story:"يواجه اللاعب مجموعة من الأحداث الغامضة."
+},
+
+{
+title:"The Warriors",
+platform:"PPSSPP",
+genre:"أكشن",
+year:"2007",
+description:"مغامرة عصابات.",
+story:"تدور الأحداث حول مجموعة من الشخصيات."
+},
+
+{
+title:"Bully Scholarship Edition",
+platform:"PPSSPP",
+genre:"عالم مفتوح",
+year:"2008",
+description:"حياة Jimmy في المدرسة.",
+story:"يواجه Jimmy العديد من المواقف داخل المدرسة."
+},
+
+{
 title:"Mortal Kombat Unchained",
 platform:"PPSSPP",
 genre:"قتال",
 year:"2006",
 description:"قتالات Mortal Kombat.",
 story:"مواجهات بين مجموعة من المقاتلين."
+},
+
+{
+title:"Mortal Kombat Deception",
+platform:"PPSSPP",
+genre:"قتال",
+year:"2006",
+description:"قتالات ومغامرات.",
+story:"يواجه المقاتلون أخطارًا جديدة."
+},
+
+{
+title:"Soulcalibur Broken Destiny",
+platform:"PPSSPP",
+genre:"قتال",
+year:"2009",
+description:"قتال بالأسلحة.",
+story:"مواجهات بين مقاتلين مختلفين."
 },
 
 {
@@ -1674,6 +2614,33 @@ story:"يواجه Spider-Man مجموعة من الأعداء."
 },
 
 {
+title:"Spider-Man Friend or Foe",
+platform:"PPSSPP",
+genre:"أكشن",
+year:"2007",
+description:"مغامرة Spider-Man.",
+story:"يتعاون Spider-Man مع شخصيات مختلفة."
+},
+
+{
+title:"Iron Man",
+platform:"PPSSPP",
+genre:"أكشن",
+year:"2008",
+description:"مغامرة Iron Man.",
+story:"يستخدم Tony Stark بدلته لمواجهة الأعداء."
+},
+
+{
+title:"X-Men Legends II",
+platform:"PPSSPP",
+genre:"RPG وأكشن",
+year:"2005",
+description:"أبطال X-Men.",
+story:"يتعاون الأبطال لمواجهة تهديد كبير."
+},
+
+{
 title:"Star Wars Battlefront II",
 platform:"PPSSPP",
 genre:"أكشن",
@@ -1689,6 +2656,24 @@ genre:"أكشن",
 year:"2008",
 description:"قوى الـForce ومعارك Star Wars.",
 story:"يخوض Starkiller مغامرة مليئة بالقوى والمعارك."
+},
+
+{
+title:"LEGO Star Wars II",
+platform:"PPSSPP",
+genre:"مغامرات",
+year:"2006",
+description:"Star Wars بأسلوب LEGO.",
+story:"مغامرة في عالم Star Wars."
+},
+
+{
+title:"LEGO Indiana Jones",
+platform:"PPSSPP",
+genre:"مغامرات",
+year:"2008",
+description:"مغامرات Indiana Jones.",
+story:"يستكشف اللاعب أماكن مختلفة."
 },
 
 {
@@ -1755,428 +2740,170 @@ story:"يبحث Harry عن ابنته في مدينة غامضة."
 },
 
 {
+title:"Obscure The Aftermath",
+platform:"PPSSPP",
+genre:"رعب",
+year:"2009",
+description:"رعب وبقاء.",
+story:"يواجه الطلاب أحداثًا غامضة."
+},
+
+{
 title:"Dead Head Fred",
 platform:"PPSSPP",
 genre:"أكشن ومغامرات",
 year:"2007",
 description:"مغامرة غريبة وممتعة.",
 story:"يبدأ Fred رحلة للبحث عن الحقيقة."
+},
+
+{
+title:"Lego Batman The Videogame",
+platform:"PPSSPP",
+genre:"أكشن ومغامرات",
+year:"2008",
+description:"Batman بأسلوب LEGO.",
+story:"يواجه Batman أعداءه."
+},
+
+{
+title:"Batman Begins",
+platform:"PPSSPP",
+genre:"أكشن",
+year:"2005",
+description:"مغامرة Batman.",
+story:"يبدأ Bruce Wayne رحلته ليصبح Batman."
+},
+
+{
+title:"Prince of Persia The Forgotten Sands",
+platform:"PPSSPP",
+genre:"أكشن ومغامرات",
+year:"2010",
+description:"مغامرة الأمير.",
+story:"يستخدم الأمير قوى الزمن في مغامرته."
+},
+
+{
+title:"Tenchu Shadow Assassins",
+platform:"PPSSPP",
+genre:"تخفي وأكشن",
+year:"2009",
+description:"مغامرة نينجا.",
+story:"يتسلل اللاعب وينفذ مهمات خطيرة."
+},
+
+{
+title:"Dissidia 012 Duodecim Final Fantasy",
+platform:"PPSSPP",
+genre:"قتال وRPG",
+year:"2011",
+description:"نسخة موسعة من Dissidia.",
+story:"معارك وشخصيات عديدة من Final Fantasy."
 }
 
 ];
 
 
 /* =====================================================
-   إعدادات النظام التلقائي
+   نظام الصور التلقائي
 ===================================================== */
 
-const AUTO_TOTAL_LIMIT = 1000;
+const coverCache={};
 
-const AUTO_BATCH_SIZE = 24;
-
-const autoGames = {
-
-PS1:[],
-PS2:[],
-PPSSPP:[]
-
-};
-
-const loadedBatches = {
-
-PS1:0,
-PS2:0,
-PPSSPP:0
-
-};
-
-const autoFinished = {
-
-PS1:false,
-PS2:false,
-PPSSPP:false
-
-};
-
-
-/* =====================================================
-   تصنيفات ويكيبيديا
-===================================================== */
-
-const wikiCategories = {
-
-PS1:[
-"Category:PlayStation_games",
-"Category:PlayStation-only_games"
-],
-
-PS2:[
-"Category:PlayStation_2_games"
-],
-
-PPSSPP:[
-"Category:PlayStation_Portable_games"
-]
-
-};
-
-
-/* =====================================================
-   تخزين مؤقت للصور
-===================================================== */
-
-const coverCache = {};
-
-
-/* =====================================================
-   صورة احتياطية
-===================================================== */
 
 function fallbackImage(title){
 
-return "https://placehold.co/600x800/111827/ffffff?text="+
+return "https://placehold.co/600x800/f3f4f6/111827?text="+
 encodeURIComponent(title);
 
 }
 
 
-/* =====================================================
-   الحصول على صورة اللعبة
-===================================================== */
-
 function getImage(game){
 
-return game.image ||
-coverCache[game.title] ||
-fallbackImage(game.title);
+return game.image || fallbackImage(game.title);
 
 }
 
 
-/* =====================================================
-   تنظيف اسم اللعبة
-===================================================== */
+async function findGameCover(game){
 
-function cleanTitle(title){
+if(game.image)
+return game.image;
 
-return title
-
-.replace(/^List of /i,"")
-
-.replace(/\s*\(.*?\)\s*/g,"")
-
-.trim();
-
-}
-
-
-/* =====================================================
-   التأكد من عدم التكرار
-===================================================== */
-
-function existsGame(title,platform){
-
-return games.some(game=>
-
-game.platform===platform &&
-
-game.title.toLowerCase()===
-title.toLowerCase()
-
-);
-
-}
-
-
-/* =====================================================
-   جلب صفحات ويكيبيديا
-===================================================== */
-
-async function fetchWikiCategory(category){
-
-let results=[];
-
-let cmcontinue="";
+if(coverCache[game.title])
+return coverCache[game.title];
 
 try{
 
-do{
-
-let url=
-
-"https://en.wikipedia.org/w/api.php"+
-
-"?action=query"+
-
-"&list=categorymembers"+
-
-"&cmtitle="+
-encodeURIComponent(category)+
-
-"&cmtype=page"+
-
-"&cmlimit=500"+
-
-"&format=json"+
-
-"&origin=*";
-
-if(cmcontinue){
-
-url +=
-"&cmcontinue="+
-encodeURIComponent(cmcontinue);
-
-}
-
-const response=
-await fetch(url);
-
-if(!response.ok)
-break;
-
-const data=
-await response.json();
-
-if(
-data.query &&
-data.query.categorymembers
-){
-
-for(
-const item
-of data.query.categorymembers
-){
-
-const title=
-cleanTitle(item.title);
-
-if(!title)
-continue;
-
-if(
-title.toLowerCase().includes("list of")
-)
-continue;
-
-results.push(title);
-
-}
-
-}
-
-if(data.continue){
-
-cmcontinue=
-data.continue.cmcontinue;
-
-}else{
-
-cmcontinue="";
-
-}
-
-}
-while(
-cmcontinue &&
-results.length<500
-);
-
-}
-catch(error){
-
-console.log(
-"Wiki error:",
-error
-);
-
-}
-
-return results;
-
-}
-
-
-/* =====================================================
-   إنشاء ألعاب تلقائية
-===================================================== */
-
-async function buildAutoGames(platform){
-
-if(
-autoFinished[platform]
-)
-return;
-
-
-let titles=[];
-
-
-for(
-const category
-of wikiCategories[platform]
-){
-
-const found=
-await fetchWikiCategory(
-category
-);
-
-titles.push(
-...found
-);
-
-if(
-titles.length>=AUTO_TOTAL_LIMIT
-)
-break;
-
-}
-
-
-/* إزالة التكرار */
-
-titles=[
-...new Set(titles)
-];
-
-
-for(
-const title
-of titles
-){
-
-if(
-autoGames[platform].length>=
-AUTO_TOTAL_LIMIT
-)
-break;
-
-
-if(
-existsGame(title,platform)
-)
-continue;
-
-
-if(
-autoGames[platform].some(
-game=>
-game.title.toLowerCase()===
-title.toLowerCase()
-)
-)
-continue;
-
-
-autoGames[platform].push({
-
-title:title,
-
-platform:platform,
-
-genre:"لعبة فيديو",
-
-year:"غير محدد",
-
-size:"يحدد حسب النسخة",
-
-description:
-"معلومات اللعبة يتم جلبها تلقائيًا من ويكيبيديا.",
-
-story:
-"يمكن عرض معلومات إضافية عن اللعبة عند توفرها."
-
-});
-
-}
-
-
-autoFinished[platform]=true;
-
-
-console.log(
-platform+
-" automatic games:",
-autoGames[platform].length
-);
-
-}
-
-
-/* =====================================================
-   تحميل معلومات لعبة من ويكيبيديا
-===================================================== */
-
-async function loadGameInfo(game){
-
-if(
-game.wikiLoaded
-)
-return;
-
-
-game.wikiLoaded=true;
-
-
-try{
-
-const url=
-
+const apiURL=
 "https://en.wikipedia.org/api/rest_v1/page/summary/"+
-
 encodeURIComponent(game.title);
 
-
 const response=
-await fetch(url);
-
+await fetch(apiURL);
 
 if(!response.ok)
-return;
-
+throw new Error("Cover not found");
 
 const data=
 await response.json();
-
 
 if(
 data.thumbnail &&
 data.thumbnail.source
 ){
 
-game.image=
-data.thumbnail.source;
-
 coverCache[game.title]=
 data.thumbnail.source;
 
-}
-
-
-if(
-data.extract
-){
-
-game.description=
-data.extract.substring(
-0,
-180
-);
-
-game.story=
-data.extract;
+return data.thumbnail.source;
 
 }
 
-
-}
-catch(error){
+}catch(error){
 
 console.log(
-"لم يتم العثور على معلومات:",
+"لم يتم العثور على غلاف:",
 game.title
 );
+
+}
+
+return fallbackImage(game.title);
+
+}
+
+
+/* =====================================================
+   تحميل الصور
+===================================================== */
+
+async function loadCovers(){
+
+const images=
+document.querySelectorAll(
+".game-cover[data-game-title]"
+);
+
+for(const img of images){
+
+const title=
+img.dataset.gameTitle;
+
+const game=
+games.find(
+g=>g.title===title
+);
+
+if(!game)
+continue;
+
+const cover=
+await findGameCover(game);
+
+img.src=cover;
 
 }
 
@@ -2194,17 +2921,11 @@ return `
 <div class="game-card">
 
 <img
-
 class="game-cover"
-
 src="${getImage(game)}"
-
 data-game-title="${game.title}"
-
 alt="${game.title}"
-
 onerror="this.src=fallbackImage(this.dataset.gameTitle)"
-
 >
 
 <div class="game-content">
@@ -2214,7 +2935,7 @@ ${game.title}
 </h3>
 
 <p>
-${game.description || "لعبة فيديو"}
+${game.description}
 </p>
 
 <div class="info-row">
@@ -2224,11 +2945,11 @@ ${game.description || "لعبة فيديو"}
 </div>
 
 <div class="info-box">
-📅 ${game.year || "غير محدد"}
+📅 ${game.year}
 </div>
 
 <div class="info-box">
-🎯 ${game.genre || "لعبة فيديو"}
+🎯 ${game.genre}
 </div>
 
 <div class="info-box">
@@ -2240,23 +2961,21 @@ ${game.description || "لعبة فيديو"}
 <div class="card-buttons">
 
 <button
-
 class="info-btn"
-
-onclick='showInfo(${JSON.stringify(game).replace(/'/g,"&#39;")})'
-
+onclick='showInfo(${JSON.stringify(game)})'
 >
+
 ℹ️ معلومات
+
 </button>
 
 <button
-
 class="download-btn"
-
 onclick="downloadGame()"
-
 >
+
 📥 تحميل
+
 </button>
 
 </div>
@@ -2266,185 +2985,6 @@ onclick="downloadGame()"
 </div>
 
 `;
-
-}
-
-
-/* =====================================================
-   تحميل دفعة
-===================================================== */
-
-async function loadBatch(platform){
-
-const all=
-autoGames[platform];
-
-
-const start=
-loadedBatches[platform]*
-AUTO_BATCH_SIZE;
-
-
-const end=
-start+
-AUTO_BATCH_SIZE;
-
-
-const batch=
-all.slice(
-start,
-end
-);
-
-
-if(!batch.length){
-
-updateLoadMoreButton(
-platform
-);
-
-return;
-
-}
-
-
-const container=
-document.getElementById(
-"platformGames"
-);
-
-
-/* إضافة البطاقات */
-
-container.insertAdjacentHTML(
-
-"beforeend",
-
-batch
-.map(
-createGameCard
-)
-.join("")
-
-);
-
-
-loadedBatches[platform]++;
-
-
-/* تحديث العدد */
-
-updateStats(
-platform
-);
-
-
-/* تحميل الصور بالتدريج */
-
-for(
-const game
-of batch
-){
-
-await loadGameInfo(
-game
-);
-
-const img=
-container.querySelector(
-`img[data-game-title="${CSS.escape(game.title)}"]`
-);
-
-
-if(
-img &&
-game.image
-){
-
-img.src=
-game.image;
-
-}
-
-
-await new Promise(
-resolve=>
-setTimeout(
-resolve,
-80
-)
-);
-
-}
-
-
-updateLoadMoreButton(
-platform
-);
-
-}
-
-
-/* =====================================================
-   زر المزيد
-===================================================== */
-
-function updateLoadMoreButton(platform){
-
-const button=
-document.getElementById(
-"loadMoreButton"
-);
-
-const total=
-autoGames[platform].length;
-
-const shown=
-loadedBatches[platform]*
-AUTO_BATCH_SIZE;
-
-
-if(
-shown<total
-){
-
-button.classList.remove(
-"hidden"
-);
-
-}else{
-
-button.classList.add(
-"hidden"
-);
-
-}
-
-}
-
-
-/* =====================================================
-   الإحصائيات
-===================================================== */
-
-function updateStats(platform){
-
-const shown=
-loadedBatches[platform]*
-AUTO_BATCH_SIZE;
-
-const total=
-autoGames[platform].length;
-
-document.getElementById(
-"platformStats"
-).innerText=
-
-"🎮 تم تحميل "+
-Math.min(shown,total)+
-" لعبة من أصل "+
-total+
-" لعبة متوفرة حاليًا";
 
 }
 
@@ -2453,175 +2993,32 @@ total+
    فتح المنصة
 ===================================================== */
 
-async function openPlatform(platform){
+function openPlatform(platform){
 
 document
 .getElementById("homePage")
-.classList
-.add("hidden");
-
+.classList.add("hidden");
 
 document
 .getElementById("platformPage")
-.classList
-.remove("hidden");
-
+.classList.remove("hidden");
 
 document
 .getElementById("platformTitle")
 .innerText=
 "🎮 ألعاب "+platform;
 
-
 const container=
 document.getElementById(
 "platformGames"
 );
 
-
-container.innerHTML="";
-
-
-document
-.getElementById("loadMoreButton")
-.classList
-.add("hidden");
-
-
-document
-.getElementById("loading")
-.classList
-.remove("hidden");
-
-
-if(
-platform==="PS1" ||
-platform==="PS2" ||
-platform==="PPSSPP"
-){
-
-await buildAutoGames(
-platform
-);
-
-
-/* دمج الألعاب القديمة والجديدة */
-
-const combined=
+const platformGames=
 games.filter(
-game=>
-game.platform===platform
+game=>game.platform===platform
 );
 
-
-/* إضافة التلقائية */
-
-for(
-const game
-of autoGames[platform]
-){
-
-if(
-!combined.some(
-existing=>
-existing.title.toLowerCase()===
-game.title.toLowerCase()
-)
-){
-
-combined.push(game);
-
-}
-
-}
-
-
-/* عرض الألعاب */
-
-container.innerHTML=
-combined
-.slice(0,AUTO_BATCH_SIZE)
-.map(createGameCard)
-.join("");
-
-
-loadedBatches[platform]=1;
-
-
-/* تحميل الصور */
-
-for(
-const game
-of combined.slice(
-0,
-AUTO_BATCH_SIZE
-)
-){
-
-await loadGameInfo(
-game
-);
-
-const img=
-container.querySelector(
-`img[data-game-title="${CSS.escape(game.title)}"]`
-);
-
-if(
-img &&
-game.image
-){
-
-img.src=
-game.image;
-
-}
-
-}
-
-
-/* نخزن الألعاب تلقائيًا */
-
-for(
-const game
-of autoGames[platform]
-){
-
-if(
-!games.some(
-existing=>
-existing.platform===platform &&
-existing.title.toLowerCase()===
-game.title.toLowerCase()
-)
-){
-
-games.push(game);
-
-}
-
-}
-
-
-updateStats(
-platform
-);
-
-
-if(
-combined.length>AUTO_BATCH_SIZE
-){
-
-document
-.getElementById(
-"loadMoreButton"
-)
-.classList
-.remove("hidden");
-
-}
-
-}else{
+if(platformGames.length===0){
 
 container.innerHTML=`
 
@@ -2629,130 +3026,53 @@ container.innerHTML=`
 
 🎮 سيتم إضافة ألعاب ${platform} هنا قريبًا
 
+<br><br>
+
+😂 لا تستعجل علينا
+
 </div>
 
 `;
 
-}
+}else{
 
+container.innerHTML=
+platformGames
+.map(createGameCard)
+.join("");
 
-document
-.getElementById("loading")
-.classList
-.add("hidden");
-
-
-window.scrollTo(
-0,
-0
-);
+loadCovers();
 
 }
 
-
-/* =====================================================
-   تحميل المزيد
-===================================================== */
-
-async function loadMoreGames(){
-
-const title=
-document
-.getElementById(
-"platformTitle"
-)
-.innerText;
-
-
-let platform="";
-
-
-if(
-title.includes("PS1")
-)
-platform="PS1";
-
-else if(
-title.includes("PS2")
-)
-platform="PS2";
-
-else if(
-title.includes("PPSSPP") ||
-title.includes("PSP")
-)
-platform="PPSSPP";
-
-
-if(!platform)
-return;
-
-
-const button=
-document.getElementById(
-"loadMoreButton"
-);
-
-
-button.disabled=true;
-
-button.innerText=
-"⏳ جاري التحميل...";
-
-
-await loadBatch(
-platform
-);
-
-
-button.disabled=false;
-
-button.innerText=
-"⬇️ تحميل المزيد";
+window.scrollTo(0,0);
 
 }
 
 
 /* =====================================================
-   العودة
+   العودة للرئيسية
 ===================================================== */
 
 function goHome(){
 
 document
-.getElementById(
-"platformPage"
-)
-.classList
-.add("hidden");
-
+.getElementById("platformPage")
+.classList.add("hidden");
 
 document
-.getElementById(
-"homePage"
-)
-.classList
-.remove("hidden");
-
+.getElementById("homePage")
+.classList.remove("hidden");
 
 document
-.getElementById(
-"searchInput"
-)
+.getElementById("searchInput")
 .value="";
 
-
 document
-.getElementById(
-"searchResults"
-)
+.getElementById("searchResults")
 .innerHTML="";
 
-
-window.scrollTo(
-0,
-0
-);
+window.scrollTo(0,0);
 
 }
 
@@ -2761,23 +3081,19 @@ window.scrollTo(
    البحث
 ===================================================== */
 
-async function searchGames(){
+function searchGames(){
 
 const text=
 document
-.getElementById(
-"searchInput"
-)
+.getElementById("searchInput")
 .value
 .toLowerCase()
 .trim();
-
 
 const results=
 document.getElementById(
 "searchResults"
 );
-
 
 if(!text){
 
@@ -2787,7 +3103,6 @@ return;
 
 }
 
-
 const found=
 games.filter(
 game=>
@@ -2796,14 +3111,17 @@ game.title
 .includes(text)
 );
 
-
-if(!found.length){
+if(found.length===0){
 
 results.innerHTML=`
 
 <div class="no-results">
 
 ❌ ما لگينا لعبة بهذا الاسم
+
+<br><br>
+
+😂 جرب اسم ثاني
 
 </div>
 
@@ -2813,17 +3131,17 @@ return;
 
 }
 
-
 results.innerHTML=`
 
 <h2 class="section-title">
+
 🔎 نتائج البحث
+
 </h2>
 
 <div class="games-grid">
 
 ${found
-.slice(0,60)
 .map(createGameCard)
 .join("")}
 
@@ -2831,33 +3149,7 @@ ${found
 
 `;
 
-
-/* صور البحث */
-
-for(
-const game of found.slice(0,60)
-){
-
-await loadGameInfo(
-game
-);
-
-const img=
-results.querySelector(
-`img[data-game-title="${CSS.escape(game.title)}"]`
-);
-
-if(
-img &&
-game.image
-){
-
-img.src=
-game.image;
-
-}
-
-}
+loadCovers();
 
 }
 
@@ -2869,72 +3161,44 @@ game.image;
 function showInfo(game){
 
 document
-.getElementById(
-"modalImage"
-)
-.src=
-getImage(game);
-
+.getElementById("modalImage")
+.src=getImage(game);
 
 document
-.getElementById(
-"modalTitle"
-)
+.getElementById("modalTitle")
 .innerText=
 game.title;
 
-
 document
-.getElementById(
-"modalStory"
-)
+.getElementById("modalStory")
 .innerText=
 game.story ||
-game.description ||
-"لا توجد معلومات إضافية.";
-
+game.description;
 
 document
-.getElementById(
-"modalPlatform"
-)
+.getElementById("modalPlatform")
 .innerText=
 game.platform;
 
-
 document
-.getElementById(
-"modalGenre"
-)
+.getElementById("modalGenre")
 .innerText=
-game.genre ||
-"لعبة فيديو";
-
+game.genre;
 
 document
-.getElementById(
-"modalYear"
-)
+.getElementById("modalYear")
 .innerText=
-game.year ||
-"غير محدد";
-
+game.year;
 
 document
-.getElementById(
-"modalSize"
-)
+.getElementById("modalSize")
 .innerText=
 game.size ||
 "يحدد حسب النسخة";
 
-
 document
-.getElementById(
-"infoModal"
-)
-.classList
-.add("show");
+.getElementById("infoModal")
+.classList.add("show");
 
 }
 
@@ -2946,11 +3210,8 @@ document
 function closeInfo(){
 
 document
-.getElementById(
-"infoModal"
-)
-.classList
-.remove("show");
+.getElementById("infoModal")
+.classList.remove("show");
 
 }
 
@@ -2970,7 +3231,7 @@ closeInfo();
 
 
 /* =====================================================
-   التحميل
+   زر التحميل
 ===================================================== */
 
 function downloadGame(){
@@ -2978,154 +3239,14 @@ function downloadGame(){
 alert(
 
 "📥 رابط التحميل الرسمي غير متوفر حاليًا لهذه اللعبة."+
-
 "\n\n"+
-
-"الموقع يعرض معلومات الألعاب ومصادرها فقط."
+"نضيف روابط المصادر القانونية والمجانية فقط."
 
 );
 
 }
-
-
-/* =====================================================
-   تحميل المكتبات تلقائيًا بالخلفية
-===================================================== */
-
-async function startAutomaticCatalog(){
-
-console.log(
-"🎮 بدء نظام مكتبة الألعاب التلقائية..."
-);
-
-
-/*
-   نبدأ PS2
-*/
-
-await buildAutoGames(
-"PS2"
-);
-
-
-/*
-   انتظار بسيط
-*/
-
-await new Promise(
-resolve=>
-setTimeout(
-resolve,
-700
-)
-);
-
-
-/*
-   PS1
-*/
-
-await buildAutoGames(
-"PS1"
-);
-
-
-await new Promise(
-resolve=>
-setTimeout(
-resolve,
-700
-)
-);
-
-
-/*
-   PSP
-*/
-
-await buildAutoGames(
-"PPSSPP"
-);
-
-
-console.log(
-"✅ تم تجهيز المكتبات التلقائية."
-);
-
-}
-
-
-/* =====================================================
-   تشغيل النظام
-===================================================== */
-
-window.addEventListener(
-"load",
-function(){
-
-setTimeout(
-function(){
-
-startAutomaticCatalog();
-
-},
-1200
-);
-
-});
-
-
-/* =====================================================
-   تحميل المزيد عند النزول لأسفل
-===================================================== */
-
-window.addEventListener(
-"scroll",
-function(){
-
-const page=
-document.getElementById(
-"platformPage"
-);
-
-
-if(
-page.classList.contains(
-"hidden"
-)
-)
-return;
-
-
-if(
-window.innerHeight+
-window.scrollY>=
-document.body.offsetHeight-500
-){
-
-const button=
-document.getElementById(
-"loadMoreButton"
-);
-
-
-if(
-!button.classList.contains(
-"hidden"
-) &&
-!button.disabled
-){
-
-loadMoreGames();
-
-}
-
-}
-
-});
 
 </script>
 
 </body>
-
 </html>
