@@ -38,7 +38,7 @@ linear-gradient(
 #ffffff,
 #eef2ff
 );
-padding:22px 15px;
+padding:18px 15px 20px;
 text-align:center;
 border-bottom:2px solid #e5e7eb;
 box-shadow:0 3px 15px rgba(0,0,0,.06);
@@ -47,15 +47,22 @@ top:0;
 z-index:100
 }
 
-header h1{
-font-size:32px;
-font-weight:900;
-color:#111827;
-letter-spacing:.5px
+/* =====================================================
+   شعار الموقع
+===================================================== */
+
+.site-logo{
+width:110px;
+height:110px;
+object-fit:contain;
+display:block;
+margin:0 auto 5px;
+border-radius:50%;
+filter:drop-shadow(0 5px 10px rgba(0,0,0,.12))
 }
 
 header p{
-margin-top:6px;
+margin-top:4px;
 color:#6b7280;
 font-size:14px
 }
@@ -436,8 +443,13 @@ background:#ffffff
 
 @media(max-width:500px){
 
-header h1{
-font-size:27px
+.site-logo{
+width:90px;
+height:90px
+}
+
+header{
+padding:14px 10px 16px
 }
 
 .hero{
@@ -521,7 +533,11 @@ background:#818cf8
 
 <header>
 
-<h1>🎮 العب وخلص</h1>
+<img
+src="logo.png"
+alt="العب وخلص"
+class="site-logo"
+>
 
 <p>
 مكتبة ألعابك... اختار، العب، وخلص 😂
@@ -629,7 +645,6 @@ target="_blank">
 
 </div>
 
-
 <div class="free-card">
 
 <h3>⚔️ Battle for Wesnoth</h3>
@@ -647,7 +662,6 @@ target="_blank">
 </a>
 
 </div>
-
 
 <div class="free-card">
 
@@ -672,7 +686,6 @@ target="_blank">
 </div>
 
 </section>
-
 
 <!-- =====================================================
      صفحة المنصة
@@ -703,7 +716,6 @@ class="games-grid">
 </section>
 
 </div>
-
 
 <!-- =====================================================
      نافذة معلومات اللعبة
@@ -785,7 +797,6 @@ class="modal-story">
 
 </div>
 
-
 <!-- =====================================================
      الفوتر
 ===================================================== -->
@@ -799,7 +810,6 @@ class="modal-story">
 😂 العب وخلص... لا تسأل شلون
 
 </footer>
-
 
 <script>
 
@@ -2804,13 +2814,11 @@ story:"معارك وشخصيات عديدة من Final Fantasy."
 
 ];
 
-
 /* =====================================================
    نظام الصور التلقائي
 ===================================================== */
 
 const coverCache={};
-
 
 function fallbackImage(title){
 
@@ -2819,13 +2827,11 @@ encodeURIComponent(title);
 
 }
 
-
 function getImage(game){
 
 return game.image || fallbackImage(game.title);
 
 }
-
 
 async function findGameCover(game){
 
@@ -2875,7 +2881,6 @@ return fallbackImage(game.title);
 
 }
 
-
 /* =====================================================
    تحميل الصور
 ===================================================== */
@@ -2908,7 +2913,6 @@ img.src=cover;
 }
 
 }
-
 
 /* =====================================================
    بطاقة اللعبة
@@ -2988,7 +2992,6 @@ onclick="downloadGame()"
 
 }
 
-
 /* =====================================================
    فتح المنصة
 ===================================================== */
@@ -3049,7 +3052,6 @@ window.scrollTo(0,0);
 
 }
 
-
 /* =====================================================
    العودة للرئيسية
 ===================================================== */
@@ -3075,7 +3077,6 @@ document
 window.scrollTo(0,0);
 
 }
-
 
 /* =====================================================
    البحث
@@ -3153,7 +3154,6 @@ loadCovers();
 
 }
 
-
 /* =====================================================
    معلومات اللعبة
 ===================================================== */
@@ -3202,7 +3202,6 @@ document
 
 }
 
-
 /* =====================================================
    إغلاق المعلومات
 ===================================================== */
@@ -3214,7 +3213,6 @@ document
 .classList.remove("show");
 
 }
-
 
 function closeOutside(event){
 
@@ -3228,7 +3226,6 @@ closeInfo();
 }
 
 }
-
 
 /* =====================================================
    زر التحميل
